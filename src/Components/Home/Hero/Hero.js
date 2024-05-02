@@ -104,7 +104,7 @@ const Hero = () => {
       <div className="hero_content">
         <div className="hero_info">
           <div className="left_body">
-            <p>
+            <p className="hero_para">
               VersaNex: Elevating your online presence with the latest tech and
               techniques for a powerful digital impact!
             </p>

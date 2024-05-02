@@ -15,6 +15,7 @@
   --first-color: #efeae3;
   --second-color: #f2ad08;
   --third-color: #161719;
+  --border-color: rgba(11, 5, 0, .2);
   /*========== Font and typography ==========*/
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
@@ -102,6 +103,86 @@ a {
 }
 
 img {
-  max-width: 100%;
+  /* max-width: 100%; */
   height: auto;
+}
+/* button  */
+.button {
+  align-self: center;
+  background-color: var(--first-color);
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  color: var(--third-color);
+  cursor: pointer;
+  outline: none;
+  width: 6.5rem;
+  height: 3rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  user-select: none; 
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  position: relative;
+  transition: all ease 0.4s;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.4;
+  gap: 0.3rem;
+  font-size: smaller;
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  font-weight: 400;
+}
+.button .arrow {
+  text-align: center;
+  position: relative;
+  top: 0.2rem;
+}
+.button:hover .arrow {
+  position: relative;
+  z-index: 9;
+  color: var(--first-color);
+}
+.button::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--second-color);
+  left: 0;
+  bottom: -100%;
+  border-radius: 50%;
+  transition: all ease 0.3s;
+}
+.button:hover::after {
+  bottom: 0;
+  border-radius: 0;
+}
+.button a {
+  position: relative;
+  z-index: 9;
+  color: var(--third-color);
+}
+.button:hover a {
+  color: var(--first-color);
+}
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+}
+/* scroll bar  */
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background: var(--third-color);
+}
+::-webkit-scrollbar-thumb{
+  background: var(--second-color);
 }

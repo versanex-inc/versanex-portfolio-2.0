@@ -19,7 +19,7 @@ const Navbar = () => {
         <div
           className="nav_link_parent"
         >
-          <button className="nav_link">
+          <button className="button nav_link">
             <a className="nav_link_a" href="#">
               Portfolio
             </a>
@@ -28,7 +28,7 @@ const Navbar = () => {
         <div
           className="nav_link_parent"
         >
-          <button className="nav_link">
+          <button className="button nav_link">
             <a className="nav_link_a" href="#">
               Discover
             </a>
@@ -46,7 +46,7 @@ const Navbar = () => {
         <div
           className="nav_link_parent"
         >
-          <button className="nav_link">
+          <button className="button nav_link">
             <a className="nav_link_a" href="#">
               Services
             </a>
@@ -68,7 +68,7 @@ const Navbar = () => {
         <div
           className="nav_link_parent"
         >
-          <button className="nav_link">
+          <button className="button nav_link">
             <a className="nav_link_a" href="#">
               Products
             </a>
@@ -90,7 +90,7 @@ const Navbar = () => {
         <div
           className="nav_link_parent"
         >
-          <button className="nav_link">
+          <button className="button nav_link">
             <a className="nav_link_a" href="#">
               Company
             </a>
@@ -109,7 +109,7 @@ const Navbar = () => {
         <div
           className="nav_link_parent"
         >
-          <button className="nav_link">
+          <button className="button nav_link">
             <a className="nav_link_a" href="#">
               Contact
             </a>
