@@ -10,17 +10,10 @@ import { ImEyeBlocked } from "react-icons/im";
 
 const Navbar = () => {
 
-  // useEffect(() => {
-  //   window.addEventListener('scroll', function() {
-  //     var scrollTop = window.scrollY;
-  //     var parallaxValue = scrollTop * 0.1; // Adjust the factor to control the intensity of parallax
-  //     document.querySelector('.navbar').style.transform = 'translateY(-' + parallaxValue + 'px)';
-  // });
-  // }, [])
   return (
     <div className="navbar">
       <div className="nav_logo">
-        <Image src={'/imgs/Versanex.png'} width={1000} height={1000} />
+        Versa<Image src={'/imgs/logo.png'} width={1000} height={1000} />ex
       </div>
       <div className="nav_links">
         <div

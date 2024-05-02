@@ -1,4 +1,8 @@
 /* CSS */
+@font-face {
+  font-family: neu;
+  src: url(../../../../public/fonts/NeueHaasDisplayMediu.ttf);
+}
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -7,10 +11,13 @@
     padding: 2vw 3vw 0 3vw;
   }
   .nav_logo {
-    width: 20vw;
+    width: 5vw;
     position: relative;
-    top: 1.1rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 3.5rem;
+    font-family: neu;
   }
   .nav_links {
     display: flex;
