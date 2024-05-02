@@ -1,0 +1,7 @@
+.services{
+    height: 100vh;
+    background: var(--first-color);
+    position: relative;
+    z-index: 2;
+    background: var(--first-color);
+}
