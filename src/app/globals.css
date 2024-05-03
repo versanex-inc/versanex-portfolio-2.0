@@ -186,6 +186,7 @@ img {
 /* container class */
 .container{
   padding: 3vw;
+  background: var(--first-color);
 }
 /* scroll bar  */
 ::-webkit-scrollbar{

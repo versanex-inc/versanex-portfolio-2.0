@@ -1,0 +1,29 @@
+.partnerships {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .partners {
+    margin-top: 5vh;
+    display: flex;
+    gap: 10vw;
+    overflow: hidden;
+    align-items: center;
+    animation: scrollLeft 30s linear infinite;
+  }
+  .partner img {
+    width: 20vw;
+    height: auto;
+  }
+  @keyframes scrollLeft {
+    0%{
+        transform: translate(100vw,0);
+    }
+    100%{
+        transform: translate(-100vw,0);
+    }
+  }
