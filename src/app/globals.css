@@ -87,13 +87,6 @@ body {
   overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  color: var(--second-color);
-}
-
 ul {
   list-style: none;
 }
@@ -175,6 +168,24 @@ img {
 
 .button:focus {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+}
+
+
+/* heading and sub heading  */
+.heading{
+  font-size: 4vw;
+  text-align: center;
+}
+.sub_heading{
+  font-size: 1.5vw;
+  text-align: center;
+  width: 50%;
+}
+
+
+/* container class */
+.container{
+  padding: 3vw;
 }
 /* scroll bar  */
 ::-webkit-scrollbar{

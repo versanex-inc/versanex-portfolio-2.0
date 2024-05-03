@@ -1,7 +1,116 @@
-.services{
-    height: 100vh;
-    background: var(--first-color);
-    position: relative;
-    z-index: 2;
-    background: var(--first-color);
+.services {
+  min-height: 100vh;
+  background: var(--first-color);
+  position: relative;
+  z-index: 2;
+  background: var(--first-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.services_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 5vh;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw;
+}
+.show_all_services {
+  margin-top: 4vh;
+  font-size: 1.2vw;
+  width: 12vw;
+}
+.show_all_services span {
+  color: var(--third-color);
+}
+.show_all_services:hover span p {
+  color: var(--first-color);
+}
+.service {
+  padding: 2vw;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  width: 100%;
+  height: 100%;
+}
+@keyframes serviceAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to the service class */
+.service {
+  animation: serviceAnimation 1s ease-out forwards;
+}
+.service_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+}
+.button:hover .service_content {
+  position: relative;
+  z-index: 9;
+  color: var(--first-color);
+}
+.service_image {
+  width: 4vw;
+  height: 4vw;
+}
+.service_image img {
+  width: 100%;
+  height: auto;
+}
+.service_title {
+  font-weight: var(--font-medium);
+  font-size: 1.5vw;
+}
+.service:hover .service_read_more_btn {
+  color: var(--first-color);
+}
+.service_read_more_btn {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2vw;
+  background: transparent;
+  color: var(--third-color);
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  padding: 0.8vw;
+  width: 30%;
+  gap: 3px;
+  padding-left: 0;
+  padding-right: 0;
+  text-decoration: underline;
+}
+.service_read_more_btn:hover {
+  background: var(--third-color);
+  color: var(--first-color);
+  width: 40%;
+  gap: 6px;
+  text-decoration: none;
+}
+.service_read_more_btn .service_arrow {
+  display: none;
+  position: relative;
+  top: 3px;
+}
+.service_read_more_btn:hover .service_arrow {
+  display: block;
+  position: relative;
+  top: 3px;
 }
