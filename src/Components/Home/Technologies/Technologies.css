@@ -1,0 +1,105 @@
+.technologies{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+.technolgies_container{
+    width: 100%;
+    margin-top: 8vh;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+}
+.technology{
+    justify-self: center;
+    font-size: 5vw;
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    border-radius: 5px;
+}
+.technology:hover{
+    background: var(--third-color);
+}
+
+
+.technology_react:hover{
+    color: #66dcfb;
+}
+.technology_next:hover{
+    color: white;
+}
+.technology_express:hover{
+    color: white;
+}
+.technology_mongodb:hover{
+    color: #5d993c;
+}
+.technology_nodejs:hover{
+    color: #71c450;
+}
+.technology_html:hover{
+    color: #fc4f13;
+}
+.technology_css:hover{
+    color: #1c76b8;
+}
+.technology_js:hover{
+    color: #ffcc2f;
+}
+.technology_bootstrap:hover{
+    color: #7f18f9;
+}
+.technology_tailwind:hover{
+    color: #1cc2ba;
+}
+.technology_mysql:hover{
+    color: skyblue;
+}
+.technology_npm:hover{
+    color: #c3282e;
+}
+.technology_threejs:hover{
+    color: white;
+}
+.technology_photoshop:hover{
+    color: #37c7f0;
+}
+.technology_illustrator:hover{
+    color: #ff9d08;
+}
+.technology_aftereffect:hover{
+    color: #9c9cff;
+}
+.technology_indesign:hover{
+    color: #ff396b;
+}
+.technology_premierpro:hover{
+    color: #9c9cff;
+}
+.technology_blender:hover{
+    color: #eb7a08;
+}
+.technology_canva:hover{
+    color: #0fbecf;
+}
+.technology_github:hover{
+    color: white;
+}
+.technology_figma:hover{
+    color: white;
+}
+.technology_typescript:hover{
+    color: #2f74c0;
+}
+.technology_vite:hover{
+    color: #b534f7;
+}

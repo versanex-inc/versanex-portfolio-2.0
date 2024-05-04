@@ -4,6 +4,7 @@ import './Page.css'
 import Services from "@/Components/Home/Services/Services";
 import Footer from "@/Components/Home/Footer/Footer";
 import Partnerships from "@/Components/Home/Partnerships/Partnerships";
+import Technologies from "@/Components/Home/Technologies/Technologies";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <About/>
       <Services/>
       <Partnerships/>
+      <Technologies/>
       <Footer/>
     </main>
   );
