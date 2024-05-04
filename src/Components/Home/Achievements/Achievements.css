@@ -1,0 +1,64 @@
+/* .achievements{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    z-index: 2;
+} */
+
+.achievements{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+.achievements_container{
+    width: 100%;
+    margin-top: 8vh;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+}
+.achievements_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 10vh;
+    justify-content: center;
+    align-items: center;
+}
+.achievement{
+    align-self:  center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 10vw 4rem 2rem auto;
+    height:400px;
+}
+.achievement_icon{
+    font-size: 7vw;
+    align-self: flex-end;
+    justify-self: center;
+    overflow: hidden;
+}
+.achievement_count{
+    align-self: center;
+    justify-self: center;
+    font-size: 3vw;
+}
+.achievement_name{
+    align-self: center;
+    justify-self: center;
+    font-size: 1.3vw;
+}
+.achievement_para{
+    align-self: flex-start;
+    justify-self: center;
+    font-size: 1vw;
+    text-align: center;
+}

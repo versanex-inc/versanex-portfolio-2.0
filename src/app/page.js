@@ -5,6 +5,7 @@ import Services from "@/Components/Home/Services/Services";
 import Footer from "@/Components/Home/Footer/Footer";
 import Partnerships from "@/Components/Home/Partnerships/Partnerships";
 import Technologies from "@/Components/Home/Technologies/Technologies";
+import Achievements from "@/Components/Home/Achievements/Achievements";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Services/>
       <Partnerships/>
       <Technologies/>
+      <Achievements/>
       <Footer/>
     </main>
   );
