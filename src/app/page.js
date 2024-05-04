@@ -6,6 +6,7 @@ import Footer from "@/Components/Home/Footer/Footer";
 import Partnerships from "@/Components/Home/Partnerships/Partnerships";
 import Technologies from "@/Components/Home/Technologies/Technologies";
 import Achievements from "@/Components/Home/Achievements/Achievements";
+import Values from "@/Components/Home/Values/Values";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Partnerships/>
       <Technologies/>
       <Achievements/>
+      <Values/>
       <Footer/>
     </main>
   );
