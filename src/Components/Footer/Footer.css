@@ -1,0 +1,123 @@
+.footer{
+    position: relative;
+    z-index: 2;
+    background: var(--third-color);
+    color: var(--first-color);
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    padding: 3rem 3rem 2rem 3rem;
+}
+.footer_content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    height: 100%;
+    column-gap: 4rem;
+    row-gap: 2rem;
+}
+.footer_container_one{
+    grid-area: 1/1/2/2;
+}
+.footer_container_two{
+    grid-area: 1/2/2/3;
+}
+.footer_container_three{
+    grid-area: 1/3/2/4;
+}
+.footer_container_four{
+    grid-area: 1/4/2/5;
+}
+.footer_container_five{
+    grid-area: 2/1/3/5;
+}
+.footer_container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.footer_logo{
+    width: 5rem;
+    justify-self: flex-start;
+    align-self: flex-start;
+}
+.footer_quote{
+    background: var(--first-color);
+    outline: none;
+    border: none;
+    width: 7rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.footer_quote:hover{
+    background: var(--second-color);
+    color: var(--third-color);
+}
+
+.footer_container_heading{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.footer_list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer_list li a{
+    color: var(--first-color);
+}
+.item_contact_footer a{
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.footer_container_five{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid #efeae38e;
+}
+.footer_scials{
+    display: flex;
+    gap: 10px;
+    color: var(--first-color);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.footer_scials span:hover{
+    color: var(--second-color);
+}
+
+.footer_list li a {
+    position: relative;
+    transition: 0.3s ease-out 0.1s;
+  }
+  
+  .footer_list li a::after {
+    height: 1px;
+    width: 100%;
+    background: var(--second-color);
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    transform: scaleX(0);
+    transition: 0.3s;
+  }
+  
+  .footer_list li a:hover::after {
+    transform: scaleX(1);
+  }
+  .footer_list li a:hover{
+    color: var(--second-color);
+  }
+
