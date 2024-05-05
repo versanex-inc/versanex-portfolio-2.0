@@ -8,6 +8,7 @@ import Technologies from "@/Components/Home/Technologies/Technologies";
 import Achievements from "@/Components/Home/Achievements/Achievements";
 import Values from "@/Components/Home/Values/Values";
 import Reviews from "@/Components/Home/Reviews/Reviews";
+import CTA from "@/Components/Home/CTA/CTA";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Achievements/>
       <Values/>
       <Reviews/>
+      <CTA/>
       <Footer/>
     </main>
   );
