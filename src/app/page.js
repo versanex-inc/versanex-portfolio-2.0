@@ -7,6 +7,7 @@ import Partnerships from "@/Components/Home/Partnerships/Partnerships";
 import Technologies from "@/Components/Home/Technologies/Technologies";
 import Achievements from "@/Components/Home/Achievements/Achievements";
 import Values from "@/Components/Home/Values/Values";
+import Reviews from "@/Components/Home/Reviews/Reviews";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Technologies/>
       <Achievements/>
       <Values/>
+      <Reviews/>
       <Footer/>
     </main>
   );
