@@ -1,13 +1,15 @@
 .cta{
     width: 100vw;
-    min-height: 40vh;
+    min-height: 60vh;
     position: relative;
     z-index: 2;
-    background: linear-gradient(#efeae3,#f2ad08);
+    /* background: linear-gradient(var(--first-color),var(--third-color)); */
+    background: var(--first-color);
     font-family: "Poppins", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--third-color);
 }
 .cta_content{
     display: flex;
