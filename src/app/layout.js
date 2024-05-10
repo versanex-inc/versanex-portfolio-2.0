@@ -1,4 +1,6 @@
+import Navbar from "@/Components/Home/Navbar/Navbar";
 import "./globals.css";
+import Footer from "@/Components/Footer/Footer";
 
 export const metadata = {
   title: "VersaNex - Home",
@@ -13,7 +15,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar/>
+        {children}
+        <Footer/>
+        </body>
     </html>
   );
 }

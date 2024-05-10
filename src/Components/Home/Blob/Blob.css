@@ -3,7 +3,7 @@
     /* width: 46vw;
     height: 36vw; */
     width: 100vw;
-    height: 35vh;
+    height: 40vh;
     background: var(--second-color);
     /* background: #000; */
     /* border-top-left-radius: 50%;
@@ -11,12 +11,12 @@
     border-top-right-radius: 50%;
     border-top-left-radius: 50%;
     right: 0;
-    bottom: 15vh;
+    bottom: 7vh;
     filter: blur(20px);
     z-index: 1;
     transform:skew(0deg, -6deg);
     animation-name: anime1;
-    animation-duration: 3s;
+    animation-duration: 4s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;

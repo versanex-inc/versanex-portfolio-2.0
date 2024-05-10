@@ -4,11 +4,24 @@
   src: url(../../../../public/fonts/NeueHaasDisplayMediu.ttf);
 }
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    padding: 2vw 3vw 0 3vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  padding-top: 2vh;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding-bottom: 2vh;
+  transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow property */
+}
+
+.navbar.scrolled {
+  /* box-shadow: none; */
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 20px 25px -18px; /* Initial box shadow */
+}
+  .nav_toggle{
+    display: none;
   }
   .nav_logo img{
     max-width: 100%;
@@ -29,6 +42,9 @@
   }
   .nav_link_parent {
     position: relative;
+  }
+  .nav_link_mobile{
+    display: none;
   }
   .dropdown {
     position: absolute;
@@ -84,3 +100,119 @@
     border-left: 1px solid var(--border-color);
     z-index: -100;
   }
+
+  @media screen and (max-width: 1024px){
+    .nav_link{
+      width: 5.7rem;
+  height: 2.7rem;
+    }
+    .nav_logo{
+      font-size: 2.9rem;
+    }
+    .dropdown{
+      padding: .5rem;
+    }
+    .dropdown_link {
+      font-size: x-small;
+      padding: .8rem;
+    }
+  } 
+
+  @media screen and (max-width: 850px){
+    .nav_link{
+      width: 5rem;
+  height: 2.2rem;
+    }
+    .nav_logo{
+      font-size: 2.3rem;
+    }
+    .dropdown{
+      padding: .5rem;
+    }
+    .dropdown_link {
+      font-size: x-small;
+      padding: .8rem;
+    }
+  } 
+
+  @media screen and (max-width: 768px){
+    .nav_link_mobile{
+      display: block;
+    }
+    .nav_links{
+      position: absolute;
+      right: -100%;
+      z-index: 10000;
+      flex-direction: column;
+      top: 0;
+      background: var(--third-color);
+      backdrop-filter: blur(10px);
+      width: 50%;
+      gap: 2rem;
+      padding: 1rem 0 2rem 2rem;
+    }
+    .nav_toggle{
+      cursor: pointer;
+      display: block;
+    }
+    .nav_close{
+      align-self: flex-end;
+      justify-self: flex-end;
+      color: var(--first-color);
+      position: relative;
+      right: 2rem;
+    }
+    .nav_toggle span{
+      font-size: 1.5rem;
+    }
+    .arrow{
+      display: none;
+    }
+    .dropdown{
+      display: none;
+    }
+    .nav_link{
+      border: none;
+      background: none;
+      box-shadow: none;
+      overflow: visible;
+      display: block;
+    }
+    .nav_link:hover{
+      background: none;
+      box-shadow: none;
+      color: var(--third-color);
+    }
+    .nav_link a{
+      font-size: 1.5rem;
+      position: relative;
+      color: var(--first-color);
+      transition: color 0.3s ease;
+    }
+    .nav_link:hover a{
+      color: var(--second-color);
+    }
+    .nav_link::after{
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 414px){
+    .nav_logo{
+      font-size: 2rem;
+    }
+    .nav_links{
+      padding: 1rem;
+    }
+    .nav_toggle span{
+      font-size: 1.2rem;
+    }
+    .nav_close{
+      right: .5rem;
+    }
+    .nav_link a{
+      left: 0;
+      font-size: 1rem;
+    }
+  } 
+  

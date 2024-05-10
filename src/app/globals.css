@@ -185,8 +185,11 @@ img {
 
 /* container class */
 .container{
-  padding: 3vw;
+  padding: 0 4vw 0 4vw;
   background: var(--first-color);
+}
+.container_top{
+  margin-top: 4vw;
 }
 /* scroll bar  */
 ::-webkit-scrollbar{

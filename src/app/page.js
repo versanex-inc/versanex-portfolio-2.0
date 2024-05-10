@@ -22,7 +22,6 @@ export default function Home() {
       <Values/>
       <Reviews/>
       <CTA/>
-      <Footer/>
     </main>
   );
 }

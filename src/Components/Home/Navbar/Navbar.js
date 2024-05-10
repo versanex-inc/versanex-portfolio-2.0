@@ -1,5 +1,5 @@
 "use client"
-import React, {useEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 import './Navbar.css';
 import Image from 'next/image';
 import { IoIosArrowDown } from 'react-icons/io';
@@ -7,15 +7,72 @@ import { BsCalendar2EventFill, BsPersonArmsUp   } from "react-icons/bs";
 import { FaPodcast, FaIndustry,FaStore , FaRegIdCard ,FaAward , FaInfo ,FaBlogger, FaNewspaper  } from "react-icons/fa";
 import { FaPager } from "react-icons/fa6";
 import { ImEyeBlocked } from "react-icons/im";
+import { FaBars,FaTimes } from "react-icons/fa";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap'
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+        const offset = window.scrollY;
+        if (offset > 0) {
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+}, []);
+   useGSAP(() => {
+    if (window.innerWidth < 768) { // Check if device width is less than 768 pixels
+      var menu = document.querySelector(".open_nav");
+      var cross = document.querySelector(".nav_close");
+      var tl = gsap.timeline();
+
+      tl.to(".nav_links", {
+          right: 0,
+          duration: 0.1,
+      });
+      tl.from(".nav_links .nav_link_parent", {
+          x: 150,
+          duration: 0.1,
+          stagger: 0.1,
+          opacity: 0
+      });
+      tl.from(".nav_close", {
+          opacity: 0
+      });
+
+      tl.pause();
+
+      menu.addEventListener("click", function() {
+          tl.play();
+      });
+      cross.addEventListener("click", function() {
+          tl.reverse();
+      });
+    }
+  });
 
   return (
-    <div className="navbar">
+    <div className={`container navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="nav_logo">
         Versa<Image src={'/imgs/logo.png'} width={1000} height={1000} />ex
       </div>
+      <div className="nav_toggle">
+        <span className="open_nav"><FaBars/></span>
+      </div>
       <div className="nav_links">
+      <div className="nav_toggle nav_close">
+          <span className="nav_close_icon"><FaTimes/></span>
+        </div>
         <div
           className="nav_link_parent"
         >
@@ -112,6 +169,24 @@ const Navbar = () => {
           <button className="button nav_link">
             <a className="nav_link_a" href="#">
               Contact
+            </a>
+          </button>
+        </div>
+        <div
+          className="nav_link_parent nav_link_mobile"
+        >
+          <button className="button nav_link">
+            <a className="nav_link_a" href="#">
+              Blogs
+            </a>
+          </button>
+        </div>
+        <div
+          className="nav_link_parent nav_link_mobile"
+        >
+          <button className="button nav_link">
+            <a className="nav_link_a" href="#">
+              Newslatter
             </a>
           </button>
         </div>

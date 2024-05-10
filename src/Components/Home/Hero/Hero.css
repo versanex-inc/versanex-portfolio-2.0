@@ -9,15 +9,13 @@
 }
 .hero_info{
     font-family: neu;
-    height: 75vh;
+    height: 76vh;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin: 0 3vw 0 3vw;
     border-bottom:  1px solid rgba(11, 5, 0, .2);
     color: var(--third-color);
     padding-bottom: 7vh;
-    margin-bottom: 7vh;
 }
 .left_body{
     width: 27vw;
