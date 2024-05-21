@@ -35,3 +35,45 @@
 .right_body h1{
     color: var(--third-color);
 }
+@media screen and (max-width: 768px){
+    .hero_info{
+        display: flex;
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    .left_body{
+        align-self: flex-start;
+        margin-top: 10vh;
+        width: 45vw;
+        line-height: .9;
+    }
+    .left_body p{
+        font-size: 1.3rem;
+    }
+    .right_body{
+        margin-top: 20vh;
+    }
+    .right_body h1{
+        font-size: 4.5rem;
+    }
+}
+@media screen and (max-width: 414px){
+    .right_body h1{
+        font-size: 3.7rem;
+    }
+    .left_body p{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 360px){
+    .right_body h1{
+        font-size: 15vw;
+    }
+    .left_body{
+        width: 50vw;
+    }
+    .left_body p{
+        font-size: 4.5vw;
+    }
+}

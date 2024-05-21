@@ -37,11 +37,11 @@ const Navbar = () => {
       var tl = gsap.timeline();
 
       tl.to(".nav_links", {
-          right: 0,
+          left: 0,
           duration: 0.1,
       });
       tl.from(".nav_links .nav_link_parent", {
-          x: 150,
+          x: -150,
           duration: 0.1,
           stagger: 0.1,
           opacity: 0
@@ -63,11 +63,11 @@ const Navbar = () => {
 
   return (
     <div className={`container navbar${scrolled ? ' scrolled' : ''}`}>
+     <div className="nav_toggle">
+        <span className="open_nav"><FaBars/></span>
+      </div>
       <div className="nav_logo">
         Versa<Image src={'/imgs/logo.png'} width={1000} height={1000} />ex
-      </div>
-      <div className="nav_toggle">
-        <span className="open_nav"><FaBars/></span>
       </div>
       <div className="nav_links">
       <div className="nav_toggle nav_close">

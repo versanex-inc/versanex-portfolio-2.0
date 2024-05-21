@@ -139,9 +139,16 @@
     .nav_link_mobile{
       display: block;
     }
+    .nav_logo{
+      position: relative;
+      width: 11rem;
+    }
+    .nav_logo img{
+      width: 2.5rem;
+    }
     .nav_links{
       position: absolute;
-      right: -100%;
+      left: -100%;
       z-index: 10000;
       flex-direction: column;
       top: 0;
@@ -150,6 +157,7 @@
       width: 50%;
       gap: 2rem;
       padding: 1rem 0 2rem 2rem;
+      min-height: 100vh;
     }
     .nav_toggle{
       cursor: pointer;
@@ -163,7 +171,7 @@
       right: 2rem;
     }
     .nav_toggle span{
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
     .arrow{
       display: none;
@@ -199,7 +207,11 @@
 
   @media screen and (max-width: 414px){
     .nav_logo{
-      font-size: 2rem;
+      font-size: 1.7rem;
+      width: 8rem;
+    }
+    .nav_logo img{
+      width: 1.7rem;
     }
     .nav_links{
       padding: 1rem;
@@ -216,3 +228,8 @@
     }
   } 
   
+  @media screen and (max-width: 360px){
+    .nav_logo{
+      /* width: 9rem; */
+    }
+  }

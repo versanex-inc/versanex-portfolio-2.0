@@ -1,9 +1,10 @@
 #hero_blob{
-    position: relative;
+    position: absolute;
     /* width: 46vw;
     height: 36vw; */
+    bottom: -40vh;
     width: 100vw;
-    height: 40vh;
+    height: 50vh;
     background: var(--second-color);
     /* background: #000; */
     /* border-top-left-radius: 50%;
@@ -11,9 +12,9 @@
     border-top-right-radius: 50%;
     border-top-left-radius: 50%;
     right: 0;
-    bottom: 7vh;
+    /* bottom: 7vh; */
     filter: blur(20px);
-    z-index: 1;
+    z-index: 0;
     transform:skew(0deg, -6deg);
     animation-name: anime1;
     animation-duration: 4s;
@@ -99,5 +100,10 @@
     }
     to{
         transform: translate(0px, 12px) scale(1, 1.1) skew(0deg, 3deg);
+    }
+}
+@media screen and (max-width: 768px){
+    #hero_blob{
+        display: none;
     }
 }
