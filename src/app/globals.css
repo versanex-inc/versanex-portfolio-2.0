@@ -201,3 +201,35 @@ img {
 ::-webkit-scrollbar-thumb{
   background: var(--second-color);
 }
+
+
+/* heaing underline  */
+.heading_underline{
+  width: 100%;
+  background: var(--third-color);
+  height: 2px;
+  position:relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  border: none;
+}
+.heading_underline_dot{
+  height: 100%;
+  width: 1rem;
+  background: var(--second-color);
+  position: absolute;
+  left: 0;
+  animation-direction: normal;
+  animation-duration: 1s;
+  animation-name: underline;
+  animation-iteration-count: infinite;
+}
+
+@keyframes underline {
+  from{
+    left: 0;
+  }
+  to{
+    left: 100%;
+  }
+}
