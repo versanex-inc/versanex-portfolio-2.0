@@ -175,6 +175,10 @@ img {
 .heading{
   font-size: 4vw;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .sub_heading{
   font-size: 1.5vw;
@@ -190,6 +194,12 @@ img {
 }
 .container_top{
   margin-top: 4vw;
+}
+.top_container{
+  padding-top: 5rem;
+}
+.sub_container{
+  margin-top: 4rem;
 }
 /* scroll bar  */
 ::-webkit-scrollbar{
@@ -225,11 +235,39 @@ img {
   animation-iteration-count: infinite;
 }
 
+.h_underline_mtContainer{
+  width: 85%;
+  position: relative;
+  bottom: 10px;
+}
+.h_underline_mtContainer span{
+  background: var(--first-color);
+}
 @keyframes underline {
   from{
     left: 0;
   }
   to{
     left: 100%;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .h_underline_mtContainer{
+    bottom: 5px;
+  }
+  .top_container{
+    padding-top: 3.5rem;
+  }
+}
+@media screen and (max-width: 414px){
+  .h_underline_mtContainer{
+    bottom: 3px;
+  }
+  .top_container{
+    padding-top: 2rem;
+  }
+  .sub_container{
+    margin-top: 1.5rem;
   }
 }
