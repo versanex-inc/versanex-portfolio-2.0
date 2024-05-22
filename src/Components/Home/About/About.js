@@ -5,51 +5,44 @@ import Image from "next/image";
 const About = () => {
   return (
     <section className="about">
-      <div className="about_one">
-        <h1 className="about_heading">About us
-        <div className="heading_underline">
-          <span className="heading_underline_dot"></span>
-        </div>
+      <div className="about_headings">
+        <h1 className="heading about_heading">
+          VERSANEX
+          <div className="heading_underline h_underline_mtContainer">
+            <span className="heading_underline_dot"></span>
+          </div>
         </h1>
         <h2 className="about_sub_heading">
-          Your partner for digital innovation
+          You partner for digital innovation.
         </h2>
-        <div className="about_paras">
-        <p className="about_para about_para_one">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, delectus earum. Minima praesentium eligendi dignissimos inventore atque exercitationem iusto magnam iure in! Quaerat possimus id eius sed vel facilis rerum hic eaque dolore animi ipsa voluptates dolor voluptatibus aut quis est laboriosam, eveniet distinctio nobis odit exercitationem debitis. Id alias laudantium, possimus a doloribus nesciunt ipsum est similique nemo voluptates.
-        </p>
-        <p className="about_para about_para_two p_unneccessary_two">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-          repellendus explicabo blanditiis eos, asperiores ducimus itaque sed,
-          laudantium ab cupiditate nihil veniam! Consectetur adipisci pariatur
-          quo ipsum soluta non aliquid accusamus sapiente vitae similique
-          ullam quam obcaecati eos, unde deleniti. Dolore
-          eius voluptatem, consectetur quia a veritatis!
-        </p>
-        <p className="about_para about_para_two p_unneccessary">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-          repellendus explicabo blanditiis eos, asperiores ducimus itaque sed,
-          laudantium ab cupiditate nihil veniam! Consectetur adipisci pariatur
-          quo ipsum soluta non aliquid accusamus sapiente vitae similique
-          ullam quam obcaecati eos, unde deleniti. Dolore
-          eius voluptatem, consectetur quia a veritatis!
-        </p>
-        <p className="about_para about_para_two p_unneccessary">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-          repellendus explicabo blanditiis eos, asperiores ducimus itaque sed,
-          laudantium ab cupiditate nihil veniam! Consectetur adipisci pariatur
-          quo ipsum soluta non aliquid accusamus sapiente vitae similique
-          ullam quam obcaecati eos, unde deleniti. Dolore
-          eius voluptatem, consectetur quia a veritatis!
-        </p>
+      </div>
+      <div className="about_content">
+        <div className="about_paragraph">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+            sequi omnis accusamus deserunt dolores, enim iste veniam praesentium
+            consequatur deleniti tenetur a quidem esse voluptatum earum cumque
+            atque eligendi ipsam hic? Rem obcaecati expedita totam quaerat quasi
+            laudantium praesentium iusto beatae maxime facere, eos officia
+            harum, sunt delectus aspernatur ipsa cumque dolorum cupiditate
+            repellat ipsum commodi. Voluptates tempore optio aliquid
+            reprehenderit incidunt ipsum porro mollitia quo laboriosam
+            explicabo, aperiam provident nemo quidem dolore ea. Pariatur
+            corporis porro explicabo, velit harum iure voluptatem non distinctio
+            consequatur! Laudantium pariatur dolor omnis enim fugit ut! Quam
+            illum voluptas in voluptatum reprehenderit aperiam autem.
+          </p>
+          <button className="about_button">Read More</button>
+        </div>
+        <div className="about_img">
+          <Image
+            src={"/imgs/about.png"}
+            alt="about img"
+            width={1000}
+            height={1000}
+          />
         </div>
       </div>
-      {/* <div className="about_two">
-        <div className="about_img">
-          <Image src={'/imgs/logo.png'} alt={"logo"} width={1000} height={1000}/>
-        </div>
-        <div className="about_img_shadow"></div>
-      </div> */}
     </section>
   );
 };

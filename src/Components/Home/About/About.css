@@ -7,187 +7,80 @@
     background: var(--second-color);
     position: relative;
     z-index: 2;
-    /* display: grid; */
-    /* grid-template-columns: 1fr 1fr; */
-    padding: 3vw;
-}
-.about_one{
+    padding: 3rem 8vw 3rem 8vw;
     display: flex;
+    height: 30rem;
     flex-direction: column;
+
+    justify-content: center;
+}
+.about_headings{
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
 }
 .about_heading{
-    color: var(--third-color);
-    font-size: 4.5rem;
-    font-family: neu;
-    text-transform: uppercase;
-    width: 22.5rem;
+  align-self: flex-start;
 }
-.about_sub_heading{
-    color: var(--third-color);
-    font-size: 1.3rem;
-    margin-top: 1rem;
+.about_content{
+  display: flex;
+  justify-content: space-between;
 }
-.about_paras{
-    display: flex;
-    flex-direction: column;
-    gap:1rem;
-    margin-top: 1rem;
+.about_paragraph{
+  margin-top: 1rem;
+  padding-right: 3rem;
 }
-/* .about_two{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 15%;
-}
-/* .about_two{
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-.about_two img{
-  width: 90%;
-  border-radius: 10px;
-} 
-.about_img{
-    background: radial-gradient(farthest-corner at 60px 45px, var(--third-color) 0%, var(--third-color) 50%);
-    border-radius: 50%;
-    height: 20vw;
-    width: 20vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.about_paragraph p{
+  height: 10rem;
+  overflow: hidden;
+  white-space: wrap;
+  text-overflow: ellipsis;
 }
 .about_img img{
-  width: 130%;
+  height: 14rem;
+  width: auto;
+  border-radius: 1rem;
+  margin-top: 1rem;
 }
-.about_img_shadow{
-    background: radial-gradient(50% 50%, #000 0%, transparent 100%);
-  height: 5vw;
-  width: 20vw;
-}
-.about_img_shadow{
-    -webkit-animation-direction: alternate;
-  -webkit-animation-duration: 5s;
-  -webkit-animation-name: grow;
-  -webkit-animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-duration: 5s;
-  animation-name: grow;
-  animation-iteration-count: infinite;
-  bottom: 0;
-  position: relative;
-}
-.about_img{
-    -webkit-animation-direction: alternate;
-  -webkit-animation-duration: 5s;
-  -webkit-animation-name: bounce;
-  -webkit-animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-duration: 5s;
-  animation-name: bounce;
-  animation-iteration-count: infinite;
-  position: relative;
+.about_button{
+  width: 10rem;
+  height: 3rem;
+  border-radius: 5rem;
+  background: var(--third-color);
+  color: var(--first-color);
+  outline: none;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-@-webkit-keyframes grow {
-    from {
-      bottom: 0;
-      height: 50px;
-      opacity: 1;
-      width: 200px;
-    }
-  
-    to {
-      bottom: -10px;
-      height: 80px;
-      opacity: 0.4;
-      width: 300px;
-    }
+.about_button:hover{
+  background: var(--second-color);
+  border: 1px solid var(--third-color);
+  color: var(--third-color);
+}
+@media screen and (max-width: 768px){
+  .about{
+    padding: 3vh 2vw 3vh 2vw;
   }
-  
-  @keyframes grow {
-    from {
-      bottom: 0;
-      height: 50px;
-      width: 200px;
-    }
-  
-    to {
-      bottom: 10%;
-      margin-left: 0;
-      height: 10px;
-      width: 15px;
-    }
+  .about_img img{
+    height: 12rem;
+    width: auto;
+    border-radius: 1rem;
   }
-  
-  @-webkit-keyframes bounce {
-    from {
-      bottom: 10%;
-    }
-  
-    to {
-      bottom: 30%;
-    }
+}
+@media screen and (max-width: 768px){
+  .about{
+    height: 25rem;
   }
-  
-  @keyframes bounce {
-    from {
-      bottom: 10%;
-    }
-  
-    to {
-      bottom: 30%;
-    }
-  }
-   */
-
-   @media screen and (max-width: 1024px){
-    .about_heading{
-      font-size: 3.5rem;
-      width: 17.5rem;
-  }
-  .about_sub_heading{
-      font-size: 1.1rem;
-  }
-   }
-
-   @media screen and (max-width: 768px){
-    .about_heading{
-      font-size: 3rem;
-      width: 14.9rem;
-  }
-  .about_sub_heading{
-      font-size: 1rem;
-  }
-  .p_unneccessary{
+  .about_img {
     display: none;
   }
-   }
-
-   @media screen and (max-width: 414px){
-    .about_heading{
-      font-size: 2rem;
-      width: 10rem;
-  }
   .about_sub_heading{
-      font-size: 1rem;
+    font-size: 1rem;
   }
-  .p_unneccessary{
-    display: none;
+  .about_paragraph{
+    padding-right: 0;
   }
-  .p_unneccessary_two{
-    display: none;
-  }
-   }
-
-   @media screen and (max-width: 360px){
-    .about_heading{
-      font-size: 1.5rem;
-      width: 7.5rem;
-  }
-  .about_sub_heading{
-      font-size: 1rem;
-  }
-   }
+}

@@ -39,7 +39,7 @@
     .hero_info{
         display: flex;
         flex-direction: column-reverse;
-        height: auto;
+        height: 28rem;
     }
     .left_body{
         align-self: flex-start;
@@ -58,6 +58,9 @@
     }
 }
 @media screen and (max-width: 414px){
+    .hero_info{
+        height: 25rem;
+    }
     .right_body h1{
         font-size: 3.7rem;
     }
