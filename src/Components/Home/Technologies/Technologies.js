@@ -12,12 +12,14 @@ import { CgFigma } from "react-icons/cg";
 
 const Technologies = () => {
   return (
-    <section className='container technologies'>
-        <h1 className="heading technologies_heading">Technologies</h1>
+    <section className='container top_container technologies'>
+        <h1 className="heading technologies_heading">Technologies<div className="heading_underline h_underline_mtContainer">
+          <span className="heading_underline_dot"></span>
+        </div></h1>
       <h2 className="sub_heading technologies_subheading">
        Using latest and advanced technologies to make your appearance strong
       </h2>
-      <div className="technolgies_container">
+      <div className="technolgies_container sub_container">
         <div className="technology technology_react">
             <FaReact/>
         </div>
