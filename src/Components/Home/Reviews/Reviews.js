@@ -59,15 +59,17 @@ const Reviews = () => {
   };
 
   return (
-    <section className="container reviews">
-      <h1 className="heading reviews_heading">Reviews</h1>
+    <section className="container top_container reviews">
+      <h1 className="heading reviews_heading">Reviews<div className="heading_underline h_underline_mtContainer">
+          <span className="heading_underline_dot"></span>
+        </div></h1>
       <h2 className="sub_heading reviews_subheading">
         See what our clients say about us
       </h2>
       <div className="swipe_alert">
         Swipe <b><MdSwipe/></b>
       </div>
-      <div className="reviews_swiper">
+      <div className="reviews_swiper sub_container">
         <Carousel
           swipeable={true}
           draggable={true}
