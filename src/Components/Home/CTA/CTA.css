@@ -34,3 +34,20 @@
 .cta_contact::after{
     background: var(--third-color);
 }
+
+@media screen and (max-width: 768px){
+    .cta_heading{
+        font-size: 1.4rem;
+    }
+    .cta_about{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 414px){
+    .cta_heading{
+        font-size: 1.18rem;
+    }
+    .cta_about{
+        font-size: .8rem;
+    }
+}
