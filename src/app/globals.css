@@ -173,7 +173,7 @@ img {
 
 /* heading and sub heading  */
 .heading{
-  font-size: 4vw;
+  font-size: 3rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -181,7 +181,7 @@ img {
   align-items: center;
 }
 .sub_heading{
-  font-size: 1.5vw;
+  font-size: 1.1rem;
   text-align: center;
   width: 50%;
 }
@@ -259,6 +259,13 @@ img {
   .top_container{
     padding-top: 3.5rem;
   }
+  .heading{
+    font-size: 2.3rem;
+  }
+  .sub_heading{
+    font-size: .8rem;
+    width: 70%;
+  }
 }
 @media screen and (max-width: 414px){
   .h_underline_mtContainer{
@@ -269,5 +276,13 @@ img {
   }
   .sub_container{
     margin-top: 1.5rem;
+    width: 80%;
+  }
+  .heading{
+    font-size: 1.8rem;
+  }
+  .sub_heading{
+    width: 80%;
+    font-size: .8rem;
   }
 }
