@@ -89,15 +89,17 @@ const Achievements = () => {
   ]);
 
   return (
-    <section className="container achievements">
-      <h1 className="heading achievements">Our Achievements</h1>
+    <section className="container top_container achievements">
+      <h1 className="heading achievements">Our Achievements<div className="heading_underline h_underline_mtContainer">
+          <span className="heading_underline_dot"></span>
+        </div></h1>
       <h2 className="sub_heading achievements">
         Are you ready to bring your vision to life, boost your online presence,
         and take your business to new heights? Our expert team is here to make
         it happen. Let&apos;s start your new project today and craft something
         extraordinary together!
       </h2>
-      <div className="achievements_container">
+      <div className="achievements_container sub_container">
         <Achievement
           icon={<PiUsersThreeFill />}
           count={employeeAchievementCount}
