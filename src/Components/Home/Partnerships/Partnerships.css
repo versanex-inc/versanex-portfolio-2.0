@@ -8,7 +8,7 @@
   }
   
   .partners {
-    margin-top: 5vh;
+    margin-top: 3rem;
     display: flex;
     gap: 10vw;
     overflow: hidden;
@@ -26,4 +26,11 @@
     100%{
         transform: translate(-100vw,0);
     }
+  }
+
+  @media screen and (max-width: 768px){
+      
+  .partners {
+    margin-top: 1rem;
+  }
   }

@@ -111,11 +111,28 @@
   display: block;
   position: relative;
 }
+.show_all_services{
+  margin-bottom: 1rem;
+}
 
 @media screen and (max-width: 1024px){
 }
 
 @media screen and (max-width: 768px){
+  .show_all_services{
+    background: var(--third-color);
+    width: 8rem;
+  }
+  .show_all_services a{
+    color: var(--first-color);
+    font-size: 1rem;
+  }
+  .show_all_services:hover{
+    background: var(--second-color);
+  }
+  .show_all_services:hover a{
+    color: var(--third-color);
+  }
   .service_title{
     font-size: .9rem;
   }
