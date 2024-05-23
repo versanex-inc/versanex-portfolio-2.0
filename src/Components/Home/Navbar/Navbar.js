@@ -10,7 +10,7 @@ import { ImEyeBlocked } from "react-icons/im";
 import { FaBars,FaTimes } from "react-icons/fa";
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
-
+import Link from 'next/link';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -66,9 +66,9 @@ const Navbar = () => {
      <div className="nav_toggle">
         <span className="open_nav"><FaBars/></span>
       </div>
-      <div className="nav_logo">
+      <Link href={'/'} className="nav_logo">
         Versa<Image src={'/imgs/logo.png'} width={1000} height={1000} />ex
-      </div>
+      </Link>
       <div className="nav_links">
       <div className="nav_toggle nav_close">
           <span className="nav_close_icon"><FaTimes/></span>
@@ -77,9 +77,9 @@ const Navbar = () => {
           className="nav_link_parent"
         >
           <button className="button nav_link">
-            <a className="nav_link_a" href="#">
+            <Link className="nav_link_a" href={'/portfolio'}>
               Portfolio
-            </a>
+            </Link>
           </button>
         </div>
         <div
