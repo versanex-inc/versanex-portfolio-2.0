@@ -18,9 +18,7 @@
 }
 .achievements_container{
     width: 100%;
-    margin-top: 8vh;
     display: grid;
-    grid-template-columns: repeat(8,1fr);
     gap: 1vw;
     align-items: center;
     justify-content: center;
@@ -28,7 +26,6 @@
 .achievements_container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-top: 10vh;
     justify-content: center;
     align-items: center;
 }
@@ -61,4 +58,27 @@
     justify-self: center;
     font-size: 1vw;
     text-align: center;
+}
+@media screen and (max-width: 768px){
+    .achievement{
+        height: 300px;
+    }
+    .achievement_name{
+        font-size: .7rem;
+    }
+    .achievement_para{
+        font-size: .6rem;
+    }
+}
+@media screen and (max-width: 414px){
+    .achievements_container{
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+    .achievement{
+        height: auto;
+        grid-template-rows: auto auto auto auto;
+        gap: .5rem;
+    }
 }

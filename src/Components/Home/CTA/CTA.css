@@ -34,3 +34,39 @@
 .cta_contact::after{
     background: var(--third-color);
 }
+
+@media screen and (max-width: 768px){
+    .cta_heading{
+        font-size: 1.4rem;
+    }
+    .cta_about{
+        font-size: 1rem;
+    }
+    .cta{
+        width: 100vw;
+        min-height: auto;
+        margin-bottom: 1rem;
+    }
+    .cta_contact{
+        background: var(--third-color);
+        width: 8rem;
+      }
+      .cta_contact a{
+        color: var(--first-color);
+        font-size: 1rem;
+      }
+      .cta_contact:hover{
+        background: var(--second-color);
+      }
+      .cta_contact:hover a{
+        color: var(--third-color);
+      }
+}
+@media screen and (max-width: 414px){
+    .cta_heading{
+        font-size: 1.18rem;
+    }
+    .cta_about{
+        font-size: .8rem;
+    }
+}

@@ -65,13 +65,15 @@ const Services = () => {
   };
 
   return (
-    <section className="container services">
-      <h1 className="heading services_heading">Our&nbsp;Services</h1>
+    <section className="container top_container services">
+      <h1 className="heading services_heading">Our&nbsp;Services<div className="heading_underline h_underline_mtContainer">
+          <span className="heading_underline_dot"></span>
+        </div></h1>
       <h2 className="sub_heading services_sub_heading">
         We make it easy to begin your online journey and there’s a place for
         everyone. Just take your pick and get started.
       </h2>
-      <div className="services_container">
+      <div className="services_container sub_container">
         {servicesData
           .slice(0, showAll ? servicesData.length : 6)
           .map((service, index) => (

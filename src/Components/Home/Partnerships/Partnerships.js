@@ -18,8 +18,10 @@ const Partnerships = () => {
   const duplicatePartnerImages = [...partnerImages, ...partnerImages, ...partnerImages];
 
   return (
-    <section className="container partnerships">
-      <h1 className="heading partnerships_heading">Featured Partners</h1>
+    <section className="container top_container partnerships">
+      <h1 className="heading partnerships_heading">Featured Partners<div className="heading_underline h_underline_mtContainer">
+          <span className="heading_underline_dot"></span>
+        </div></h1>
       <h2 className="sub_heading partnerships_subheading">
         Leading review and rating platforms say we are the top development
         company. We don’t mind.

@@ -11,7 +11,7 @@ import { FaBars,FaTimes } from "react-icons/fa";
 import { useGSAP } from '@gsap/react';
 import Link from 'next/link';
 import gsap from 'gsap'
-
+import Link from 'next/link';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -38,11 +38,11 @@ const Navbar = () => {
       var tl = gsap.timeline();
 
       tl.to(".nav_links", {
-          right: 0,
+          left: 0,
           duration: 0.1,
       });
       tl.from(".nav_links .nav_link_parent", {
-          x: 150,
+          x: -150,
           duration: 0.1,
           stagger: 0.1,
           opacity: 0
@@ -64,12 +64,12 @@ const Navbar = () => {
 
   return (
     <div className={`container navbar${scrolled ? ' scrolled' : ''}`}>
-      <div className="nav_logo">
-        Versa<Image src={'/imgs/logo.png'} width={1000} height={1000} />ex
-      </div>
-      <div className="nav_toggle">
+     <div className="nav_toggle">
         <span className="open_nav"><FaBars/></span>
       </div>
+      <Link href={'/'} className="nav_logo">
+        Versa<Image src={'/imgs/logo.png'} width={1000} height={1000} />ex
+      </Link>
       <div className="nav_links">
       <div className="nav_toggle nav_close">
           <span className="nav_close_icon"><FaTimes/></span>
@@ -78,9 +78,9 @@ const Navbar = () => {
           className="nav_link_parent"
         >
           <button className="button nav_link">
-            <a className="nav_link_a" href="#">
+            <Link className="nav_link_a" href={'/portfolio'}>
               Portfolio
-            </a>
+            </Link>
           </button>
         </div>
         <div

@@ -13,12 +13,10 @@
     align-items: center;
     gap: 5px;
     font-weight: var(--font-medium);
-    margin-top: 5vh;
 
 }
 .reviews_swiper{
     width: 80%;
-    margin-top: 3vh;
 }
 .reviews_swipe{
     border-left: 1px solid var(--border-color);
@@ -62,4 +60,9 @@
     display: flex;
     gap: 5px;
     color: var(--second-color);
+}
+@media screen and (max-width: 768px){
+    .swipe_alert{
+        font-size: 1rem;
+    }
 }

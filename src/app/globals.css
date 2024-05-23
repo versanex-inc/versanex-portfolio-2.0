@@ -173,11 +173,15 @@ img {
 
 /* heading and sub heading  */
 .heading{
-  font-size: 4vw;
+  font-size: 3rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .sub_heading{
-  font-size: 1.5vw;
+  font-size: 1.1rem;
   text-align: center;
   width: 50%;
 }
@@ -191,6 +195,12 @@ img {
 .container_top{
   margin-top: 4vw;
 }
+.top_container{
+  padding-top: 5rem;
+}
+.sub_container{
+  margin-top: 4rem;
+}
 /* scroll bar  */
 ::-webkit-scrollbar{
   width: 10px;
@@ -200,4 +210,79 @@ img {
 }
 ::-webkit-scrollbar-thumb{
   background: var(--second-color);
+}
+
+
+/* heaing underline  */
+.heading_underline{
+  width: 100%;
+  background: var(--third-color);
+  height: 2px;
+  position:relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  border: none;
+}
+.heading_underline_dot{
+  height: 100%;
+  width: 1rem;
+  background: var(--second-color);
+  position: absolute;
+  left: 0;
+  animation-direction: normal;
+  animation-duration: 1s;
+  animation-name: underline;
+  animation-iteration-count: infinite;
+}
+
+.h_underline_mtContainer{
+  width: 85%;
+  position: relative;
+  bottom: 10px;
+}
+.h_underline_mtContainer span{
+  background: var(--first-color);
+}
+@keyframes underline {
+  from{
+    left: 0;
+  }
+  to{
+    left: 100%;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .h_underline_mtContainer{
+    bottom: 5px;
+  }
+  .top_container{
+    padding-top: 3.5rem;
+  }
+  .heading{
+    font-size: 2.3rem;
+  }
+  .sub_heading{
+    font-size: .8rem;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 414px){
+  .h_underline_mtContainer{
+    bottom: 3px;
+  }
+  .top_container{
+    padding-top: 2rem;
+  }
+  .sub_container{
+    margin-top: 1.5rem;
+    width: 80%;
+  }
+  .heading{
+    font-size: 1.8rem;
+  }
+  .sub_heading{
+    width: 80%;
+    font-size: .8rem;
+  }
 }
