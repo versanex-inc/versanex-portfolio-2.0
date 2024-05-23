@@ -84,6 +84,12 @@
     position: relative;
     color: var(--third-color);
   }
+  .Links{
+    color: black;
+  }
+  .dropdown_link:hover .Links{
+    color: white;
+  }
   .dropdown_link:hover{
     background: var(--second-color);
     color: var(--first-color);

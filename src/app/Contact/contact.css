@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    box-sizing: border-box;
+}
+.Contact_main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: var(--first-color);
+}
+.left_con{
+    width: 45%;
+}
+.f_title{
+    font-size: var(  --h3-font-size);
+
+}
+content{
+    font-style: var( --normal-font-size);
+}
+.s_title{
+font-size: var( --small-font-size);
+font-weight: bolder;
+margin-top: 2rem;
+line-height: 30px;
+}
+.form_arrow {
+    margin-left: 1rem;
+    width: 0;
+    height: 10;
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid transparent;
+    border-left: 60px solid var(--second-color);
+}
+.right_con{
+    width: 35%;
+    /* float: right; */
+}
+.form{
+    padding: 10px;
+    margin-left: 1rem;
+    border-radius: 8px;
+}
+.form_cel{
+    width: 100%;
+    margin-top:1rem;
+   padding: 10px;
+   border: none;
+   border-radius: 9px;
+    background-color: white;
+    box-shadow: rgba(127, 127, 127, 0.485) 0px 0px 12px ;
+}
+.f_group{
+    margin-top: 1rem;
+}
+.f_group input,
+textarea,
+select{
+    width: 100%;
+    padding: 10px;
+    resize: none;
+    border: none;
+    border-radius: 9px;
+     background-color: white;
+     box-shadow: rgba(127, 127, 127, 0.485) 0px 2px 12px ;
+}
+.form_cel{
+    color: rgb(109, 109, 109);
+}
+.f_group input::placeholder,textarea::placeholder{
+color: rgb(109, 109, 109);
+}
+.form_btn{
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    width: 6rem;
+    font-weight: bolder;
+background: var(--second-color);
+}
+.submit_btn{
+    margin-top: 1rem;
+    float: right;
+}
+.form_btn:hover{
+color: black;
+}
+@media screen and (max-width:1024px) {
+    .f_title{
+        font-size:.8rem;
+    }
+    .content{
+        font-size: 14px;
+    }
+    .s_title{
+    font-size:.6rem;
+    font-weight: bolder;
+    margin-top: 2rem;
+    line-height: 30px;
+    }
+}
+@media screen and (max-width: 768px){
+    .f_title{
+        font-size:.6rem;
+    }
+    .content{
+        font-size: 12px;
+    }
+    .s_title{
+    font-size:.4rem;
+    }
+    .form_arrow {
+        border-top: 100px solid transparent;
+        border-bottom: 100px solid transparent;
+    }
+    form{
+        padding: 10px;
+        margin-left: 1rem;
+    }
+    .form_cel{
+        margin-top:.8rem;
+       padding: 8px;
+    }
+    .f_group{
+        margin-top: .8rem;
+    }
+    .f_group input,
+    textarea,
+    select{
+        padding: 8px;
+        border-radius: 9px;
+    }
+    .form_cel{
+        font-size: 8px;
+        color: rgb(109, 109, 109);
+    }
+
+    .f_group input::placeholder,textarea::placeholder{
+    font-size: 11px;
+    }
+    .form_btn{
+        font-size: 10PX;
+        width: 5rem;
+    }
+    .submit_btn{
+        margin-top: .8rem;
+    }
+    .right_con{
+        width: 45%;
+    }
+}
+@media screen and (max-width: 600px){
+    .form_arrow {
+    display: none;
+    }
+    .Contact_main{
+        display:inline-block;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        background-color: var(--first-color);
+    }
+    .left_con{
+        margin-top: 2rem;
+        width: 100%;
+    }
+    .right_con{
+        margin-top: 1rem;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 414px){
+    .s_title{
+    /* font-size: var( --small-font-size); */
+    font-weight: bolder;
+    margin-top: 1rem;
+    font-size: 7px;
+    font-weight: bolder;
+    line-height: 14px;
+    }   
+}

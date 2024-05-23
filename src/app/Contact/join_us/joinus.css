@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    box-sizing: border-box;
+}
+.joincontent{
+    margin-left: 1rem;
+    display: flex;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.joinus_main{
+    background-color: var(--second-color);
+}
+.main_heading{
+    font-size: var(--h3--size);
+}
+.content{
+    font-size: var(--normal-font-size);
+}
+.content li{
+margin-top: 1rem;
+}
+.content li::marker{
+font-size: 19px;
+}
+.joinus_lft{
+    width: 45%;
+  text-align: justify;
+}
+.joinus_right{
+    /* font-size: 13rem; */
+    width: 40%;
+    margin-left: 4rem;
+    text-align: center;
+}
+.joinus_lft_con h1{
+    font-family: "Poppins";
+    line-height: 4rem;
+    font-size:5rem ;
+    text-align: left;
+}
+.joinus_right h1 {
+    transition: color 0.5s ease-in-out;
+}
+.color-change {
+    color: red; /* Change this to your desired color */
+}
+/* --------------------------------- */

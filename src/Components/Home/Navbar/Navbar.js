@@ -9,6 +9,7 @@ import { FaPager } from "react-icons/fa6";
 import { ImEyeBlocked } from "react-icons/im";
 import { FaBars,FaTimes } from "react-icons/fa";
 import { useGSAP } from '@gsap/react';
+import Link from 'next/link';
 import gsap from 'gsap'
 
 const Navbar = () => {
@@ -149,7 +150,7 @@ const Navbar = () => {
         >
           <button className="button nav_link">
             <a className="nav_link_a" href="#">
-              Company
+              About 
             </a>
             <span className="arrow">
               <IoIosArrowDown />
@@ -157,19 +158,18 @@ const Navbar = () => {
           </button>
             <div className="dropdown">
             <div className="linking_dropdown"></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><FaInfo /></span><span className="dd_link_name">About</span></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><BsPersonArmsUp /></span><span className="dd_link_name">Careers</span></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><FaBlogger /></span><span className="dd_link_name">Blogs</span></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><FaNewspaper /></span><span className="dd_link_name">Newslatter</span></div>
+            <div className="dropdown_link"><span className="dd_link_icon"><FaInfo /></span><Link href={"/About"} className='Links'><span className="dd_link_name">Company</span></Link></div>
+            <div className="dropdown_link"><span className="dd_link_icon"><FaBlogger /></span><Link href={"/"} className='Links'><span className="dd_link_name">Testimonial</span></Link></div>
+            <div className="dropdown_link"><span className="dd_link_icon"><BsPersonArmsUp /></span><Link href={"/"} className='Links'><span className="dd_link_name">Team Members</span></Link></div>
         </div>
         </div>
         <div
           className="nav_link_parent"
         >
           <button className="button nav_link">
-            <a className="nav_link_a" href="#">
+            <Link className="nav_link_a" href="/Contact">
               Contact
-            </a>
+            </Link>
           </button>
         </div>
         <div
