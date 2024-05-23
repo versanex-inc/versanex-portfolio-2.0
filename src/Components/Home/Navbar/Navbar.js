@@ -9,7 +9,6 @@ import { FaPager } from "react-icons/fa6";
 import { ImEyeBlocked } from "react-icons/im";
 import { FaBars,FaTimes } from "react-icons/fa";
 import { useGSAP } from '@gsap/react';
-import Link from 'next/link';
 import gsap from 'gsap'
 import Link from 'next/link';
 const Navbar = () => {

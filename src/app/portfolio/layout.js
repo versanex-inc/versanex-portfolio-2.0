@@ -9,7 +9,7 @@ export default function PortfolioLayout({ children }) {
   return (
       <section className="portfolio">
         <div className="portfolio_header">
-            Header
+            Headerr 
         </div>
             {children}
       </section>
