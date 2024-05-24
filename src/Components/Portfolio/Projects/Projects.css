@@ -140,6 +140,14 @@
     transition: transform 1s ease;
   }
   
-  .p_project_bg_img img:hover {
+  /* .p_project_bg_img img:hover {
     transform: scale(1.2);
+  } */
+  .p_project:hover .p_project_bg_img img{
+    transform: scale(1.2);
+  }
+
+
+  .p_project_one{
+    margin-top: 0;
   }

@@ -52,7 +52,7 @@ const Projects = () => {
             onLeaveBack: () => {
               gsap.to(project, { y: 60, opacity: 0, scale: 0.8, duration: 1.5, ease: 'power3.out' });
             },
-            markers: true, // Remove this line to hide markers
+            // markers: true,
           },
         }
       );
@@ -61,7 +61,7 @@ const Projects = () => {
 
   return (
     <div className="p_projects">
-      <div className="p_project">
+      <div className="p_project p_project_one">
         <div className="p_project_bg_img">
           <img src="https://images.unsplash.com/photo-1595830039485-1bbbacb903b6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8NGslMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" alt="" />
           <div className="lower_part_img">
