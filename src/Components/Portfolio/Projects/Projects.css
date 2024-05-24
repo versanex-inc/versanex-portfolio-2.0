@@ -77,7 +77,8 @@
    */
 
 .p_projects{
-    width: 80%;
+    width: 100%;
+    padding: 0 10vw 0 10vw;
     margin: 20px auto;
     columns: 3;
     column-gap: 40px;

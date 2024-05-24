@@ -1,3 +1,5 @@
+import Portfolio_Header from "@/Components/Portfolio/Portfolio_header/Portfolio_Header";
+
 // 'use client'
 export const metadata = {
   title: "VersaNex - Portfolio",
@@ -8,9 +10,7 @@ export const metadata = {
 export default function PortfolioLayout({ children }) {
   return (
       <section className="portfolio">
-        <div className="portfolio_header">
-            Headerr 
-        </div>
+            <Portfolio_Header/>
             {children}
       </section>
   );

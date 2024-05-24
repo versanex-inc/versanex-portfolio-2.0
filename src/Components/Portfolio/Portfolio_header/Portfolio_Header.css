@@ -1,0 +1,122 @@
+.portfolio_header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-height: 50vh;
+    position: relative;
+}
+
+
+.p_header_animation{
+    transform: rotate(-40deg) translate(0px, 0px) scale(0.9, 1) skew(-1deg, 0deg);
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.p_header_animation_content{
+}
+.p_h_animation_box {
+    border-radius: 1rem;
+    margin-top: 2rem;
+    width: 25rem;
+    height: 13rem;
+    overflow: hidden;
+    box-shadow: -9px 18px 21px 0px rgba(0, 0, 0, 0.3);
+  }
+  .p_h_animation_box img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+    object-fit: cover;
+  }
+  .p_h_animation_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-family: neu;
+    color: var(--first-color);
+  }
+  .p_h_animation_one{
+    background: var(--third-color);
+  }
+
+  .p_h_animation_two{
+    background: var(--third-color);
+  }
+  .p_h_animation_three{
+    background: var(--third-color);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* .p_h_animation_box{
+    position: relative;
+    bottom: 300px;
+  } */
+  .p_header_animation{
+    position: relative;
+    left: 50vw;
+  }
+
+  .p_header_animation_content {
+    transform: translateY(0);
+    transition: transform 0.3s linear; 
+  }
+
+
+
+
+
+
+
+
+
+
+  /* text  */
+.p_header_info{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10vw;
+}
+.p_h_heading{
+  font-family: neu;
+  font-size: 6rem;
+}
+  
+
+.portfolio_nav{
+  display: flex;
+  gap: 1rem;
+  border: 1px solid var(--border-color);
+  padding: .8rem;
+background: rgba(239, 234, 227, 0.53);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.7px);
+-webkit-backdrop-filter: blur(4.7px);
+border: 1px solid rgba(239, 234, 227, 0.35);
+width: 14.5rem;
+border-radius: 4rem;
+}
+.portfolio_nav a{
+  color: var(--third-color);
+}
