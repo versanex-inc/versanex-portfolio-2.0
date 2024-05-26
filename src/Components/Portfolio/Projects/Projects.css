@@ -14,6 +14,9 @@
     margin-top: 40px;
     cursor: pointer;
 }
+.p_project:nth-child(1) {
+  margin-top: 0;
+}
 .p_project img{
     max-width: 100%;
     border-radius: 15px;
