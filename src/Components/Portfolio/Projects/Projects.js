@@ -25,6 +25,7 @@ const Projects = () => {
 
         if (isMounted) {
           setProjects(data.result);
+          
           setLoading(false);
         }
       } catch (error) {

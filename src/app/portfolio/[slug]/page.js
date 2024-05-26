@@ -66,7 +66,6 @@ const Project_page = ({ params }) => {
         </div>
         <div className="pd_project_details">
           <p className="project_title">{projectData.title}</p>
-          <p className="project_details">{projectData.description}</p>
           <div className="project_category_status_deadline">
             <div className="project_category">
               <p>
@@ -114,6 +113,7 @@ const Project_page = ({ params }) => {
               </p>
             </div>
           </div>
+          <p className="project_details">{projectData.description}</p>
         </div>
         <div className="project_pictures">
           {projectData.type === "iframe" ? (
