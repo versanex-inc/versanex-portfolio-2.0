@@ -104,22 +104,22 @@ const Navbar = () => {
           className="nav_link_parent"
         >
           <button className="button nav_link">
-            <a className="nav_link_a" href="#">
+            <Link href={'/services'} className="nav_link_a">
               Services
-            </a>
+            </Link>
             <span className="arrow">
               <IoIosArrowDown />
             </span>
           </button>
             <div className="dropdown">
             <div className="linking_dropdown"></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><FaStore/></span><span className="dd_link_name">E&nbsp;Commerce&nbsp;Web</span></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><FaPager /></span><span className="dd_link_name">Blog&nbsp;Web</span></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><FaRegIdCard/></span><span className="dd_link_name">Portfolio&nbsp;Web</span></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><ImEyeBlocked/></span><span className="dd_link_name">Membership&nbsp;Web</span></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><BsCalendar2EventFill/></span><span className="dd_link_name">Events&nbsp;Web</span></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><FaAward /></span><span className="dd_link_name">Fashion&nbsp;Web</span></div>
-            <div className="dropdown_link"><span className="dd_link_name">More</span></div>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_icon"><FaStore/></span><span className="dd_link_name">E&nbsp;Commerce&nbsp;Web</span></Link>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_icon"><FaPager /></span><span className="dd_link_name">Blog&nbsp;Web</span></Link>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_icon"><FaRegIdCard/></span><span className="dd_link_name">Portfolio&nbsp;Web</span></Link>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_icon"><ImEyeBlocked/></span><span className="dd_link_name">Membership&nbsp;Web</span></Link>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_icon"><BsCalendar2EventFill/></span><span className="dd_link_name">Events&nbsp;Web</span></Link>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_icon"><FaAward /></span><span className="dd_link_name">Fashion&nbsp;Web</span></Link>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_name">More</span></Link>
         </div>
         </div>
         <div
