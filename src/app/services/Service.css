@@ -13,11 +13,8 @@
   gap: 1rem;
   margin-top: 2rem;
 }
-.service_image{
-  border-radius: 1rem;
-}
 .service_image img{
-  width: 100%;
+  width: 40vw;
   border-radius: 1rem;
 }
 .subs{
