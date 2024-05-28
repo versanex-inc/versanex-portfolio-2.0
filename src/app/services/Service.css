@@ -1,10 +1,10 @@
-.service{
+.services_service{
   width: 100vw;
   padding-top: 5rem;
   display: flex;
   flex-direction: column;
 }
-.service_heading,.subs_media,.service_detail,.service_faqs{
+.services_service_heading,.subs_media,.service_detail,.service_faqs{
   padding: 0 10vw 0 10vw;
 }
 .subs_media{
@@ -13,7 +13,7 @@
   gap: 1rem;
   margin-top: 2rem;
 }
-.service_image img{
+.services_service_image img{
   width: 40vw;
   border-radius: 1rem;
 }

@@ -68,8 +68,8 @@ const Service = () => {
         },
       ];
   return (
-    <div className="service">
-      <h1 className="service_heading">Website Developing</h1>
+    <div className="services_service">
+      <h1 className="services_service_heading">Website Developing</h1>
       <div className="subs_media">
         <div className="subs">
           <p className="service_headline">
@@ -91,7 +91,7 @@ const Service = () => {
             Contact us
           </Link>
         </div>
-        <div className="service_image">
+        <div className="services_service_image">
           <Image
             src={
               "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHdlYnNpdGUlMjBkZXZlbG9waW5nfGVufDB8fDB8fHww"
