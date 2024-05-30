@@ -126,9 +126,9 @@ const Navbar = () => {
           className="nav_link_parent"
         >
           <button className="button nav_link">
-            <a className="nav_link_a" href="#">
+            <Link href={'/products'} className="nav_link_a">
               Products
-            </a>
+            </Link>
             <span className="arrow">
               <IoIosArrowDown />
             </span>
