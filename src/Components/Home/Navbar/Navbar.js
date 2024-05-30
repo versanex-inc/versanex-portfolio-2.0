@@ -158,7 +158,7 @@ const Navbar = () => {
             <div className="dropdown">
             <div className="linking_dropdown"></div>
             <div className="dropdown_link"><span className="dd_link_icon"><FaInfo /></span><Link href={"/About"} className='Links'><span className="dd_link_name">Company</span></Link></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><FaBlogger /></span><Link href={"/"} className='Links'><span className="dd_link_name">Testimonial</span></Link></div>
+            <div className="dropdown_link"><span className="dd_link_icon"><FaBlogger /></span><Link href={"/testimonials"} className='Links'><span className="dd_link_name">Testimonial</span></Link></div>
             <div className="dropdown_link"><span className="dd_link_icon"><BsPersonArmsUp /></span><Link href={"/"} className='Links'><span className="dd_link_name">Team Members</span></Link></div>
         </div>
         </div>
