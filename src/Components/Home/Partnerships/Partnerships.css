@@ -18,7 +18,7 @@
     animation: scrollLeft 30s linear infinite;
   }
   .partner img {
-    width: 20vw;
+    width: 15rem;
     height: auto;
   }
   @keyframes scrollLeft {
@@ -31,8 +31,8 @@
   }
 
   @media screen and (max-width: 768px){
-      
-  .partners {
-    margin-top: 1rem;
-  }
+    .partner img {
+      width: 10rem;
+      height: auto;
+    }
   }

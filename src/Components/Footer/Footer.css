@@ -144,7 +144,7 @@
         grid-area: 3/1/4/3;
     }
   }
-  @media screen and (max-width: 414px){
+  @media screen and (max-width: 500px){
     .footer_content{
         display: flex;
         flex-direction: column;

@@ -39,11 +39,17 @@ const Footer = () => {
             </div>
             <div className="footer_container footer_container_four">
             <h4 className="footer_container_heading">Contact</h4>
-                <ul className="footer_list list_contact_footer">
+                {/* <ul className="footer_list list_contact_footer">
                     <li className="footer_list_item item_contact_footer"><a href=""><b className='footer_contact_icon'><FaPhone/></b>+92 3450000000</a></li>
                     <li className="footer_list_item item_contact_footer"><a href=""><b className='footer_contact_icon'><IoLogoWhatsapp/></b>+92 3470000000</a></li>
                     <li className="footer_list_item item_contact_footer"><a href=""><b className='footer_contact_icon'><IoMdMail/></b>versanexinc@gmail.com</a></li>
                     <li className="footer_list_item item_contact_footer"><a href=""><b className='footer_contact_icon'><FaLocationDot/></b>GM-Abad,Faisalabd,Pakistan</a></li>
+                </ul> */}
+                <ul className="footer_list list_services_footer">
+                    <li className="footer_list_item item_services_footer"><a href=""><FaPhone/>&nbsp;&nbsp;+92 3450000000</a></li>
+                    <li className="footer_list_item item_services_footer"><a href=""><IoLogoWhatsapp/>&nbsp;&nbsp;+92 3470000000</a></li>
+                    <li className="footer_list_item item_services_footer"><a href=""><IoMdMail/>&nbsp;&nbsp;versanexinc@gmail.com</a></li>
+                    <li className="footer_list_item item_services_footer"><a href=""><FaLocationDot/>&nbsp;GM-Abad,Faisalabd,Pakistan</a></li>
                 </ul>
             </div>
             <div className="footer_container footer_container_five">

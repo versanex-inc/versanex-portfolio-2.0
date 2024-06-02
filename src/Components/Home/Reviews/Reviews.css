@@ -16,7 +16,7 @@
 
 }
 .reviews_swiper{
-    width: 80%;
+    width: 100%;
 }
 .reviews_swipe{
     border-left: 1px solid var(--border-color);
@@ -52,7 +52,7 @@
     font-weight: var(--font-medium);
 }
 .review_read_more{
-    font-size: .8rem;
+    font-size: 1rem;
     color: var(--third-color);
     text-decoration: underline;
 }
