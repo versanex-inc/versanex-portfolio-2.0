@@ -205,3 +205,216 @@
 }
 /* .vision_con{
 } */
+
+@media (max-width:762px) {
+    .stylebox{
+            display: none;
+    }
+}
+@media (min-width:1600px) {
+    .l_div{ 
+        border-right: 80px solid transparent;
+    }
+    .r_div{
+  
+        border-left: 80px solid transparent;
+    }
+    .bl_div{
+        border-right: 80px solid transparent;
+        /* border-top: 100px solid var(--second-color);; */
+    }
+    .br_div{
+        border-left: 80px solid transparent;
+    }
+    .l_small {
+        background-color: var(--first-color);
+        width: 9px;
+        height: 5rem;
+        position: absolute;
+        transform: rotate(40deg);
+        margin-bottom: 40px;
+        bottom: 0;
+    }
+    .r_small {
+        background-color: var(--first-color);
+        width: 9px;
+        height: 5rem;
+        position: absolute;
+        transform: rotate(40deg);
+        margin-bottom: 40px;
+        bottom: 0;
+    }
+  
+    .r_small {
+        background-color:var(--first-color);
+        width: 9px;
+        height: 5rem;
+        position: absolute;
+        transform: rotate(-40deg);
+        margin-bottom: 40px;
+        bottom: 0;
+        right: 0;
+      }
+      .line_handler{
+        width: 88%;
+        position: relative;
+      }
+      .top_lef_line{
+        height:12rem;
+        width: 20px;
+        position: absolute;
+        bottom: -30px;
+        left: 5rem; 
+        transform: rotate(40deg); 
+           background-color: var(--second-color);
+      }
+      .top_rig_line{
+        height:12rem;
+        width: 20px;
+        position: absolute;
+        bottom: -30px;
+        right: 5rem; 
+        transform: rotate(-40deg); 
+           background-color: var(--second-color);
+      }
+     
+    
+   
+    .bl_small {
+        background-color: var(--first-color);
+        width: 9px;
+        height: 5rem;
+        position: absolute;
+        transform: rotate(-40deg);
+        margin-top: 40px;
+        top: 0;
+    }
+    .bottom_lef_line{
+        height:12rem;
+        width: 20px;
+        position: absolute;
+        bottom: -30px;
+        left: 5rem; 
+        transform: rotate(-40deg); 
+           background-color: var(--second-color);
+      }
+    .bottom_rig_line{
+        height:12rem;
+        width: 20px;
+        position: absolute;
+        bottom: -30px;
+        right: 5rem; 
+        transform: rotate(40deg); 
+           background-color: var(--second-color);
+      }
+ 
+    .br_small {
+        background-color: var(--first-color);
+        width: 9px;
+        height: 5rem;
+        position: absolute;
+        transform: rotate(40deg);
+        margin-top: 40px;
+        top: 0;
+        right: 0;
+      }
+    
+}
+@media (min-width:2000px) {
+    .l_div{ 
+        border-right: 110px solid transparent;
+    }
+    .r_div{
+  
+        border-left: 110px solid transparent;
+    }
+    .bl_div{
+        border-right: 110px solid transparent;
+    }
+    .br_div{
+        border-left: 110px solid transparent;
+    }
+}
+@media (min-width:2600px) {
+    .l_div{
+        /* border-right: 140px solid transparent; */
+        width: 5%;
+    }
+    .r_div{
+        width: 5%;
+        /* border-left: 140px solid transparent; */
+    }
+    .bl_div{
+        /* border-right: 140px solid transparent; */
+        width: 5%;
+    }
+    .br_div{
+        /* border-left: 140px solid transparent; */
+        width: 5%;
+    }
+    .top_rig_line {
+        right: 2rem;
+      }
+      .bottom_rig_line {
+        right: 1rem;
+      }
+}
+@media (min-width:3000px) {
+    .stylebox{
+        display: none;
+    }
+    /* .l_div{
+        border-right: 160px solid transparent;
+        width: 4%;
+    }
+    .r_div{
+  
+        border-left: 160px solid transparent;
+        width: 4%;
+    }
+    .bl_div{
+        border-right: 160px solid transparent;
+        width: 4%;
+    }
+    .br_div{
+        border-left: 160px solid transparent;
+        width: 4%;
+    } */
+ }
+/* @media (min-width:3600px) {
+    .l_div{
+        border-right: 190px solid transparent;
+        width: 4%;
+    }
+    .r_div{
+        width: 4%;
+        border-left: 190px solid transparent;
+    }
+    .bl_div{
+        width: 4%;
+        border-right: 190px solid transparent;
+    }
+    .br_div{
+        width: 4%;
+        border-left: 190px solid transparent;
+    }
+}
+@media (min-width:4000px) {
+    .l_div{
+        width: 3%;
+        border-right: 210px solid transparent;
+    }
+    .r_div{
+        
+        width: 3%;
+        border-left: 210px solid transparent;
+    }
+    .bl_div{
+        width: 3%;
+        border-right: 210px solid transparent;
+    }
+    .br_div{
+        width: 3%;
+        border-left: 210px solid transparent;
+    }
+} */

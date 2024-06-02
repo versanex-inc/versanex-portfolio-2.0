@@ -9,7 +9,7 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: auto;
     background-color: var(--first-color);
 }
 .left_con{
@@ -45,7 +45,8 @@ line-height: 30px;
     margin-left: 1rem;
     border-radius: 8px;
 }
-.form_cel{
+.form_cel,
+.contact_form_select{
     width: 100%;
     margin-top:1rem;
    padding: 10px;
@@ -59,20 +60,23 @@ line-height: 30px;
 }
 .f_group input,
 textarea,
+.contact_form_select
+,
 select{
     width: 100%;
     padding: 10px;
     resize: none;
     border: none;
+    font-family: none;
     border-radius: 9px;
-     background-color: white;
-     box-shadow: rgba(127, 127, 127, 0.485) 0px 2px 12px ;
+    background-color: white;
+    box-shadow: rgba(127, 127, 127, 0.485) 0px 2px 12px ;
 }
 .form_cel{
-    color: rgb(109, 109, 109);
+        color: rgb(109, 109, 109);
 }
 .f_group input::placeholder,textarea::placeholder{
-color: rgb(109, 109, 109);
+    color: rgb(109, 109, 109);
 }
 .form_btn{
     border: none;
@@ -81,15 +85,136 @@ color: rgb(109, 109, 109);
     color: white;
     width: 6rem;
     font-weight: bolder;
-background: var(--second-color);
+    background: var(--second-color);
+    box-shadow: rgba(127, 127, 127, 0.485) 0px 2px 12px ;
 }
 .submit_btn{
     margin-top: 1rem;
     float: right;
 }
 .form_btn:hover{
-color: black;
+    color: rgb(99, 99, 99);
 }
+.contact_joinus_page{
+    margin-top: 2rem;
+}
+.contact_form_parent 
+    {
+    position: relative;
+}
+  .contact_form_select{
+    text-align: left;
+    display: flex;
+    color: #999;
+    justify-content: space-between;
+    
+    width: 100%;
+}
+.contact_form_dropdown{
+    /* border: 1px solid black; */
+    visibility: hidden;
+    position: relative;
+}
+.contact_dropdown{
+    box-shadow: rgba(127, 127, 127, 0.485) 0px 2px 12px ;
+    border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    top: 10px;
+}
+  .contact_dropdown_link{
+      padding: 8px;
+      font-size: 11px;
+    border-radius: 10px;
+    background: var(--first-color);
+    margin-top: 1px;
+
+}
+  .contact_dropdown_link:hover{
+    background: var(--second-color);
+  }
+  .contact_form_parent .contact_form_dropdown {
+    
+  }
+  .contact_form_parent .contact_form_dropdown {
+    visibility: visible;
+    animation: slide-up 0.4s ease-in-out;
+  }
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+      /* left: -18px; */
+      top: -20px;
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      left: 0;
+      top: 0px;
+    }
+  }
+  
+/* .contact_form_dropdown {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    z-index: 100;
+    padding: 1rem;
+    background: var(--first-color);
+    box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+    color: var(--third-color);
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+    visibility: hidden;
+    transform: scale(0);
+    transition: transform 0.1s ease;
+    transition: all 0.5s ease;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+  }
+  .contact_dropdown_link{
+    width: 1rem;
+    height: 1rem;
+    transform: rotate(45deg);
+    background: var(--first-color);
+    position: absolute;
+    right: 2rem;
+    top: -.4rem;
+    border-top: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    z-index: -100;
+  }
+  
+  .contact_dropdown_link{
+    padding: 1rem;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    background: var(--first-color);
+    transition: background 0.3s ease;
+    border-radius: .3rem;
+    position: relative;
+    color: var(--third-color);
+  }
+  .contact_form_select:hover .contact_dropdown{
+    visibility: visible;
+  }
+  .dropdown_link:hover .Links{
+    color: white;
+  }
+  .dropdown_link:hover{
+    background: var(--second-color);
+    color: var(--first-color);
+  } */
 @media screen and (max-width:1024px) {
     .f_title{
         font-size:.8rem;
@@ -169,10 +294,11 @@ color: black;
     .left_con{
         margin-top: 2rem;
         width: 100%;
+        margin-bottom: 2rem;
     }
     .right_con{
-        margin-top: 1rem;
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
     }
 }
 
@@ -185,4 +311,8 @@ color: black;
     font-weight: bolder;
     line-height: 14px;
     }   
+    .right_con{
+        width: 100%;
+        margin: 0 auto;
+    }
 }
