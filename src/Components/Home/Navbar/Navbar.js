@@ -238,13 +238,13 @@ const Navbar = () => {
               className={`mobile_nav_dropdown ${isOpenAbout ? "open" : ""}`}
             >
               <div className="mobile_nav_links">
-              <Link href="/About">
+              <Link href="/about">
                 Company
               </Link>
-              <Link href="/About/testimonials">
+              <Link href="/about/testimonials">
                 Testimonials
               </Link>
-              <Link href="/About/ourteam">Our&nbsp;team</Link>
+              <Link href="/about/ourteam">Our&nbsp;team</Link>
               </div>
             </div>
           <div className="dropdown">
@@ -253,7 +253,7 @@ const Navbar = () => {
               <span className="dd_link_icon">
                 <FaInfo />
               </span>
-              <Link href={"/About"} className="Links">
+              <Link href={"/about"} className="Links">
                 <span className="dd_link_name">Company</span>
               </Link>
             </div>
@@ -261,7 +261,7 @@ const Navbar = () => {
               <span className="dd_link_icon">
                 <FaBlogger />
               </span>
-              <Link href={"/About/testimonials"} className="Links">
+              <Link href={"/about/testimonials"} className="Links">
                 <span className="dd_link_name">Testimonials</span>
               </Link>
             </div>
@@ -269,7 +269,7 @@ const Navbar = () => {
               <span className="dd_link_icon">
                 <BsPersonArmsUp />
               </span>
-              <Link href={"/About/ourteam"} className="Links">
+              <Link href={"/about/ourteam"} className="Links">
                 <span className="dd_link_name">Our&nbsp;team</span>
               </Link>
             </div>
