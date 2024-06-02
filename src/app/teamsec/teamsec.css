@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    box-sizing: border-box;
+}
+.team_Main{
+    margin-bottom:2rem ;
+    margin-top:1rem;
+    text-align: center;
+    background-color: var( --first-color);
+}
+.team_title{
+    font-size:var( --h1-font-size);
+}
+.title span{
+    color: var(--second-color);
+}
+.Team_Yellow_underline {
+    width: 20%;
+    height: 4px;
+    background: var(--second-color);
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-bottom: 2rem;
+}
+.sub_headin{
+    font-size: var(--h2-font-size);
+    margin-top: 1rem;
+}
+.teammain_con{
+    display: flex ;
+    justify-content: center;
+    font-size: var(--normal-font-size);
+}
+.team_about_con{
+    width: 75%;
+    text-align: center;
+}
+
+/* ----------------------------------------------- */
+.Mission{
+    text-align: center;
+    background-color: var(--second-color);
+}
+.team_culture_title{
+    text-align: center;
+    font-size:var( --h1-font-size);
+}
+.team_culture_val{
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+.White_underline{
+        width: 20%;
+        height: 4px;
+        background: var(--third-color);
+        display: inline-block;
+        /* margin-bottom: 2rem; */
+}
+.team_culture_main_con{
+    margin-top: 2rem;
+    display: flex ;
+    justify-content: center;
+    font-size: var(--normal-font-size);
+}
+.mission_main{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    font-size: var(--normal-font-size);
+}
+
+.teamculutre_about_con{
+    width: 75%;
+    text-align: center;   
+}
+/* --------------------------- */
+
+.Card_sec{
+    height: auto;
+    text-align: center;
+
+}
+.card_sec_con{
+    margin-top: 5%;
+}
+.button_sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+.btns{
+    height: 2rem;
+    width: 8rem;
+    font-weight: lighter;
+    border-radius:8px;
+    margin-right: 2rem;
+    border: 3px solid var(--second-color);
+    color: var(--second-color);
+    background-color:white;
+    box-shadow: rgba(127, 127, 127, 0.485) 0px 15px  30px  ;
+    transition: box-shadow 0.3s ease;
+}
+.btns:hover{
+    background-color: var(--second-color);
+    color: white;
+    box-shadow: rgba(127, 127, 127, 0.485) 0px 8px 10px ;
+}
+.btns.clicked{
+    color: white;
+    background-color: var(--second-color);
+    box-shadow: rgba(127, 127, 127, 0.485) 0px 3px 3px ;    
+}
+.card_container {
+    /* margin-top: 20px; */
+    margin: 0 auto;
+    width: 70%;
+  }
+  .card1{
+    margin-left: 9px;
+    margin-right: 9px;
+}
+.card{
+     position: relative;
+    height: 200px;
+    /* height: 300px; */
+    width: 100%;
+    margin-top: 5rem;
+background: var(--second-color);
+border-radius: 10px;
+ overflow: visible; 
+}
+.team-image {
+  height: 273px;
+}
+
+.card img{
+
+     position: absolute;
+    bottom: 0; /* Start from the bottom */
+    left: 50%;
+    transform: translateX(-50%) translateY(0%); /* Center the image and adjust Y position */
+    max-width: 100%;
+    /* aspect-ratio:3/2; */
+    /* mix-blend-mode: color-burn; */
+}
+
+.team_container{
+    width: 70%;
+    justify-content: center;
+    right: calc(4% + 10px);
+    
+}
+.react-multiple-carousel__arrow{
+    width: 0;
+    height: 0;
+    background-color: transparent;
+}
+.react-multiple-carousel__arrow--left {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 30px solid var(--second-color);
+    border-radius: 30%;
+      border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+    left: calc(12% + 1px); 
+    z-index: 2;
+}
+.react-multiple-carousel__arrow--left:hover {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 30px solid var(--third-color);
+  background: transparent;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.react-multiple-carousel__arrow--right {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid var(--second-color);
+    right: calc(12% + 1px); 
+    border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  z-index: 2;
+}
+.react-multiple-carousel__arrow--right:hover {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid var(--third-color);
+  background: transparent;
+      border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+  .react-multi-carousel-list {
+    position:initial;
+  }
+  .react-multiple-carousel__arrow--left::before {
+    content: "";
+  }
+  .react-multiple-carousel__arrow--right::before {
+    content: "";
+  }
+  .Team_Seperator{
+    height: 2rem;
+    margin-top: 1rem;
+    /* margin-left: 0; */
+    margin-left: -3px;
+    width: 100%;
+    background-color: var(--second-color);
+  }
+  .card_con{
+    text-align: left;
+    margin-right: 10px;
+  }
+  .cardsub_dets{
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .card_dets{
+    margin-left: 1rem;
+}
+ /* ---------------------------------- */
+ 
+  @media (max-width: 1024px) {
+    .card {
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        height: 180px;
+    }
+    .team_culture_title{
+        font-size:var( --h2-font-size);
+    }
+    .team_title{
+        font-size:var( --h2-font-size);
+    }
+    .teammain_con{
+        font-size:12px;
+    }
+    .team_culture_main_con{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .card {
+        height: 150px;
+    }
+    .team_culture_title{
+        font-size:16px;
+    }
+    .team_title{
+        font-size:var( --h3-font-size);
+    }
+    .teammain_con{
+        font-size:12px;
+    }
+    .team_culture_main_con{
+        font-size: 12px;
+    }
+    .react-multi-carousel-item {
+        margin-top: 3rem;
+    }
+    .btns{
+      display: none;
+        
+    }
+} 
+

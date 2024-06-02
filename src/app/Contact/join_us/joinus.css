@@ -8,12 +8,15 @@
 .joincontent{
     margin-left: 1rem;
     display: flex;
-    height: 100vh;
+    margin-bottom: 2rem;
+    height: auto;
     display: flex;
+    margin-top: 3rem;
     justify-content: center;
     align-items: center;
 }
 .joinus_main{
+    overflow: hidden;
     background-color: var(--second-color);
 }
 .main_heading{
@@ -21,16 +24,34 @@
 }
 .content{
     font-size: var(--normal-font-size);
+    text-align: left;
 }
 .content li{
 margin-top: 1rem;
+list-style: none;
+display: flex;
 }
-.content li::marker{
-font-size: 19px;
-}
+.content li {
+    position: relative;
+    list-style-type: none; /* Remove default bullet points */
+    margin-bottom: 10px;
+    padding-left: 20px; /* Space for the dot */
+  }
+  
+  .content li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px; /* Width of the dot */
+    height: 10px; /* Height of the dot */
+    background-color: #000; /* Color of the dot */
+    border-radius: 50%; /* Make it a circle */
+  }
 .joinus_lft{
     width: 45%;
-  text-align: justify;
+    /* text-align: justify; */
 }
 .joinus_right{
     /* font-size: 13rem; */
@@ -51,3 +72,47 @@ font-size: 19px;
     color: red; /* Change this to your desired color */
 }
 /* --------------------------------- */
+@media screen and (max-width:1024px){
+}
+@media screen and (max-width:1024px) {
+    .joinus_lft {
+        width: auto;
+      }
+    .joinus_right{
+        /* font-size: 13rem; */
+        width: auto;
+        margin-left: 4rem;
+    }
+    .joinus_lft_con h1{
+        line-height: 4rem;
+        font-size:4rem ;
+        text-align: left;
+    }
+
+}
+@media screen and (max-width: 768px){
+    .joinus_right{
+        /* font-size: 13rem; */
+        width: auto;
+        margin-left: 4rem;
+    }
+    .joinus_lft_con h1{
+        line-height: 3rem;
+        font-size:3rem ;
+        text-align: left;
+    }
+    
+    
+}
+@media screen and (max-width: 768px){
+    .joinus_right{
+       display: none;
+    }
+}
+@media screen and (max-width: 600px){
+
+}
+
+@media screen and (max-width: 414px){
+
+}
