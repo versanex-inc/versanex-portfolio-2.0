@@ -4,6 +4,7 @@ import "./Services.css";
 import Image from "next/image";
 import { PiArrowRightBold } from "react-icons/pi";
 import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
+import Link from "next/link";
 
 const Services = () => {
   // Array of service objects
@@ -89,12 +90,12 @@ const Services = () => {
                 </div>
                 <div className="service_title">{service.title}</div>
                 <div className="service_description">{service.description}</div>
-                <div className="service_read_more_btn">
+                <Link href={'/services/websiteDeveloping'} className="service_read_more_btn">
                   Read&nbsp;More
                   <b className="service_arrow">
                     <PiArrowRightBold />
                   </b>
-                </div>
+                </Link>
               </div>
             </div>
           ))}

@@ -1,0 +1,62 @@
+.form{
+    border-radius: 8px;
+}
+.form input,textarea{
+    border: none;
+}
+.form input,textarea:focus{
+    outline: none;
+    /* border: 1px solid var(--third-color); */
+}
+.form select{
+    border: none;
+}
+.form_cel{
+    width: 100%;
+    margin-top:1rem;
+   padding: 10px;
+   border-radius: 9px;
+    background-color: white;
+    box-shadow: rgba(127, 127, 127, 0.485) 0px 0px 12px ;
+}
+.f_group{
+    margin-top: 1rem;
+}
+.f_group input,
+textarea,
+select{
+    width: 100%;
+    padding: 10px;
+    resize: none;
+    border-radius: 9px;
+     background-color: white;
+     box-shadow: rgba(127, 127, 127, 0.485) 0px 2px 12px ;
+}
+.form_cel{
+    color: rgb(109, 109, 109);
+}
+.f_group input::placeholder,textarea::placeholder{
+color: rgb(109, 109, 109);
+}
+.form_btn{
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    width: 6rem;
+    font-weight: bolder;
+background: var(--second-color);
+}
+.submit_btn{
+    margin-top: 1rem;
+    float: right;
+}
+.form_btn:hover{
+color: black;
+}
+
+.form input:focus{
+    border: 1px solid var(--third-color);
+}
+.form textarea:focus{
+    border: 1px solid var(--third-color);
+}

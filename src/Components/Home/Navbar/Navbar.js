@@ -104,31 +104,31 @@ const Navbar = () => {
           className="nav_link_parent"
         >
           <button className="button nav_link">
-            <a className="nav_link_a" href="#">
+            <Link href={'/services'} className="nav_link_a">
               Services
-            </a>
+            </Link>
             <span className="arrow">
               <IoIosArrowDown />
             </span>
           </button>
             <div className="dropdown">
             <div className="linking_dropdown"></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><FaStore/></span><span className="dd_link_name">E&nbsp;Commerce&nbsp;Web</span></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><FaPager /></span><span className="dd_link_name">Blog&nbsp;Web</span></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><FaRegIdCard/></span><span className="dd_link_name">Portfolio&nbsp;Web</span></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><ImEyeBlocked/></span><span className="dd_link_name">Membership&nbsp;Web</span></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><BsCalendar2EventFill/></span><span className="dd_link_name">Events&nbsp;Web</span></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><FaAward /></span><span className="dd_link_name">Fashion&nbsp;Web</span></div>
-            <div className="dropdown_link"><span className="dd_link_name">More</span></div>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_icon"><FaStore/></span><span className="dd_link_name">E&nbsp;Commerce&nbsp;Web</span></Link>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_icon"><FaPager /></span><span className="dd_link_name">Blog&nbsp;Web</span></Link>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_icon"><FaRegIdCard/></span><span className="dd_link_name">Portfolio&nbsp;Web</span></Link>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_icon"><ImEyeBlocked/></span><span className="dd_link_name">Membership&nbsp;Web</span></Link>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_icon"><BsCalendar2EventFill/></span><span className="dd_link_name">Events&nbsp;Web</span></Link>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_icon"><FaAward /></span><span className="dd_link_name">Fashion&nbsp;Web</span></Link>
+            <Link href={'/services/websiteDeveloping'} className="dropdown_link"><span className="dd_link_name">More</span></Link>
         </div>
         </div>
         <div
           className="nav_link_parent"
         >
           <button className="button nav_link">
-            <a className="nav_link_a" href="#">
+            <Link href={'/products'} className="nav_link_a">
               Products
-            </a>
+            </Link>
             <span className="arrow">
               <IoIosArrowDown />
             </span>
@@ -158,8 +158,13 @@ const Navbar = () => {
             <div className="dropdown">
             <div className="linking_dropdown"></div>
             <div className="dropdown_link"><span className="dd_link_icon"><FaInfo /></span><Link href={"/About"} className='Links'><span className="dd_link_name">Company</span></Link></div>
+<<<<<<< HEAD
             <div className="dropdown_link"><span className="dd_link_icon"><FaBlogger /></span><Link href={"/"} className='Links'><span className="dd_link_name">Testimonial</span></Link></div>
             <div className="dropdown_link"><span className="dd_link_icon"><BsPersonArmsUp /></span><Link href={"/teamsec"} className='Links'><span className="dd_link_name">Team Members</span></Link></div>
+=======
+            <div className="dropdown_link"><span className="dd_link_icon"><FaBlogger /></span><Link href={"/testimonials"} className='Links'><span className="dd_link_name">Testimonial</span></Link></div>
+            <div className="dropdown_link"><span className="dd_link_icon"><BsPersonArmsUp /></span><Link href={"/"} className='Links'><span className="dd_link_name">Team Members</span></Link></div>
+>>>>>>> 8beb72fce471dcca61ed900fdaa4dfa96fcffa43
         </div>
         </div>
         <div

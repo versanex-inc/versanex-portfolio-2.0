@@ -1,83 +1,6 @@
-/* .p_projects {
-    width: 100vw;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5rem;
-    justify-content: center;
-    padding: 2rem 10vh;
-  }
-  
-  .p_project {
-    width: 18rem;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column; 
-    justify-content: flex-start;
-    align-items: center;
-    overflow: hidden;
-    background: var(--second-color);
-    flex: 0 1 auto;
-  }
-  
-  .p_project_bg_img img {
-    transition: transform 1s ease;
-  }
-  
-  .p_project_bg_img img:hover {
-    transform: scale(1.2);
-  }
-  
-  .p_project img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
-    display: inline-block;
-    cursor: pointer;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 1rem;
-  }
-  
-  .p_project_bg_img {
-    position: relative;
-    width: 100%; 
-  }
-  
-  .lower_part_img {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: linear-gradient(180deg, transparent 0%, rgba(22, 23, 25, 1) 100%);
-    color: var(--first-color);
-    border-bottom-right-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 10px;
-  }
-  
-  .lower_part_img .p_project_title {
-    font-size: 80%;
-  }
-  
-  .p_project_category {
-    font-size: 70%;
-    font-weight: bold;
-  }
-  
-  .p_project_read_more {
-    position: absolute;
-    right: 1rem;
-    font-size: 110%;
-    bottom: 8px;
-    cursor: pointer;
-  }
-   */
-
 .p_projects{
-    width: 80%;
+    width: 100%;
+    padding: 0 10vw 0 10vw;
     margin: 20px auto;
     columns: 3;
     column-gap: 40px;
@@ -89,14 +12,15 @@
     overflow: hidden;
     border-radius: 1rem;
     margin-top: 40px;
+    cursor: pointer;
+}
+.p_project:nth-child(1) {
+  margin-top: 0;
 }
 .p_project img{
     max-width: 100%;
     border-radius: 15px;
 }
-
-
-
 
 .p_project_bg_img {
     position: relative;
@@ -140,6 +64,14 @@
     transition: transform 1s ease;
   }
   
-  .p_project_bg_img img:hover {
+  /* .p_project_bg_img img:hover {
     transform: scale(1.2);
+  } */
+  .p_project:hover .p_project_bg_img img{
+    transform: scale(1.2);
+  }
+
+
+  .p_project_one{
+    margin-top: 0;
   }
