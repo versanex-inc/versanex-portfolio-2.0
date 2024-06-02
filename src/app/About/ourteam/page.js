@@ -206,7 +206,7 @@ const Page = () => {
             rewindWithAnimation={true}
           >
             {imgs.map((item, index) => (
-              <div className="card-sec">
+              <div key={index} className="card-sec">
               <div className="card1" key={index}>
                 <div className="card">
                   <Image

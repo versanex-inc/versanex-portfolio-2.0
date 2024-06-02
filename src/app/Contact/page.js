@@ -4,7 +4,7 @@ import "./contact.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 import Joins from "./join_us/joinus";
-const contact = () => {
+const Contact = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [selectedService, setSelectedService] = useState(
     "Select the service You Need"
@@ -154,4 +154,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;

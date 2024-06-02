@@ -244,7 +244,7 @@ const Navbar = () => {
               <Link href="/about/testimonials">
                 Testimonials
               </Link>
-              <Link href="/about/team-members">Team&nbsp;Members</Link>
+              <Link href="/about/ourteam">Our&nbsp;team</Link>
               </div>
             </div>
           <div className="dropdown">
@@ -269,8 +269,8 @@ const Navbar = () => {
               <span className="dd_link_icon">
                 <BsPersonArmsUp />
               </span>
-              <Link href={"/about/team-members"} className="Links">
-                <span className="dd_link_name">Team&nbsp;Members</span>
+              <Link href={"/about/ourteam"} className="Links">
+                <span className="dd_link_name">Our&nbsp;team</span>
               </Link>
             </div>
           </div>
