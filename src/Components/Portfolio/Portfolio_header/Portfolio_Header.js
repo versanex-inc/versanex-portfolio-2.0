@@ -39,7 +39,7 @@ const Portfolio_Header = () => {
         </div>
         <div className="pf_links">
           <div className="pf_link">
-            <Link href={"#"}>All</Link>{" "}
+            <Link href={"/portfolio"}>All</Link>{" "}
             <span
               className="pf_link_categories_show"
               onClick={() => toggleCategories(0)}
@@ -51,14 +51,14 @@ const Portfolio_Header = () => {
                 openCategories === 0 ? "visible" : ""
               }`}
             >
-              <Link href={'#'} className="pf_link_category">Gfx&nbsp;Design</Link>
-              <Link href={'#'} className="pf_link_category">Web&nbsp;Developing</Link>
-              <Link href={'#'} className="pf_link_category">Video&nbsp;Editing</Link>
+              <Link href={'/portfolio/graphics-designing'} className="pf_link_category">Gfx&nbsp;Design</Link>
+              <Link href={'/portfolio/website-developing'} className="pf_link_category">Web&nbsp;Developing</Link>
+              <Link href={'/portfolio/video-editing'} className="pf_link_category">Video&nbsp;Editing</Link>
             </div>
           </div>
           <div className="pf_link">
-            <Link href={"#"}>Gfx&nbsp;Design</Link>{" "}
-            <span
+            <Link href={"/portfolio/graphics-designing"}>Gfx&nbsp;Design</Link>{" "}
+            {/* <span
               className="pf_link_categories_show"
               onClick={() => toggleCategories(1)}
             >
@@ -71,11 +71,11 @@ const Portfolio_Header = () => {
             >
               <Link href={'#'} className="pf_link_category">Logos</Link>
               <Link href={'#'} className="pf_link_category">Banners</Link>
-            </div>
+            </div> */}
           </div>
           <div className="pf_link">
-            <Link href={"#"}>Video&nbsp;Editing</Link>{" "}
-            <span
+            <Link href={"/portfolio/website-developing"}>Website&nbsp;developing</Link>{" "}
+            {/* <span
               className="pf_link_categories_show"
               onClick={() => toggleCategories(2)}
             >
@@ -88,11 +88,11 @@ const Portfolio_Header = () => {
             >
               <Link href={'#'} className="pf_link_category">Motion</Link>
               <Link href={'#'} className="pf_link_category">Blender</Link>
-            </div>
+            </div> */}
           </div>
           <div className="pf_link">
-            <Link href={"#"}>Web&nbsp;Developing</Link>{" "}
-            <span
+            <Link href={"/portfolio/video-editing"}>Video&nbsp;Editing</Link>{" "}
+            {/* <span
               className="pf_link_categories_show"
               onClick={() => toggleCategories(3)}
             >
@@ -105,7 +105,7 @@ const Portfolio_Header = () => {
             >
               <Link href={'#'} className="pf_link_category">Websites</Link>
               <Link href={'#'} className="pf_link_category">Web&nbsp;Apps</Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -57,6 +57,7 @@ const Project_page = ({ params }) => {
               alt="user"
               width={1000}
               height={1000}
+              quality={100}
             />
           </div>
           <Link href={projectData.creatorProfile} className="creator_name">
@@ -116,11 +117,12 @@ const Project_page = ({ params }) => {
           <p className="project_details">{projectData.description}</p>
         </div>
         <div className="project_pictures">
-          {projectData.type === "iframe" ? (
+          {projectData.projectType === "iframe" ? (
             <iframe
+            className="slug_video"
               width="100%"
-              height="300"
-              src={projectData.images}
+              height="350"
+              src={projectData.images[1]?.url}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

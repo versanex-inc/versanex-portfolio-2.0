@@ -10,8 +10,9 @@ const projectSchema = new mongoose.Schema({
   creatorNiche: { type: String },
   creatorPicture: { type: String },
   creatorProfile: { type: String },
-  category: { type: String, enum: ["Gfx Design", "Programming"] },
-  subCategory: { type: String, enum: ["Illustration", "Gfx","Logo Design", "3d", "E-shop", "Buisness", "Portfolio", "Web Developing"] },
+  projectType: { type: String },
+  category: { type: String, enum: ["Gfx Design", "Web Developing", "Video Editing"] },
+  subCategory: { type: String, enum: ["Illustration", "Gfx","Logo Design", "3d", "E-shop", "Buisness", "Portfolio"] },
   status: { type: String, enum: ["Progress", "Completed", "Holding", "Cancelled"] },
   deadline: { type: Date, default: Date.now }
 });

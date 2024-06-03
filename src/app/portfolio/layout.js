@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function PortfolioLayout({ children }) {
   return (
-      <section className="portfolio">
+      <section className="container portfolio">
             <Portfolio_Header/>
             {children}
       </section>
