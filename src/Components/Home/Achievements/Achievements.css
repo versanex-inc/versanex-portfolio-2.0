@@ -86,7 +86,7 @@
         margin-top: 1rem;
     }
 }
-@media screen and (max-width: 414px){
+@media screen and (max-width: 500px){
     .achievement_para{
         display: none;
     }

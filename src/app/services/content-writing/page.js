@@ -69,12 +69,12 @@ const Service = () => {
       ];
   return (
     <div className="services_service">
-      <h1 className="heading container services_service_heading">Website Developing</h1>
+      <h1 className="heading container services_service_heading">Content Writing</h1>
       <div className="container services_media_wrapper">
       <Image
           className="services_service_image"
             src={
-              "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHdlYnNpdGUlMjBkZXZlbG9waW5nfGVufDB8fDB8fHww"
+              "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29udGVudCUyMHdyaXRpbmd8ZW58MHx8MHx8fDA%3D"
             }
             alt="service"
             width={1000}

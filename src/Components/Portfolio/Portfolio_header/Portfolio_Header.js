@@ -32,7 +32,7 @@ const Portfolio_Header = () => {
   };
 
   return (
-    <div className="portfolio_header">
+    <div className="portfolio_layout_header">
       <div className="pf_h_info">
         <div className="pf_h_heading">
           <h1>Portfolio</h1>

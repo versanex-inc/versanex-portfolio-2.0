@@ -211,7 +211,7 @@
       color: var(--first-color);
       position: relative;
       text-align: end;
-      right: 1.5rem;
+      right: 1rem;
     }
     .nav_toggle span{
       font-size: 1.8rem;
