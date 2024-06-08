@@ -26,6 +26,7 @@
   --small-font-size: 0.813rem;
   --extra-smaller-font-size: 0.713rem;
   --extra-extra-smaller-font-size: 0.613rem;
+  --normal-font-size: 1.4rem;
 
   /*========== Font weight ==========*/
   --font-small: 400;
@@ -54,6 +55,22 @@
   --z-medium: 3;
   --z-large: 4;
   --z-largest: 5;
+}
+
+@media only screen and (max-width: 1700px) {
+  :root{
+    --normal-font-size: 1.3rem;
+  }
+}
+@media only screen and (max-width: 1500px) {
+  :root{
+    --normal-font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  :root{
+    --normal-font-size: 1rem;
+  }
 }
 /*========== Variables Dark theme ==========*/
 /* body.dark-theme{ */
@@ -206,6 +223,7 @@ img {
 /* container class */
 .container{
   width: 100%;
+  /* padding: 0 20vw 0 20vw; */
   padding: 0 10vw 0 10vw;
   background: var(--first-color);
 }
@@ -308,7 +326,7 @@ img {
     height: 2.8rem;
   }
 }
-@media screen and (max-width: 414px){
+@media screen and (max-width: 500px){
   .container{
     padding: 0 5vw 0 5vw;
   }

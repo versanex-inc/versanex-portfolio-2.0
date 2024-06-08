@@ -12,10 +12,14 @@
 }
 .pd_creator{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 12rem;
     grid-template-rows: auto auto;
     width: 12rem;
     position: relative;
+    column-gap: .5rem;
+}
+.project_category{
+    width: auto;
 }
 .creator_img{
     position: relative;

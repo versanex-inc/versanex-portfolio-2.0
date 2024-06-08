@@ -7,7 +7,8 @@
     background: var(--second-color);
     position: relative;
     z-index: 2;
-    padding: 4rem 8vw 4rem 8vw;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,6 +26,7 @@
 }
 .about_sub_heading{
   margin-top: .3rem;
+  width: 100%;
 }
 .about_content{
   display: flex;
@@ -41,7 +43,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   height: auto; /* Allow the height to adjust based on content */
-  font-size: 1rem;
+  font-size: var(--normal-font-size);
 }
 .about_img img{
   height: 18rem;
@@ -76,7 +78,7 @@
     margin-top: 1rem;
   }
   .about_sub_heading{
-    font-size: 1rem;
+    /* font-size: var(--normal-font-size); */
   }
 }
 @media screen and (max-width: 768px){
@@ -87,7 +89,7 @@
     display: none;
   }
   .about_sub_heading{
-    font-size: 1rem;
+    font-size: var(--normal-font-size);
   }
   .about_paragraph{
     padding-right: 0;

@@ -8,7 +8,7 @@
     z-index: 0;
 }
 .hero_content{
-    padding: 0 4vw 0 4vw;
+    padding: 5vh 8vw 5vh 8vw;
 }
 .hero_info{
     font-family: neu;
@@ -23,13 +23,13 @@
 .left_body{
     width: 27vw;
     line-height: 2vw;
-    font-size: 1.7vw;
+    font-size: 2.5rem;
 }
 .right_body{
     letter-spacing: -.03em;
     text-transform: uppercase;
     font-family: Neuehaasdisplay mediu, sans-serif;
-    font-size: 6vw;
+    font-size: 7rem;
     font-weight: 500;
     line-height: .8;
     text-align: right;
@@ -37,6 +37,48 @@
 }
 .right_body h1{
     color: var(--third-color);
+}
+@media only screen and (max-width: 1700px) {
+    .hero_content{
+        padding: 4vh 6vw 4vh 6vw;
+    }
+    .left_body{
+        font-size: 2.5rem;
+    }
+    .right_body{
+        font-size: 7rem;
+    }
+}
+@media only screen and (max-width: 1500px) {
+    .hero_content{
+        padding: 2vh 4vw 2vh 4vw;
+    }
+    .left_body{
+        font-size: 2rem;
+    }
+    .right_body{
+        font-size: 6rem;
+    }
+}
+@media only screen and (max-width: 1300px) {
+    .hero_content{
+        padding: 2.5vh 4vw 2.5vh 4vw;
+    }
+    .left_body{
+        font-size: 1.4rem;
+    }
+    .right_body{
+        font-size: 4.8rem;
+    }
+}
+@media screen and (max-width: 1024px){
+    .left_body{
+        line-height: 2.3vw;
+        font-size: 1.2rem;
+    }
+    .right_body{
+        font-size: 4rem;
+    }
 }
 @media screen and (max-width: 768px){
     .hero_info{

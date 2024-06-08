@@ -13,7 +13,7 @@ const About = () => {
             <span className="heading_underline_dot"></span>
           </div>
         </h1>
-        <h2 className="about_sub_heading">
+        <h2 className="sub_heading about_sub_heading">
           You partner for digital innovation.
         </h2>
       </div>

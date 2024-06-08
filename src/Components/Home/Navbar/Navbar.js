@@ -105,7 +105,8 @@ const Navbar = () => {
       </div>
       <Link href={"/"} className="nav_logo">
         Versa
-        <Image src={"/imgs/logo.png"} width={1000} height={1000} />
+        {/* <Image src={"/imgs/logo.png"} width={1000} height={1000} /> */}
+        <b>N</b>
         ex
       </Link>
       <div className="nav_links">
@@ -113,6 +114,13 @@ const Navbar = () => {
           <span className="nav_close_icon">
             <FaTimes />
           </span>
+        </div>
+        <div className="nav_link_parent">
+          <button className="button nav_link">
+            <Link className="nav_link_a" href={"/"}>
+              Home
+            </Link>
+          </button>
         </div>
         <div className="nav_link_parent">
           <button className="button nav_link">
@@ -275,16 +283,16 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="nav_link_parent">
+        {/* <div className="nav_link_parent">
           <button className="button nav_link">
             <Link href={"/products"} className="nav_link_a">
               Products
             </Link>
-            {/* <span className="arrow">
+            <span className="arrow">
               <IoIosArrowDown />
-            </span> */}
+            </span>
           </button>
-          {/* <div className="dropdown">
+          <div className="dropdown">
              <div className="linking_dropdown"></div>
              <div className="dropdown_link"><span className="dd_link_icon"><FaPager /></span><span className="dd_link_name">Blog&nbsp;Web</span></div>
              <div className="dropdown_link"><span className="dd_link_icon"><FaStore/></span><span className="dd_link_name">E&nbsp;Commerce&nbsp;Web</span></div>
@@ -293,8 +301,8 @@ const Navbar = () => {
              <div className="dropdown_link"><span className="dd_link_icon"><FaAward /></span><span className="dd_link_name">Fashion&nbsp;Web</span></div>
              <div className="dropdown_link"><span className="dd_link_icon"><BsCalendar2EventFill/></span><span className="dd_link_name">Events&nbsp;Web</span></div>
              <div className="dropdown_link"><span className="dd_link_name">More</span></div>
-         </div> */}
-        </div>
+         </div>
+        </div> */}
         <div className="nav_link_parent">
           <button className="button nav_link">
             <Link className="nav_link_a" href="/contact">
