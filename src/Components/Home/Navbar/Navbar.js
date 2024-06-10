@@ -26,8 +26,12 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
 import { MdOutlineWeb } from "react-icons/md";
+import { signIn } from "next-auth/react";
+import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
+  const {status} = useSession();
   const [scrolled, setScrolled] = useState(false);
   const [isOpenAbout, setIsOpenAbout] = useState(false);
   const [isOpenServices, setIsOpenServices] = useState(false);
@@ -309,6 +313,23 @@ const Navbar = () => {
               Contact
             </Link>
           </button>
+        </div>
+        <div className="nav_link_parent">
+          {status === 'authenticated' ? (
+            <button onClick={()=> signOut()} className="button nav_link">
+            <Link className="nav_link_a" href={"#"}>
+              Sign&nbsp;out
+            </Link>
+          </button>
+            
+          ) : (
+            <button onClick={()=> signIn('google')} className="button nav_link">
+            <Link className="nav_link_a" href={"#"}>
+              Sign&nbsp;in
+            </Link>
+          </button>
+          )}
+          
         </div>
       </div>
     </div>
