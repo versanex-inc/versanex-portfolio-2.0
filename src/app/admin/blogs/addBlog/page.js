@@ -3,9 +3,8 @@ import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
-import '../admin.css'
-import './AddProject.css'
-const Admin_Add_project = () => {
+import '../../admin.css'
+const Admin_Add_Blog = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -28,8 +27,6 @@ const Admin_Add_project = () => {
   const [projectType, setProjectType] = useState("");
   const [category, setCategory] = useState("");
   const [subCategory, setSubCategory] = useState("");
-  const [status, setStatus] = useState("");
-  const [deadline, setDeadline] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -64,12 +61,6 @@ const Admin_Add_project = () => {
       case "subCategory":
         setSubCategory(value);
         break;
-      case "status":
-        setStatus(value);
-        break;
-      case "deadline":
-        setDeadline(value);
-        break;
       default:
         break;
     }
@@ -96,13 +87,11 @@ const Admin_Add_project = () => {
       projectType,
       category,
       subCategory,
-      status,
-      deadline,
     };
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_HOST}/api/addProject`,
+        `${process.env.NEXT_PUBLIC_HOST}/api/addBlog`,
         {
           method: "POST",
           headers: {
@@ -125,8 +114,6 @@ const Admin_Add_project = () => {
         setProjectType("");
         setCategory("");
         setSubCategory("");
-        setStatus("");
-        setDeadline("");
         toast.success("Project added successfully", {
           position: "bottom-left",
           autoClose: 5000,
@@ -171,7 +158,7 @@ const Admin_Add_project = () => {
         />
         <form className="a_form" onSubmit={handleSubmit}>
           <div className="a_form_content">
-            <h1 className="contact_heading admin_contact_heading">Add Project</h1>
+            <h1 className="contact_heading admin_contact_heading">Add Blog</h1>
             <div className="form admin_form">
               <div className="group">
                 <input
@@ -319,35 +306,7 @@ const Admin_Add_project = () => {
                   <span className="highlight"></span>
                 </div>
               ))}
-              <div className="group">
-                <input
-                  value={deadline}
-                  onChange={handleChange}
-                  type="date"
-                  name="deadline"
-                  id="deadline"
-                  placeholder="Deadline"
-                  required
-                />
-                <span className="highlight"></span>
-              </div>
               <div className="group_dropdowns">
-              <div className="group admin_group">
-                <select
-                  value={status}
-                  onChange={handleChange}
-                  name="status"
-                  id="status"
-                  required
-                >
-                  <option className="selction_option" value="">Status</option>
-                  <option value="Progress">Progress</option>
-                  <option value="Completed">Completed</option>
-                  <option value="Holding">Holding</option>
-                  <option value="Cancelled">Cancelled</option>
-                </select>
-                <span className="highlight"></span>
-              </div>
               <div className="group admin_group">
                 <select
                   value={category}
@@ -385,7 +344,7 @@ const Admin_Add_project = () => {
               </div>
               <div className="admin_form_submit_button">
               <button type="submit" className="button button_small form_submit">
-                  <p>Add Project</p>
+                  <p>Add Blog</p>
                 </button>
               </div>
             </div>
@@ -396,4 +355,4 @@ const Admin_Add_project = () => {
   );
 };
 
-export default Admin_Add_project;
+export default Admin_Add_Blog;

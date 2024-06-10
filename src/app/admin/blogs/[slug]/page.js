@@ -1,10 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import './AllProjectsSlug.css';
 import { useRouter } from "next/navigation";
 
-const All_Projects_Slug = ({ params }) => {
+const All_Blogs_Slug = ({ params }) => {
     const router = useRouter();
 
     useEffect(() => {
@@ -22,7 +20,7 @@ const All_Projects_Slug = ({ params }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getProjects`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getBlogs`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch project data");
                 }
@@ -65,7 +63,7 @@ const All_Projects_Slug = ({ params }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/editProject`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/editBlog`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -94,7 +92,7 @@ const All_Projects_Slug = ({ params }) => {
 
     return (
         <div className="container top_container edit_project_container">
-            <h1>Edit Project</h1>
+            <h1>Edit Blog</h1>
             {projectData && (
                 <form className='top_container edit_p_form' onSubmit={handleSubmit}>
                     <div>
@@ -129,15 +127,6 @@ const All_Projects_Slug = ({ params }) => {
                             type="text" 
                             name="subCategory" 
                             value={projectData.subCategory || ''} 
-                            onChange={handleInputChange} 
-                        />
-                    </div>
-                    <div>
-                        <label>Status:</label>
-                        <input 
-                            type="text" 
-                            name="status" 
-                            value={projectData.status || ''} 
                             onChange={handleInputChange} 
                         />
                     </div>
@@ -189,20 +178,11 @@ const All_Projects_Slug = ({ params }) => {
                             onChange={handleInputChange} 
                         />
                     </div>
-                    <div>
-                        <label>Deadline:</label>
-                        <input 
-                            type="datetime-local" 
-                            name="deadline" 
-                            value={new Date(projectData.deadline).toISOString().slice(0, 16) || ''} 
-                            onChange={handleInputChange} 
-                        />
-                    </div>
-                    <button className="button button_small form_submit" type="submit"><p>Updata&nbsp;Project</p></button>
+                    <button className="button button_small form_submit" type="submit"><p>Updata&nbsp;Blog</p></button>
                 </form>
             )}
         </div>
     );
 };
 
-export default All_Projects_Slug;
+export default All_Blogs_Slug;
