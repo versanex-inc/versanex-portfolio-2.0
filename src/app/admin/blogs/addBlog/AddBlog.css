@@ -1,0 +1,110 @@
+.admin{
+    margin-top: 10vh;
+}
+
+.form {
+    position: relative;
+    margin-top: 1rem;
+  }
+  .group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .group textarea {
+    width: 100%;
+    padding: 0 0.2rem 0 0.2rem;
+    min-height: 10rem;
+    font-size: 1rem;
+    border: none;
+    color: var(--third-color);
+    font-family: var(--second-font-family);
+  }
+  .group textarea:focus {
+    border: var(--light-dark-color);
+  }
+  .group textarea::placeholder {
+    color: rgba(0, 0, 0, 0.308);
+  }
+  
+  .form input {
+    font-family: var(--second-font-family);
+    font-size: 1rem;
+    padding: 0.5rem 0 0.5rem 0.4rem;
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--second-color);
+    color: var(--third-color);
+    background: rgba(0, 0, 0, 0);
+    opacity: 0.5;
+    transition: 0.2s ease;
+  }
+  
+  .form input:focus {
+    outline: none;
+    opacity: 1;
+  }
+  
+  .form label {
+    padding: 0.5rem 0 0.5rem 0.4rem;
+    font-family: var(--second-font-family);
+    color: var(--third-color);
+    font-size: 1rem;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    bottom: 0;
+    top: 0;
+    opacity: 0.5;
+    transition: 0.2s ease all;
+  }
+  
+  .form input:focus ~ .label,
+  input:valid ~ .label {
+    top: -1rem;
+    font-size: .5rem;
+    color: var(--third-color);
+    opacity: 1;
+  }
+  
+  .form .highlight {
+    position: absolute;
+    height: 60%;
+    width: 8rem;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  .form input:focus ~ .highlight {
+    animation: inputHighlighter 0.3s ease;
+  }
+  .form textarea:focus{
+    border: 1px solid var(--second-color);
+    outline: 1px solid var(--second-color);
+  }
+  
+  @keyframes inputHighlighter {
+    from {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    to {
+      width: 0;
+      background: transparent;
+    }
+  }
+.form_submit{
+    justify-self: center;
+    align-self: center;
+    border-radius: .5rem;
+}
+.form_submit p:hover{
+    color: var(--third-color);
+}
+.form_submit p{
+    position: relative;
+    z-index: 5;
+}

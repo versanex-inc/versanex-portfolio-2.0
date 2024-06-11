@@ -1,38 +1,37 @@
 import React from "react";
 import "./About.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const About = () => {
   return (
-    <section className="about">
+    <section className="container about">
       <div className="about_headings">
         <h1 className="heading about_heading">
           VERSANEX
-          <div className="heading_underline h_underline_mtContainer">
+          <div className="heading_underline h_underline_mtContainer about_heading_underline">
             <span className="heading_underline_dot"></span>
           </div>
         </h1>
-        <h2 className="about_sub_heading">
+        <h2 className="sub_heading about_sub_heading">
           You partner for digital innovation.
         </h2>
       </div>
       <div className="about_content">
         <div className="about_paragraph">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            sequi omnis accusamus deserunt dolores, enim iste veniam praesentium
-            consequatur deleniti tenetur a quidem esse voluptatum earum cumque
-            atque eligendi ipsam hic? Rem obcaecati expedita totam quaerat quasi
-            laudantium praesentium iusto beatae maxime facere, eos officia
-            harum, sunt delectus aspernatur ipsa cumque dolorum cupiditate
-            repellat ipsum commodi. Voluptates tempore optio aliquid
-            reprehenderit incidunt ipsum porro mollitia quo laboriosam
-            explicabo, aperiam provident nemo quidem dolore ea. Pariatur
-            corporis porro explicabo, velit harum iure voluptatem non distinctio
-            consequatur! Laudantium pariatur dolor omnis enim fugit ut! Quam
-            illum voluptas in voluptatum reprehenderit aperiam autem.
+            Since then, it has evolved and established itself in being at the
+            forefront in information and technology supporting competency in
+            computing strategies and solutions for Private and Government
+            Organizations. Understanding the importance of IT, VERSANEX has been
+            involved in, perhaps, some of the most projects in the country.
+            Globally, the Company has taken its place among the important market specialties of various countries, offering services and products to a continuously rising number of corporates. In addition to deployment, our current and potential services encompass operations, maintenance, support, and business outsourcing. As a team of talented and hardworking Technology Specialists, we have vast experience in implementing successful solutions using technologies such as Microsoft, Oracle, PHP, ASP, 3D, and MERN stack.
           </p>
-          <button className="about_button">Read More</button>
+          <button className="button button_small nav_link_about">
+            <Link  href={"/about"}>
+              Read&nbsp;more
+            </Link>
+          </button>
         </div>
         <div className="about_img">
           <Image

@@ -1,0 +1,22 @@
+.all_blogs{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    overflow: hidden;
+}
+.blogs_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+.blog_content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+.blog_image img{
+    max-width: 100%;
+    border-radius: 1rem;
+}

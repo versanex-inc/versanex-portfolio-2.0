@@ -4,26 +4,30 @@
   display: flex;
   flex-direction: column;
 }
-.services_service_heading,.subs_media,.service_detail,.service_faqs{
-  padding: 0 10vw 0 10vw;
-}
-.subs_media{
-  display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-.services_service_image img{
-  width: 40vw;
-  border-radius: 1rem;
-}
-.subs{
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
+.services_service_heading{
+  text-align: start;
+  align-self: flex-start;
+  width: auto;
+  margin-bottom: 2rem;
 }
 .service_headline{
   font-weight: bold;
+}
+.service_subheadline{
+  margin: .7rem 0 .7rem 0;
+}
+.services_media_wrapper{
+  width: 100%;
+
+}
+.services_media_wrapper img{
+  max-width: 28rem;
+  float: right;
+  border-radius: .5rem;
+  margin-left: 1.5rem;
+}
+.services_media_text_boxex{
+  font-size: 1rem;
 }
 .service_contact{
   width: 10rem;
@@ -94,4 +98,35 @@
   .service_answer.show {
     max-height: 500px; /* or any large value that exceeds the expected height of the content */
     margin-top: 1rem;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .services_media_wrapper img{
+      max-width: 22rem;
+      margin-left: 1rem;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .services_service{
+      padding-top: 3rem;
+    }
+    .services_media_wrapper img{
+      max-width: 100%;
+      border-radius: .5rem;
+      margin-bottom: .7rem;
+      margin-left: 0;
+    }
+    .service_detail ul{
+      list-style: disc;
+      position: relative;
+      left: 0;
+      margin: 2rem 0 2rem 0;
+    }
+  }
+
+  
+  @media only screen and (max-width: 500px) {
+    .services_service{
+      padding-top: 2rem;
+    }
   }

@@ -100,31 +100,35 @@ const Achievements = () => {
         extraordinary together!
       </h2>
       <div className="achievements_container sub_container">
-        <Achievement
-          icon={<PiUsersThreeFill />}
-          count={employeeAchievementCount}
-          name="Dedicated Employees"
-          para="With a growing family of 50+ skilled employees, we are committed to delivering excellence in every aspect of software development, web design, and digital marketing."
-        />
-        <Achievement
-          icon={<FaHandshake />}
-          count={clientAchievementCount}
-          name="Happy Clients"
-          para="In 2024, we are delighted to have served and delighted over 150 clients, turning their digital dreams into reality."
-        />
-        <Achievement
-          icon={<GiAchievement />}
-          count={projectsAchievementCount}
-          name="Work done"
-          para="We are proud to have successfully completed over 100 projects, each one a testament to our commitment to quality and innovation."
-        />
-        <Achievement
-          icon={<FaGlobeAfrica  />}
-          count={countryAchievementCount}
-          name="Country serve"
-          para="we are prividing service in golbal level so now our client can reach us from everywhere around the world"
-        />
-      </div>
+  <Achievement
+    icon={<PiUsersThreeFill />}
+    count={employeeAchievementCount}
+    name="Dedicated Employees"
+    para="Our team of 50+ skilled professionals excels in software development, web design, and digital marketing."
+  />
+  <Achievement
+    icon={<FaHandshake />}
+    count={clientAchievementCount}
+    name="Happy Clients"
+    para="In 2024, we proudly served over 150 clients, bringing their digital dreams to life."
+  />
+  <Achievement
+    icon={<GiAchievement />}
+    count={projectsAchievementCount}
+    name="Completed Projects"
+    para="We have completed over 100 projects, showcasing our dedication to quality and innovation."
+  />
+  <Achievement
+    icon={<FaGlobeAfrica />}
+    count={countryAchievementCount}
+    name="Global Reach"
+    para="Our global services allow clients worldwide to benefit from our expertise."
+  />
+</div>
+
+
+
+
     </section>
   );
 };
