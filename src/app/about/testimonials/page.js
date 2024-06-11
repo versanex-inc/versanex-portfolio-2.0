@@ -1,33 +1,71 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./testimonials.css";
-import { IoStarSharp } from "react-icons/io5";
+import { IoStarSharp, IoStarOutline } from "react-icons/io5";
 import { PiPencilSimpleLineFill } from "react-icons/pi";
 import Image from "next/image";
-import { FaLock } from "react-icons/fa";
+import { FaThumbsUp } from "react-icons/fa6";
 import { MdPublic } from "react-icons/md";
-import { FaUserFriends } from "react-icons/fa";
-import { FaThumbsUp } from "react-icons/fa";
-import { IoStarOutline } from "react-icons/io5";
-const reviews = () => {
-  const [dropdown, setdropdown] = useState(false);
-  const toggledropdown = () => {
-    setdropdown(!dropdown);
+
+const Reviews = () => {
+  const [feedbackopen, setfeedbackopen] = useState(false);
+  const toglefeedback = () => {
+    setfeedbackopen(!feedbackopen);
+  };
+  // 9;
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const buttonRef = useRef(null);
+
+  const toggleDropdownOpen = () => {
+    setDropdownOpen(!dropdownOpen);
   };
 
-  const [selectedOption, setSelectedOption] = useState({
-    text: "Public",
-    icon: <MdPublic />,
-  });
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+  const resetStars = () => {
+    setStars(Array(5).fill("empty"));
   };
 
-  const handleOptionClick = (option, icon) => {
-    setSelectedOption({ text: option, icon: icon });
-    setIsOpen(false);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setDropdownOpen(false);
+        resetStars();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+  //Added state to track the number of selected stars:
+  const [selectedStars, setSelectedStars] = useState(0);
+  //Updated handleStarClick function to set the selected stars and reset the stars array:
+  const [stars, setStars] = useState(Array(5).fill("empty"));
+  const handleStarClick = (index) => {
+    let newStars = [...stars];
+    for (let i = 0; i <= index; i++) {
+      newStars[i] = "full";
+    }
+    for (let i = index + 1; i < 5; i++) {
+      newStars[i] = "empty";
+    }
+    setStars(newStars);
+    setSelectedStars(index + 1);
+  };
+  //Added a function to handle saving the review to the database using the selectedStars state:
+  const handlePostClick = () => {
+    // Here you can handle saving the review to the database using the selectedStars state
+    console.log("Stars selected:", selectedStars);
+    // Add your save logic here
+    setDropdownOpen(false);
+    resetStars();
   };
 
   const reviews = [
@@ -37,7 +75,7 @@ const reviews = () => {
       username: "Maaz Jutt",
       reviwcount: "5",
       reviewcontent:
-        "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
+        "   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
     },
     {
       id: 2,
@@ -72,6 +110,7 @@ const reviews = () => {
         "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
     },
   ];
+
   return (
     <div className="container">
       <div className="reviews_top_header">
@@ -82,84 +121,72 @@ const reviews = () => {
           </div>
 
           <div className="reviews_heading_writereview">
-            <button className="writereview_btn" onClick={toggledropdown}>
+            <button
+              className="writereview_btn"
+              onClick={toggleDropdownOpen}
+              ref={buttonRef}
+            >
               <PiPencilSimpleLineFill />
               <span>Write a review</span>
             </button>
-            {/* {isopen && ( */}
-            {dropdown && (
-              <div className="reviews_heading_writereview_content">
-                <div className="writereview_content_brandname">VersaNex</div>
-                <div className="writereview_content_user">
-                  <div className="reviewed_user">
-                    <div className="reviewed_user_image">
-                      <Image
-                        src={"/imgs/flash.webp"}
-                        height={50}
-                        width={50}
-                        alt="user image"
-                      ></Image>
+            <div
+              ref={dropdownRef}
+              className={`reviews_heading_writereview_content ${
+                dropdownOpen ? "open" : ""
+              }`}
+            >
+              <div className="writereview_content_brandname">VersaNex</div>
+              <div className="writereview_content_user">
+                <div className="reviewed_user">
+                  <div className="reviewed_user_image">
+                    <Image
+                      src={"/imgs/flash.webp"}
+                      height={50}
+                      width={50}
+                      alt="user image"
+                    />
+                  </div>
+                  <div className="reviewed_user_name">
+                    <h5>Fahad Joyia</h5>
+                    <div className="visibility_dropdown">
+                      <label htmlFor="visibility">Visibility: </label>
+                      <span>
+                        Public <MdPublic />
+                      </span>
                     </div>
-                    <div className="reviewed_user_name">
-                      <h5>Fahad Joyia</h5>
-                      <div className="visibility_dropdown">
-                        <label htmlFor="visibility">Visibility: </label>
-                        <span onClick={toggleDropdown}>
-                          {" "}
-                          {selectedOption.text} {selectedOption.icon}
-                        </span>
-                        {isOpen && (
-                          <ul className="visibility_dropdown_options">
-                            <li
-                              onClick={() =>
-                                handleOptionClick("Public", <MdPublic />)
-                              }
-                            >
-                              {" "}
-                              Public <MdPublic />
-                            </li>
-                            <li
-                              onClick={() =>
-                                handleOptionClick("Private", <FaLock />)
-                              }
-                            >
-                              Private <FaLock />{" "}
-                            </li>
-                            <li
-                              onClick={() =>
-                                handleOptionClick("Friends", <FaUserFriends />)
-                              }
-                            >
-                              Friends <FaUserFriends />
-                            </li>
-                          </ul>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="reviewed_user_stars">
-                    <IoStarOutline />
-                    <IoStarOutline />
-                    <IoStarOutline />
-                    <IoStarOutline />
-                    <IoStarOutline />
-                  </div>
-                  <div className="reviewed_user_content_box">
-                    <textarea
-                      name=""
-                      id=""
-                      rows={5}
-                      placeholder="Share details of your own experience at this place"
-                    ></textarea>
-                  </div>
-                  <div className="reviewed_user_close">
-                    <button>Cancel</button>
-                    <button>Post</button>
                   </div>
                 </div>
+                <div className="reviewed_user_stars">
+                  {stars.map((star, index) => (
+                    <span
+                      key={index}
+                      className="review_star"
+                      onClick={() => handleStarClick(index)}
+                    >
+                      {star === "empty" && <IoStarOutline />}
+                      {star === "full" && <IoStarSharp />}
+                    </span>
+                  ))}
+                </div>
+                <div className="reviewed_user_content_box">
+                  <textarea
+                    rows={5}
+                    placeholder="Share details of your own experience at this place"
+                  ></textarea>
+                </div>
+                <div className="reviewed_user_close">
+                  <button
+                    onClick={() => {
+                      setDropdownOpen(false);
+                      resetStars();
+                    }}
+                  >
+                    Cancel
+                  </button>
+                  <button onClick={handlePostClick}>Post</button>
+                </div>
               </div>
-              // {/* )} */}
-            )}
+            </div>
           </div>
         </div>
 
@@ -180,11 +207,11 @@ const reviews = () => {
           <div className="reviews_filter">
             <div className="reviews_filter_box">
               <span>Sort by:</span>
-              <select name="" id="">
+              <select>
                 <option value="all-reviews">All reviews</option>
                 <option value="last-week">Last week</option>
                 <option value="last-month">Last month</option>
-                <option value="last-month">Last year</option>
+                <option value="last-year">Last year</option>
               </select>
             </div>
           </div>
@@ -203,7 +230,7 @@ const reviews = () => {
                   height={50}
                   width={50}
                   alt="user image"
-                ></Image>
+                />
               </div>
               <div className="reviewed_user_name">
                 <h5>{val.username}</h5>
@@ -224,8 +251,32 @@ const reviews = () => {
                 <div className="like_review">
                   <FaThumbsUp /> <p>Like</p>
                 </div>
-                <div className="review_reply">Reply</div>
+                <div className="review_reply" onClick={toglefeedback}>
+                  Feedback
+                  
+                </div>
+                
               </div>
+              <div className={`review_reply_input_main ${feedbackopen ? 'review__input' : ''}`}>
+              <div className={`review_reply_input }`}>
+                <input type="text" placeholder="write your review" />
+              </div>
+              <div className="review_reply_content">
+                <div className="review_reply_response">
+                  <div className="review_reply_titledate">
+                    <h1>Response from the owner</h1>
+                    <span>2 Week ago</span>
+                  </div>
+
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta dolorum corporis eum tempore perspiciatis amet et odit
+                  dignissimos, quibusdam nostrum.
+                </p>
+                </div>
+              </div>
+              </div>
+            
             </div>
           </div>
         ))}
@@ -234,4 +285,4 @@ const reviews = () => {
   );
 };
 
-export default reviews;
+export default Reviews;
