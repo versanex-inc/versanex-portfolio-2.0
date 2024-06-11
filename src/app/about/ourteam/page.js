@@ -28,7 +28,7 @@ const Page = () => {
       slidesToSlide: 1,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 600, min: 0 },
       items: 1,
       slidesToSlide: 1,
     },
