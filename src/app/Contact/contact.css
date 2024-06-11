@@ -99,7 +99,7 @@ select{
     margin-top: 2rem;
 }
 .contact_form_parent 
-    {
+{
     position: relative;
 }
   .contact_form_select{
@@ -136,10 +136,7 @@ select{
   .contact_dropdown_link:hover{
     background: var(--second-color);
   }
-  .contact_form_parent .contact_form_dropdown {
-    
-  }
-  .contact_form_parent .contact_form_dropdown {
+ .contact_form_parent .contact_form_dropdown {
     visibility: visible;
     animation: slide-up 0.4s ease-in-out;
   }

@@ -1,0 +1,32 @@
+
+.productcardmain{
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+.productcard{
+    padding: 10px;
+}
+.prodcardimg img{
+    border-radius: 10px;
+}
+.prodcardconhead{
+    font-size: .5rem;
+    
+}
+.prodcardconcontent{
+    font-size: 11px;
+}
+
+.prodcardbtn{
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+@media (max-width:523px){
+    .productcard{
+        text-align: center;
+        margin-top: 20px;
+    }
+}

@@ -157,14 +157,9 @@ const Navbar = () => {
           </button>
             <div className="dropdown">
             <div className="linking_dropdown"></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><FaInfo /></span><Link href={"/About"} className='Links'><span className="dd_link_name">Company</span></Link></div>
-<<<<<<< HEAD
-            <div className="dropdown_link"><span className="dd_link_icon"><FaBlogger /></span><Link href={"/"} className='Links'><span className="dd_link_name">Testimonial</span></Link></div>
-            <div className="dropdown_link"><span className="dd_link_icon"><BsPersonArmsUp /></span><Link href={"/teamsec"} className='Links'><span className="dd_link_name">Team Members</span></Link></div>
-=======
-            <div className="dropdown_link"><span className="dd_link_icon"><FaBlogger /></span><Link href={"/testimonials"} className='Links'><span className="dd_link_name">Testimonial</span></Link></div>
+            <div className="dropdown_link"><span className="dd_link_icon"><FaInfo /></span><Link href={"/about"} className='Links'><span className="dd_link_name">Company</span></Link></div>
+            <div className="dropdown_link"><span className="dd_link_icon"><FaBlogger /></span><Link href={"/about/testimonials"} className='Links'><span className="dd_link_name">Testimonial</span></Link></div>
             <div className="dropdown_link"><span className="dd_link_icon"><BsPersonArmsUp /></span><Link href={"/"} className='Links'><span className="dd_link_name">Team Members</span></Link></div>
->>>>>>> 8beb72fce471dcca61ed900fdaa4dfa96fcffa43
         </div>
         </div>
         <div
@@ -180,9 +175,9 @@ const Navbar = () => {
           className="nav_link_parent nav_link_mobile"
         >
           <button className="button nav_link">
-            <a className="nav_link_a" href="#">
+            <Link className="nav_link_a" href={"/blogs"}>
               Blogs
-            </a>
+            </Link>
           </button>
         </div>
         <div

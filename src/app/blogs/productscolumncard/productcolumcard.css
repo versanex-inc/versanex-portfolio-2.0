@@ -1,0 +1,279 @@
+.blog_main_page{
+    display: flex;
+    gap: 1rem;
+    height: 100vh;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.productsseccardsleft{
+    max-width: 70%;
+}
+.mainprdcolbox{
+    display: flex;
+    justify-content: left;
+    /* width: 70%; */
+}
+
+.mainprdcolimgsec{
+    width:  25%;
+}
+.blog_right_img img{
+    width: 100%;
+}
+.mainprdcolcontetnsec{
+    width: 79%
+}
+.mainprdcolcontetnsec{
+    margin-left: 10px;
+}
+.mainprdcoltophead,
+.mainprdcolbottomhead{
+    font-size: 11px;
+    color: rgb(124, 124, 124);
+}
+.mainprdcolmainhead h1{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.mainprdcolbottomhead{
+    margin-top: 10px;
+}
+.mainprdcolmaincontent{
+    font-size: 11px;
+    color: rgb(101, 101, 101);
+}
+.mainprdcolmaincontent p{
+    width: 300px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+.productsseccardsright{
+    width: 30%;
+background: var( --second-color);
+border-radius:0;
+height:100%;
+}
+.productsseccardsrightbox{
+}
+.productsseccardsrightboxsrchbar{
+border: 1px solid black;
+background-color: white;
+border-radius: 20px;
+width: 80%;
+display: flex;
+justify-content: space-between;
+margin: 0 auto;
+margin-top: 2rem;
+overflow: hidden;
+}
+.productsseccardsrightboxsrchbar input{
+border: none;
+outline: none;
+padding: 10px 15px;
+width: 80%;
+}
+.productsseccardsrightboxsrchbarbtn{
+    /* padding: 10px 10px; */
+background: white;
+text-align: center;
+width: 20%;
+border: none;
+background-color: rgba(196, 196, 196, 0.406);
+}
+.productsseccardsrightboxsrchbarbtn svg{
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    }
+    
+.blog_right_box_dropdown{
+    margin-top: 1rem;
+    /* width: 100%; */
+    justify-content: center;
+    text-align: center;
+}
+    
+.contact_form_parent 
+{
+    position: relative;
+}
+  .contact_form_select{
+    text-align: left;
+    display: flex;
+    color: #000000;
+    /* background-color: red; */
+    width: 80%;
+    padding: 14px;
+    justify-content: space-between;
+    border-radius: 50px;
+    border:none;
+    margin: 0 auto;
+}
+.contact_form_dropdown{
+    /* border: 1px solid black; */
+    visibility: hidden;
+    position: relative;
+}
+.contact_dropdown{
+    box-shadow: rgba(127, 127, 127, 0.485) 0px 2px 12px ;
+    border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    top: 10px;
+}
+  .contact_dropdown_link{
+      padding: 8px;
+      font-size: 11px;
+    border-radius: 10px;
+    background: var(--first-color);
+    margin-top: 1px;
+
+}
+  .contact_dropdown_link:hover{
+    background: var(--second-color);
+  }
+ .contact_form_parent  .contact_form_dropdown {
+    visibility: visible;
+    animation: slide-up 0.4s ease-in-out;
+  }
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+      /* left: -18px; */
+      top: -20px;
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      left: 0;
+      top: 0px;
+    }
+  }
+ 
+@media (max-width:1024px){
+    .mainprdcolmainhead h1{
+        font-size: .7rem;
+    }
+    .mainprdcolmaincontent p{
+        font-size: 9px;
+    }
+    .mainprdcolbottomhead{
+        margin: 0;
+        font-weight:500;
+    }
+    .productsseccardsrightboxsrchbar input{
+        padding: 7px 15px;
+    }
+    .contact_form_select{
+        padding: 8px;
+        font-size: 11px;
+    }
+    .productsseccardsrightboxsrchbarbtn svg{
+        font-size: 1.2rem;
+    }
+}
+@media (max-width:779px){
+    .mainprdcolmainhead h1{
+        font-size: 9px;
+    }
+    .mainprdcolmaincontent p{
+        font-size: 7px;
+    }
+    .mainprdcoltophead,
+    .mainprdcolbottomhead{
+        font-size: 9px;
+        color: rgb(124, 124, 124);
+        }
+    .productsseccardsrightboxsrchbar input{
+        padding: 7px 15px;
+        font-size: 9px;
+    }
+    .contact_form_select{
+        padding: 6px;
+        font-size: 10px;
+    }
+    .productsseccardsrightboxsrchbarbtn svg{
+        font-size: 13px;
+        margin-top: 2px;
+    }
+    
+}
+        @media (max-width:600px){
+            .mainprdcolmaincontent p{
+                width: 200px;
+                -webkit-line-clamp: 1;
+                }
+              .mainprdcolbox {
+                margin-bottom: 1rem;
+              }
+              .productsseccardsleft{
+                max-width: 65%;
+              }
+            .productsseccardsright{
+                width:  35%;
+            }
+            .productsseccardsrightboxsrchbar input {
+                font-size: 7px;
+              }
+              .contact_form_select {
+                font-size: 8px;
+              }
+        }
+                @media (max-width:414px){
+                    .mainprdcolmainhead h1{
+                        font-size: 7px;
+                    }
+                    .mainprdcolmaincontent p{
+                        font-size: 6px;
+                    }
+                    .mainprdcoltophead,
+                    .mainprdcolbottomhead{
+                        font-size: 6px;
+                        color: rgb(124, 124, 124);
+                        }
+                        .productsseccardsrightboxsrchbar {
+                            border:none;
+                            border-radius: 0;
+                            width: 100%;
+                          }
+                          .contact_form_select {
+                            width: 100%;
+                            border-radius: 0;
+                          }
+                    .productsseccardsrightboxsrchbar input{
+                        padding: 7px 15px;
+                        font-size: 9px;
+                    }
+                    .contact_form_select{
+                        padding: 6px;
+                        font-size: 10px;
+                    }
+                    .productsseccardsrightboxsrchbarbtn svg{
+                        font-size: 13px;
+                        margin-top: 2px;
+                    }
+                    .productsseccardsleft {
+                        max-width: 60%;
+                      }
+                      .productsseccardsright {
+                        width: 40%;
+                      }
+                      .mainprdcolmaincontent p{
+                        width: 150px;
+                        -webkit-line-clamp: 1;
+                        }
+                        .productsseccardsrightboxsrchbar input {
+                            font-size: 7px;
+                          }
+                          .contact_form_select {
+                            font-size: 8px;
+                          }
+                }

@@ -1,0 +1,208 @@
+.reviews_top_header{
+    margin-top: 1rem;
+    padding: .5rem 0; 
+}
+.reviews_header_content{
+    display: flex;
+    justify-content: space-between;
+}
+.reviews_heading_personinfo{
+    line-height:22px ;
+}
+.reviews_heading_personinfo span{
+font-size:var(--extra-smaller-font-size);
+color: #161719af;
+}
+.writereview_btn {
+    background: var(  --second-color);
+    border: none;
+    outline: none;
+    color: var(  --first-color);
+    font-weight: 600;   
+    padding: 8px 15px;
+    position: relative;
+}
+.reviews_heading_writereview_content{
+    padding: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%,50%);
+    background: white;
+    border-radius: 20px;
+    width: 60%;
+}
+.writereview_content_brandname{
+    text-align: center;
+}
+.reviewed_user_stars{
+    font-size: 2rem;
+    text-align: center;
+}
+.reviewed_user_stars svg{
+    margin-left: 5px;
+}
+.reviewed_user_content_box textarea{
+    resize: none;
+    width: 100%;
+    font-family: inherit;
+    padding: 12px;
+    font-size: 14px;
+    outline: none;
+}
+.reviewed_user_close {
+    display: flex;
+    justify-content: end;
+    margin-top: 4rem;
+}
+.reviewed_user_close button{
+    background-color: white;
+    border: 2px solid rgb(235, 235, 235);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 20px;
+    margin-left: 12px;
+    font-weight: normal;
+    color: #2967e4;
+}
+.reviewed_user_close button:hover{
+    background-color: rgb(224, 224, 224);
+}
+.visibility_dropdown label{
+    font-size: 12px;
+    }
+    .visibility_dropdown span{
+        font-size: 12px;
+        background-color:transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .visibility_dropdown_options{
+        margin-left: 1rem;
+        }
+        .visibility_dropdown_options li{
+            font-size: 12px;
+            }
+            .visibility_dropdown_options li:hover{
+                background-color: var(--second-color);
+                cursor: pointer;
+                border-radius: 10px;
+                padding: 5px 10px;
+            }
+
+.writereview_btn:hover{
+
+    background:#161719be;
+
+}
+.reviews_heading_writereview button span{
+    margin-left: 10px;
+}
+.reviews_rating_filter{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.reviews_rating{
+    display: flex;
+    color: var(--second-color);
+    }
+    .reviews_rating_number{
+        font-size: 2rem;
+        margin-right: 10px;
+        }
+        .reviews_rating_stars svg{
+            font-size: 1.6rem;
+            margin-top: 10px;
+        }
+.reviews_count{
+    font-size: .9rem;
+    margin: auto 0px;
+    font-weight: bold;
+    margin-left: 1rem;
+    color: #161719d0;
+}
+.reviews_filter_box{
+    margin: auto 0;
+    display: flex;
+    margin-top: 5px;
+    }
+    .reviews_filter_box span{
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .reviews_filter_box select{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        margin-left: 10px;
+        
+    }
+    .reviewed_user{
+        display: flex;
+        margin-top: 2rem;
+    }
+    .reviewed_user_image{
+        display: flex;
+    }
+    .reviewed_user_image img{
+        border-radius: 50px;
+        background-color: var(--second-color);
+        box-sizing: border-box;
+        height: 50px;
+        width: 50px;
+    }
+    .reviewed_user_name{
+        margin-left: 14px;
+    }
+    .reviewed_user_name p{
+        font-size: 10px;
+    }
+   .review_user_rating svg{
+    color: var(--second-color);
+   }
+    .review_user_rating span{
+    font-size: 10px;
+    margin-top: 0;
+    margin-left: 10px;
+    color:#1617199b;
+    }
+    .review_user_main_review_content{
+        margin-left: 55px;
+    }
+    .like_review_reply{
+        display: flex;
+    }
+    .like_review{
+        display:inline-flex;
+        margin-top: .5rem;
+        padding:5px 10px;
+        }
+    .like_review svg{
+        font-size: 1.3rem;
+    color:#1617199b;
+    }
+    .like_review p{
+        color:#1617199b;
+        margin-left: 10px;
+        }
+    .like_review:hover{
+        background-color: var(--second-color);
+        border-radius: 10px;
+        cursor: pointer;
+        
+        }
+        .review_reply{
+            margin-left: .5rem;
+            margin-top: 1rem;
+            color:#1617199b;
+            font-size: 13px;
+            text-decoration: underline;
+            cursor: pointer;
+    }
+    .review_reply:hover{
+            color:#161719b8;
+
+    }
+    
