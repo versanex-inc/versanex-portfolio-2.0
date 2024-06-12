@@ -29,8 +29,16 @@ color: #161719af;
     top: 10%;
     transform: translate(-50%,50%);
     background: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; 
     border-radius: 20px;
+    z-index: 1000;
     width: 60%;
+    display: none;
+}
+.open{
+    opacity: 1;
+    display: block;
 }
 .writereview_content_brandname{
     text-align: center;
@@ -75,9 +83,9 @@ color: #161719af;
         font-size: 12px;
         background-color:transparent;
         border: none;
-        cursor: pointer;
+        /* cursor: pointer; */
     }
-    .visibility_dropdown_options{
+    /* .visibility_dropdown_options{
         margin-left: 1rem;
         }
         .visibility_dropdown_options li{
@@ -88,7 +96,7 @@ color: #161719af;
                 cursor: pointer;
                 border-radius: 10px;
                 padding: 5px 10px;
-            }
+            } */
 
 .writereview_btn:hover{
 
@@ -183,6 +191,9 @@ color: #161719af;
         font-size: 1.3rem;
     color:#1617199b;
     }
+    .review_user_content{
+
+    }
     .like_review p{
         color:#1617199b;
         margin-left: 10px;
@@ -200,9 +211,163 @@ color: #161719af;
             font-size: 13px;
             text-decoration: underline;
             cursor: pointer;
+            position: relative;
     }
     .review_reply:hover{
             color:#161719b8;
 
     }
-    
+    .show{
+        animation-name: oys;
+    }
+
+    @keyframes oys {
+        0%{
+            opacity: 0%;
+        }
+        50%{
+            opacity: 50%;
+        }
+        100%{
+            opacity: 100%;
+        }
+    }
+   .review_reply_input{
+    width: 30%;
+    }
+    .review_reply_input input{
+        border-radius: 20px;
+        border: 1px solid var(--second-color);
+        width: 100%;
+        margin-top: 10px;
+        padding: 8px 1rem;
+        margin-bottom: 10px;
+        }
+        .review_reply_input input:focus{
+            outline: none;
+            border: 1px solid var(--third-color);
+        }
+        .review_reply_content{
+            border-left: 2px solid grey;
+            margin-top: 10px;
+        }
+        .review_reply_response{
+
+            margin-left: 10px;
+        }
+        .review_reply_titledate{
+            display: flex;
+        }
+        .review_reply_titledate h1{
+            font-size: 1rem;
+        }
+        .review_reply_titledate span{
+            margin-left: 10px;
+            font-size: .8rem;
+            margin-top: 2px;
+        }
+        .review_reply_response p{
+            font-size: .9rem;
+        }
+        .review_reply_input_main{
+            display: none;
+
+        }
+        .review__input{
+            display: block;
+        }
+        @media (max-width:768px){
+            .reviews_heading_writereview_content{
+                width: 80%;
+            }
+            .writereview_btn{
+                font-weight: 600;
+         padding: 8px 10px;
+        }
+    .reviews_rating_number {
+    font-size: 1.7rem;
+    margin-left: 4px;
+    }
+    .reviews_rating_stars svg {
+        font-size: 1.4rem;
+        }
+        .reviews_count {
+    font-size: .8rem;
+    margin-left: .6rem;
+    }
+    .reviews_filter_box span {
+    font-size: 14px;
+    }
+  .reviews_filter_box select {
+      
+      margin-left: 5px;
+  }
+  .review_user_main_review_content{
+    font-size: 13px;
+  }
+            }
+        @media (max-width:600px){
+            .reviews_heading_writereview_content{
+                width: 100%;
+                top: -10%;
+            }
+            .writereview_btn{
+                font-weight: 600;
+                padding: 5px 5px;
+        }
+        .reviews_rating_number {
+            font-size: 1.4rem;
+            margin-left: 4px;
+            }
+            .reviews_rating_stars svg {
+                font-size: 1rem;
+                }
+                .reviews_count {
+                    font-size: .7rem;
+                    margin-top: 12px;
+                    margin-left: .6rem;
+                    }
+                    .reviews_heading_personinfo h1{
+                        font-size: 28px;
+                    }
+                    .reviews_heading_personinfo span {
+                        
+                        font-size: 10px;
+                      }
+        }
+                        @media (max-width:414px){
+                            .writereview_btn{
+                                font-weight: 600;
+                                padding: 5px 5px;
+                                
+                                }
+                                .writereview_btn{
+                                    font-size: 9px;
+                                }
+                        .reviews_rating_number {
+                            font-size: 1.2rem;
+                            margin-left: 0px;
+                            margin-right: 4px;
+                            }
+                            .reviews_filter_box span{
+                                font-size: 9px;
+                            }
+                            .reviews_rating_stars svg {
+                                font-size: 12px;
+                                }
+                                .reviews_count {
+                                    font-size: 10px;
+                                    margin-top: 8px;
+                                    margin-left: .6rem;
+                                    }
+                                    .reviews_heading_personinfo h1{
+                                        font-size: 18px;
+                                    }
+                                    .reviews_heading_personinfo span {
+                                        
+                                        font-size: 9px;
+                                      }
+                                      .reviews_filter_box select{
+                                        font-size: 9px;
+                                      }
+                        }

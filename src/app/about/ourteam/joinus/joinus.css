@@ -47,3 +47,31 @@
     color: white;
 
 }
+
+@media (max-width: 768px) {
+      .title {
+        font-size: var( --h3-font-size);
+      }
+      .joinus_content{
+        font-size: 14px;
+      }
+}
+@media (max-width: 600px) {
+    .title {
+        font-size: 14px;
+      }
+      .joinus_content{
+        font-size: 12px;
+      }
+      .joinus_content{
+            width: 90%;
+      }
+}
+          @media (max-width: 414px) {
+            .title {
+                font-size: 12px;
+              }
+              .joinus_content{
+                font-size: 11px;
+              }
+          }

@@ -246,19 +246,62 @@ border-radius: 10px;
     .team_culture_main_con{
         font-size: 12px;
     }
+    .team_about_con {
+        width: 90%;
+      }
+      .teamculutre_about_con {
+        width: 90%;
+      }
+      .card {
+        margin-top: 7rem;
+      }
+      .title {
+        font-size: var( --h3-font-size);
+      }
 }
 
+@media (max-width: 600px) {
+    .team_title {
+        font-size: 1rem;
+      }
+      .team_culture_title{
+       font-size:.9rem;
+      }
+      .team_about_con,
+      .teamculutre_about_con{
+        font-size: 10px;
+      }
+      .btns {
+        font-weight: lighter;
+        border-radius: 8px;
+        margin-right: 2rem;
+        border: 2px solid var(--second-color);
+        color: var(--second-color);
+        background-color: white;
+        box-shadow: rgba(127, 127, 127, 0.485) 0px 15px 30px;
+        transition: box-shadow 0.3s ease;
+        font-size: 9px;
+        padding: 6px;
+      }
+      .card {
+        margin-top: 8rem;
+      }
+}
 @media (max-width: 480px) {
-    
+    .team_title {
+        font-size: .8rem;
+      }
+      .team_culture_title{
+       font-size: 11px;
+      }
+      .team_about_con,
+      .teamculutre_about_con{
+        font-size: 9px;
+      }
     .card {
         height: 150px;
     }
-    .team_culture_title{
-        font-size:16px;
-    }
-    .team_title{
-        font-size:var( --h3-font-size);
-    }
+
     .teammain_con{
         font-size:12px;
     }

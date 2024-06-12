@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { BiSolidCheckSquare } from "react-icons/bi";
-import { FaTools, FaCirclePlay } from "react-icons/fa";
+import { FaTools } from "react-icons/fa";
+import { FaCirclePlay } from "react-icons/fa6";
 import { MdCancel } from "react-icons/md";
 import "./Slug.css";
 

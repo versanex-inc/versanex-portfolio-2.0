@@ -205,10 +205,39 @@
 }
 /* .vision_con{
 } */
-
+@media (max-width:600px) {
+    .title {
+        font-size: var( --h3-font-size);
+      }
+      .vision_title {
+        font-size: var( --h3-font-size);
+        margin-top: 2rem;
+      }
+    .about_con{
+        font-size: 13px;
+    }
+    .White_underline {
+        margin-bottom: 1rem;
+      }
+}
+@media (max-width:414px) {
+    .title {
+        font-size :13px;
+        }
+        .vision_title {
+            font-size :13px;
+      }
+      .about_con{
+        font-size: 11px;
+    }
+}
 @media (max-width:762px) {
     .stylebox{
             display: none;
+    }
+    .about_con{
+        width: 90%;
+        text-align:justify;
     }
 }
 @media (min-width:1600px) {
