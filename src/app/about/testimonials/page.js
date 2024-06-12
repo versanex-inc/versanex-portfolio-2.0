@@ -9,7 +9,7 @@ import { MdPublic } from "react-icons/md";
 import { FaUserFriends } from "react-icons/fa";
 import { FaThumbsUp } from "react-icons/fa";
 import { IoStarOutline } from "react-icons/io5";
-const reviews = () => {
+const Reviews = () => {
   const [dropdown, setdropdown] = useState(false);
   const toggledropdown = () => {
     setdropdown(!dropdown);
@@ -234,4 +234,4 @@ const reviews = () => {
   );
 };
 
-export default reviews;
+export default Reviews;

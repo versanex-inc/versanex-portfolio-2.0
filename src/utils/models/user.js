@@ -8,8 +8,15 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
+    unique: true,
   },
-},{timestamps:true}
-);
+  image:{
+    type: String,
+  },
+  reviews: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Review'
+  }]
+}, {timestamps: true});
 
-export const User = mongoose.models.user || mongoose.model("user", userSchema);
+export const User = mongoose.models.User || mongoose.model("User", userSchema);
