@@ -1,14 +1,15 @@
 "use client";
+// AllReviews.js
+// AllReviews.js
 import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 import Image from 'next/image';
 import { IoStarSharp, IoStarOutline } from 'react-icons/io5';
 import { FaThumbsUp } from 'react-icons/fa';
-import moment from 'moment'; // Import moment library for date formatting
 import FilterReview from '../filterReview/FileterReview';
 
 const AllReviews = () => {
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [reviews, setReviews] = useState([]);
   const [filteredReviews, setFilteredReviews] = useState([]);
   const [starCounts, setStarCounts] = useState({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 });
@@ -65,11 +66,9 @@ const AllReviews = () => {
 
         if (isMounted) {
           setUsers(data.result);
-          setLoading(false);
         }
       } catch (error) {
         console.error(error);
-        setLoading(false);
       }
     }
 
@@ -121,7 +120,7 @@ const AllReviews = () => {
     }));
   };
 
-  const getTimeAgo = (timestamp) => {
+  const getTimeAgo = timestamp => {
     return moment(timestamp).fromNow(); // Using moment.js to get time ago format
   };
 
@@ -131,6 +130,7 @@ const AllReviews = () => {
         reviews={reviews}
         onSortChange={handleSortChange}
         onRatingChange={handleRatingChange}
+        starCounts={starCounts} // Pass starCounts as prop
       />
       {filteredReviews.map(review => {
         const user = getUserById(review.user);
