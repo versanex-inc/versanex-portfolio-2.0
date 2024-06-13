@@ -14,6 +14,18 @@ const starSchema = new mongoose.Schema({
   }
 });
 
+const feedbackSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  feedback: {
+    type: String,
+    required: true
+  }
+},{ timestamps: true });
+
 const reviewSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -24,7 +36,8 @@ const reviewSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  stars: [starSchema]
-}, {timestamps: true});
+  stars: [starSchema],
+  feedback: [feedbackSchema]
+}, { timestamps: true });
 
 export const Review = mongoose.models.Review || mongoose.model("Review", reviewSchema);

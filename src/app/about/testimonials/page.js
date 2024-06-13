@@ -1,30 +1,58 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./testimonials.css";
 import { IoStarSharp, IoStarOutline } from "react-icons/io5";
 import { PiPencilSimpleLineFill } from "react-icons/pi";
 import Image from "next/image";
 import { FaThumbsUp } from "react-icons/fa6";
 import { MdPublic } from "react-icons/md";
+import { useSession } from "next-auth/react";
+import AllReviews from "./allReviews/AllReviews";
+import FileterReview from "./filterReview/FileterReview";
 
 const Reviews = () => {
-  const [feedbackopen, setfeedbackopen] = useState(false);
-  const toglefeedback = () => {
-    setfeedbackopen(!feedbackopen);
-  };
-  // 9;
+  const { status, data: session } = useSession();
 
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [selectedStars, setSelectedStars] = useState(0);
+  const [stars, setStars] = useState(Array(5).fill("empty"));
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const buttonRef = useRef(null);
+  const [reviewDetails, setReviewDetails] = useState("");
 
-  const toggleDropdownOpen = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
+  useEffect(() => {
+    let isMounted = true;
 
-  const resetStars = () => {
-    setStars(Array(5).fill("empty"));
-  };
+    async function fetchUserData() {
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_HOST}/api/getUsers`
+        );
+        const data = await response.json();
+
+        if (isMounted) {
+          const filteredUser = data.result.find(
+            (user) => user.email === session.user.email
+          );
+          setUser(filteredUser);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error(error);
+        if (isMounted) setLoading(false);
+      }
+    }
+
+    if (session) {
+      fetchUserData();
+    }
+
+    return () => {
+      isMounted = false;
+    };
+  }, [session]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -44,80 +72,143 @@ const Reviews = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  //Added state to track the number of selected stars:
-  const [selectedStars, setSelectedStars] = useState(0);
-  //Updated handleStarClick function to set the selected stars and reset the stars array:
-  const [stars, setStars] = useState(Array(5).fill("empty"));
+
+  const resetStars = () => {
+    setStars(Array(5).fill("empty"));
+  };
+
   const handleStarClick = (index) => {
-    let newStars = [...stars];
+    const newStars = Array(5).fill("empty");
     for (let i = 0; i <= index; i++) {
       newStars[i] = "full";
-    }
-    for (let i = index + 1; i < 5; i++) {
-      newStars[i] = "empty";
     }
     setStars(newStars);
     setSelectedStars(index + 1);
   };
-  //Added a function to handle saving the review to the database using the selectedStars state:
-  const handlePostClick = () => {
-    // Here you can handle saving the review to the database using the selectedStars state
+
+  const handlePostClick = async () => {
     console.log("Stars selected:", selectedStars);
-    // Add your save logic here
-    setDropdownOpen(false);
-    resetStars();
+
+    try {
+      // Post review details
+      const reviewResponse = await fetch(
+        `${process.env.NEXT_PUBLIC_HOST}/api/addReview`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: user.email,
+            details: reviewDetails,
+          }),
+        }
+      );
+
+      const reviewData = await reviewResponse.json();
+
+      if (reviewData.success) {
+        // Post star rating
+        const ratingResponse = await fetch(
+          `${process.env.NEXT_PUBLIC_HOST}/api/addReviewStars`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              reviewId: reviewData.review._id,
+              userId: user._id,
+              rating: selectedStars,
+            }),
+          }
+        );
+
+        const ratingData = await ratingResponse.json();
+        if (!ratingData.success) {
+          console.error("Error updating stars:", ratingData.error);
+        }
+      } else {
+        console.error("Error saving review:", reviewData.error);
+      }
+
+      setDropdownOpen(false);
+      resetStars();
+      setReviewDetails("");
+    } catch (error) {
+      console.error("Error posting review:", error);
+    }
   };
 
-  const reviews = [
-    {
-      id: 1,
-      userimg: "/imgs/btchi.png",
-      username: "Maaz Jutt",
-      reviwcount: "5",
-      reviewcontent:
-        "   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
-    },
-    {
-      id: 2,
-      userimg: "/imgs/im2.png",
-      username: "Hisham Hussain",
-      reviwcount: "2",
-      reviewcontent:
-        "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
-    },
-    {
-      id: 3,
-      userimg: "/imgs/img3.png",
-      username: "Ahmad Jutt",
-      reviwcount: "8",
-      reviewcontent:
-        "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
-    },
-    {
-      id: 4,
-      userimg: "/imgs/flash.webp",
-      username: "Jami",
-      reviwcount: "3",
-      reviewcontent:
-        "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
-    },
-    {
-      id: 5,
-      userimg: "/imgs/H_resolution.jpg",
-      username: "Ali Ahmad",
-      reviwcount: "15",
-      reviewcontent:
-        "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
-    },
-  ];
+  const toggleDropdownOpen = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  if (status !== "authenticated") {
+    alert("Please login first");
+    return null;
+  }
+
+  if (!user) {
+    return <div>No user data found.</div>;
+  }
+
+  // const reviews = [
+  //   {
+  //     id: 1,
+  //     userimg: "/imgs/btchi.png",
+  //     username: "Maaz Jutt",
+  //     reviwcount: "5",
+  //     reviewcontent:
+  //       "   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
+  //   },
+  //   {
+  //     id: 2,
+  //     userimg: "/imgs/im2.png",
+  //     username: "Hisham Hussain",
+  //     reviwcount: "2",
+  //     reviewcontent:
+  //       "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
+  //   },
+  //   {
+  //     id: 3,
+  //     userimg: "/imgs/img3.png",
+  //     username: "Ahmad Jutt",
+  //     reviwcount: "8",
+  //     reviewcontent:
+  //       "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
+  //   },
+  //   {
+  //     id: 4,
+  //     userimg: "/imgs/flash.webp",
+  //     username: "Jami",
+  //     reviwcount: "3",
+  //     reviewcontent:
+  //       "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
+  //   },
+  //   {
+  //     id: 5,
+  //     userimg: "/imgs/H_resolution.jpg",
+  //     username: "Ali Ahmad",
+  //     reviwcount: "15",
+  //     reviewcontent:
+  //       "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
+  //   },
+  // ];
 
   return (
-    <div className="container">
+    <div className="testimonials_container container">
       <div className="reviews_top_header">
         <div className="reviews_header_content">
           <div className="reviews_heading_personinfo">
-            <h1>Jon Doe</h1>
-            <span>1294 Civil Rd, Pakistan</span>
+            <div className="person_imgae">
+              <Image src={user.image} width={60} height={60} alt="user" />
+            </div>
+            <h1>{user.name}</h1>
+            {/* <span>1294 Civil Rd, Pakistan</span> */}
           </div>
 
           <div className="reviews_heading_writereview">
@@ -140,14 +231,14 @@ const Reviews = () => {
                 <div className="reviewed_user">
                   <div className="reviewed_user_image">
                     <Image
-                      src={"/imgs/flash.webp"}
-                      height={50}
-                      width={50}
-                      alt="user image"
+                      src={user.image}
+                      width={60}
+                      height={60}
+                      alt="user"
                     />
                   </div>
                   <div className="reviewed_user_name">
-                    <h5>Fahad Joyia</h5>
+                    <h5>{user.name}</h5>
                     <div className="visibility_dropdown">
                       <label htmlFor="visibility">Visibility: </label>
                       <span>
@@ -172,6 +263,8 @@ const Reviews = () => {
                   <textarea
                     rows={5}
                     placeholder="Share details of your own experience at this place"
+                    value={reviewDetails}
+                    onChange={(e) => setReviewDetails(e.target.value)}
                   ></textarea>
                 </div>
                 <div className="reviewed_user_close">
@@ -189,98 +282,9 @@ const Reviews = () => {
             </div>
           </div>
         </div>
-
-        <div className="reviews_rating_filter">
-          <div className="reviews_rating">
-            <div className="reviews_rating_number">5.0</div>
-            <div className="reviews_rating_stars">
-              <IoStarSharp />
-              <IoStarSharp />
-              <IoStarSharp />
-              <IoStarSharp />
-              <IoStarSharp />
-            </div>
-            <div className="reviews_count">
-              16 <span>reviews</span>
-            </div>
-          </div>
-          <div className="reviews_filter">
-            <div className="reviews_filter_box">
-              <span>Sort by:</span>
-              <select>
-                <option value="all-reviews">All reviews</option>
-                <option value="last-week">Last week</option>
-                <option value="last-month">Last month</option>
-                <option value="last-year">Last year</option>
-              </select>
-            </div>
-          </div>
-        </div>
       </div>
-
       <hr />
-
-      <div className="main-reviews">
-        {reviews.map((val) => (
-          <div className="review_one" key={val.id}>
-            <div className="reviewed_user">
-              <div className="reviewed_user_image">
-                <Image
-                  src={val.userimg}
-                  height={50}
-                  width={50}
-                  alt="user image"
-                />
-              </div>
-              <div className="reviewed_user_name">
-                <h5>{val.username}</h5>
-                <p>
-                  {val.reviwcount} <span>review</span>
-                </p>
-              </div>
-            </div>
-            <div className="review_user_main_review_content">
-              <div className="review_user_rating">
-                <IoStarSharp />
-                <IoStarSharp />
-                <IoStarSharp />
-                <span>1 day ago</span>
-              </div>
-              <div className="review_user_content">{val.reviewcontent}</div>
-              <div className="like_review_reply">
-                <div className="like_review">
-                  <FaThumbsUp /> <p>Like</p>
-                </div>
-                <div className="review_reply" onClick={toglefeedback}>
-                  Feedback
-                  
-                </div>
-                
-              </div>
-              <div className={`review_reply_input_main ${feedbackopen ? 'review__input' : ''}`}>
-              <div className={`review_reply_input }`}>
-                <input type="text" placeholder="write your review" />
-              </div>
-              <div className="review_reply_content">
-                <div className="review_reply_response">
-                  <div className="review_reply_titledate">
-                    <h1>Response from the owner</h1>
-                    <span>2 Week ago</span>
-                  </div>
-
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Soluta dolorum corporis eum tempore perspiciatis amet et odit
-                  dignissimos, quibusdam nostrum.
-                </p>
-                </div>
-              </div>
-              </div>
-            
-            </div>
-          </div>
-        ))}
-      </div>
+      <AllReviews/>
     </div>
   );
 };
