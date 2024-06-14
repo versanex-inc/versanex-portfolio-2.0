@@ -24,7 +24,7 @@ const Projects = () => {
         if (isMounted) {
           // Filter projects based on subcategory being "Gfx Design"
           const filteredProjects = data.result.filter((project) => project.category === "Gfx Design");
-          setProjects(filteredProjects);
+          setProjects(filteredProjects.reverse());
           setLoading(false);
         }
       } catch (error) {

@@ -4,11 +4,9 @@ import "./testimonials.css";
 import { IoStarSharp, IoStarOutline } from "react-icons/io5";
 import { PiPencilSimpleLineFill } from "react-icons/pi";
 import Image from "next/image";
-import { FaThumbsUp } from "react-icons/fa6";
 import { MdPublic } from "react-icons/md";
 import { useSession } from "next-auth/react";
 import AllReviews from "./allReviews/AllReviews";
-import FileterReview from "./filterReview/FileterReview";
 
 const Reviews = () => {
   const { status, data: session } = useSession();
@@ -47,6 +45,8 @@ const Reviews = () => {
 
     if (session) {
       fetchUserData();
+    } else {
+      setLoading(false); // Set loading to false if there's no session
     }
 
     return () => {
@@ -141,21 +141,16 @@ const Reviews = () => {
   };
 
   const toggleDropdownOpen = () => {
-    setDropdownOpen(!dropdownOpen);
+    if (status === "authenticated") {
+      setDropdownOpen(!dropdownOpen);
+    } else {
+      alert("Please sign in first to write a review.");
+    }
   };
 
   if (loading) {
     return <div>Loading...</div>;
   }
-  if (status !== "authenticated") {
-    alert("Please login first");
-    return null;
-  }
-
-  if (!user) {
-    return <div>No user data found.</div>;
-  }
-
 
   return (
     <div className="testimonials_container container">
@@ -163,84 +158,101 @@ const Reviews = () => {
         <div className="reviews_header_content">
           <div className="reviews_heading_personinfo">
             <div className="person_imgae">
-              <Image src={user.image} width={60} height={60} alt="user" />
+              {status === "authenticated" && user ? (
+                <Image
+                  src={user.image}
+                  width={60}
+                  height={60}
+                  alt="user"
+                />
+              ) : (
+                <Image
+                  src={"/imgs/user_profile.png"}
+                  width={60}
+                  height={60}
+                  alt="default user"
+                />
+              )}
             </div>
-            <p className="testi_username">{user.name}</p>
-            {/* <span>1294 Civil Rd, Pakistan</span> */}
+            <p className="testi_username">
+              {status === "authenticated" && user ? user.name : "Unknown User"}
+            </p>
             <div className="reviews_heading_writereview">
-            <button
-              className="writereview_btn"
-              onClick={toggleDropdownOpen}
-              ref={buttonRef}
-            >
-              <PiPencilSimpleLineFill />
-              <span className="write_review_font">Write a review</span>
-            </button>
-            <div
-              ref={dropdownRef}
-              className={`reviews_heading_writereview_content ${
-                dropdownOpen ? "open" : ""
-              }`}
-            >
-              <div className="writereview_content_brandname">VersaNex</div>
-              <div className="writereview_content_user">
-                <div className="reviewed_user">
-                  <div className="reviewed_user_image">
-                    <Image
-                      src={user.image}
-                      width={60}
-                      height={60}
-                      alt="user"
-                    />
-                  </div>
-                  <div className="reviewed_user_name">
-                    <h5>{user.name}</h5>
-                    <div className="visibility_dropdown">
-                      <label htmlFor="visibility">Visibility: </label>
-                      <span>
-                        Public <MdPublic />
-                      </span>
+              <button
+                className="writereview_btn"
+                onClick={toggleDropdownOpen}
+                ref={buttonRef}
+              >
+                <PiPencilSimpleLineFill />
+                <span className="write_review_font">Write a review</span>
+              </button>
+              {status === "authenticated" && user && (
+                <div
+                  ref={dropdownRef}
+                  className={`reviews_heading_writereview_content ${
+                    dropdownOpen ? "open" : ""
+                  }`}
+                >
+                  <div className="writereview_content_brandname">VersaNex</div>
+                  <div className="writereview_content_user">
+                    <div className="reviewed_user">
+                      <div className="reviewed_user_image">
+                        <Image
+                          src={user.image}
+                          width={60}
+                          height={60}
+                          alt="user"
+                        />
+                      </div>
+                      <div className="reviewed_user_name">
+                        <h5>{user.name}</h5>
+                        <div className="visibility_dropdown">
+                          <label htmlFor="visibility">Visibility: </label>
+                          <span>
+                            Public <MdPublic />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="reviewed_user_stars">
+                      {stars.map((star, index) => (
+                        <span
+                          key={index}
+                          className="review_star"
+                          onClick={() => handleStarClick(index)}
+                        >
+                          {star === "empty" && <IoStarOutline />}
+                          {star === "full" && <IoStarSharp />}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="reviewed_user_content_box">
+                      <textarea
+                        rows={5}
+                        placeholder="Share details of your own experience at this place"
+                        value={reviewDetails}
+                        onChange={(e) => setReviewDetails(e.target.value)}
+                      ></textarea>
+                    </div>
+                    <div className="reviewed_user_close">
+                      <button
+                        onClick={() => {
+                          setDropdownOpen(false);
+                          resetStars();
+                        }}
+                      >
+                        Cancel
+                      </button>
+                      <button onClick={handlePostClick}>Post</button>
                     </div>
                   </div>
                 </div>
-                <div className="reviewed_user_stars">
-                  {stars.map((star, index) => (
-                    <span
-                      key={index}
-                      className="review_star"
-                      onClick={() => handleStarClick(index)}
-                    >
-                      {star === "empty" && <IoStarOutline />}
-                      {star === "full" && <IoStarSharp />}
-                    </span>
-                  ))}
-                </div>
-                <div className="reviewed_user_content_box">
-                  <textarea
-                    rows={5}
-                    placeholder="Share details of your own experience at this place"
-                    value={reviewDetails}
-                    onChange={(e) => setReviewDetails(e.target.value)}
-                  ></textarea>
-                </div>
-                <div className="reviewed_user_close">
-                  <button
-                    onClick={() => {
-                      setDropdownOpen(false);
-                      resetStars();
-                    }}
-                  >
-                    Cancel
-                  </button>
-                  <button onClick={handlePostClick}>Post</button>
-                </div>
-              </div>
+              )}
             </div>
-          </div>
           </div>
         </div>
       </div>
-      <AllReviews/>
+      <AllReviews />
     </div>
   );
 };
