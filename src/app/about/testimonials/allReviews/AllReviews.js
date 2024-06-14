@@ -1,20 +1,23 @@
 "use client";
 // AllReviews.js
-// AllReviews.js
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import Image from 'next/image';
 import { IoStarSharp, IoStarOutline } from 'react-icons/io5';
 import { FaThumbsUp } from 'react-icons/fa';
 import FilterReview from '../filterReview/FileterReview';
+import { useSession } from "next-auth/react";
 
 const AllReviews = () => {
+  const { status, data: session } = useSession();
   const [users, setUsers] = useState([]);
+  const [user, setUser] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [filteredReviews, setFilteredReviews] = useState([]);
   const [starCounts, setStarCounts] = useState({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 });
   const [selectedRating, setSelectedRating] = useState('all-ratings');
   const [feedbackOpenStates, setFeedbackOpenStates] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
@@ -65,19 +68,27 @@ const AllReviews = () => {
         const data = await response.json();
 
         if (isMounted) {
+          const filteredUser = data.result.find(user => user.email === session?.user?.email);
+          setUser(filteredUser);
           setUsers(data.result);
+          setLoading(false);
         }
       } catch (error) {
         console.error(error);
+        if (isMounted) setLoading(false);
       }
     }
 
-    fetchUserData();
+    if (session) {
+      fetchUserData();
+    } else {
+      setLoading(false);
+    }
 
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [session]);
 
   const getUserById = userId => {
     return users.find(user => user._id === userId);
@@ -124,6 +135,37 @@ const AllReviews = () => {
     return moment(timestamp).fromNow(); // Using moment.js to get time ago format
   };
 
+  const handleLike = async (reviewId) => {
+    if (!user) return; // Ensure user is fetched and logged in
+
+    try {
+      const userId = user._id; // Get the userId from the fetched user
+
+      const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/addReviewLike`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ reviewId, userId })
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        // Update the reviews state with the new likes data
+        setReviews(reviews.map(review => review._id === reviewId ? data.review : review));
+        setFilteredReviews(filteredReviews.map(review => review._id === reviewId ? data.review : review));
+      } else {
+        console.error('Error liking the review:', data.error);
+      }
+    } catch (error) {
+      console.error('Error liking the review:', error);
+    }
+  };
+
+  if (loading) {
+    return <div>Loading...</div>; // Display a loading state
+  }
+
   return (
     <div className="main-reviews">
       <FilterReview
@@ -134,6 +176,9 @@ const AllReviews = () => {
       />
       {filteredReviews.map(review => {
         const user = getUserById(review.user);
+        const userLikesReview = review.likes.some(like => like.userId === user?._id);
+        const likeCount = review.likes.length;
+
         return (
           <div className="review_one" key={review._id}>
             <div className="reviewed_user">
@@ -162,8 +207,8 @@ const AllReviews = () => {
               </div>
               <div className="review_user_content">{review.details}</div>
               <div className="like_review_reply">
-                <div className="like_review">
-                  <FaThumbsUp /> <p>Like : 3</p>
+                <div className="like_review" onClick={() => handleLike(review._id)}>
+                  <FaThumbsUp className={userLikesReview ? 'liked' : ''} /> <p>Likes : {likeCount}</p>
                 </div>
                 <div className="review_reply" onClick={() => toggleFeedback(review._id)}>
                   Feedback

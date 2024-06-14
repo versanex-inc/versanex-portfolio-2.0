@@ -156,48 +156,6 @@ const Reviews = () => {
     return <div>No user data found.</div>;
   }
 
-  // const reviews = [
-  //   {
-  //     id: 1,
-  //     userimg: "/imgs/btchi.png",
-  //     username: "Maaz Jutt",
-  //     reviwcount: "5",
-  //     reviewcontent:
-  //       "   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
-  //   },
-  //   {
-  //     id: 2,
-  //     userimg: "/imgs/im2.png",
-  //     username: "Hisham Hussain",
-  //     reviwcount: "2",
-  //     reviewcontent:
-  //       "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
-  //   },
-  //   {
-  //     id: 3,
-  //     userimg: "/imgs/img3.png",
-  //     username: "Ahmad Jutt",
-  //     reviwcount: "8",
-  //     reviewcontent:
-  //       "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
-  //   },
-  //   {
-  //     id: 4,
-  //     userimg: "/imgs/flash.webp",
-  //     username: "Jami",
-  //     reviwcount: "3",
-  //     reviewcontent:
-  //       "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
-  //   },
-  //   {
-  //     id: 5,
-  //     userimg: "/imgs/H_resolution.jpg",
-  //     username: "Ali Ahmad",
-  //     reviwcount: "15",
-  //     reviewcontent:
-  //       "                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore facere perspiciatis earum voluptate temporibus, dolorem accusamus magni culpa. Provident neque praesentium in excepturi, ducimus quasi non ratione debitis doloremque a animi accusantium est autem qui? Consequuntur, voluptatum. Architecto, alias velit ad quos eos nihil vitae optio at unde, eum dolorem.",
-  //   },
-  // ];
 
   return (
     <div className="testimonials_container container">
@@ -207,18 +165,16 @@ const Reviews = () => {
             <div className="person_imgae">
               <Image src={user.image} width={60} height={60} alt="user" />
             </div>
-            <h1>{user.name}</h1>
+            <p className="testi_username">{user.name}</p>
             {/* <span>1294 Civil Rd, Pakistan</span> */}
-          </div>
-
-          <div className="reviews_heading_writereview">
+            <div className="reviews_heading_writereview">
             <button
               className="writereview_btn"
               onClick={toggleDropdownOpen}
               ref={buttonRef}
             >
               <PiPencilSimpleLineFill />
-              <span>Write a review</span>
+              <span className="write_review_font">Write a review</span>
             </button>
             <div
               ref={dropdownRef}
@@ -281,9 +237,9 @@ const Reviews = () => {
               </div>
             </div>
           </div>
+          </div>
         </div>
       </div>
-      <hr />
       <AllReviews/>
     </div>
   );

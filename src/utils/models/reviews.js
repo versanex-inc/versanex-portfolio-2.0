@@ -26,6 +26,18 @@ const feedbackSchema = new mongoose.Schema({
   }
 },{ timestamps: true });
 
+const likeSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  likes: {
+    type: Number,
+    required: true
+  }
+},{ timestamps: true });
+
 const reviewSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -37,7 +49,8 @@ const reviewSchema = new mongoose.Schema({
     required: true
   },
   stars: [starSchema],
-  feedback: [feedbackSchema]
+  feedback: [feedbackSchema],
+  likes: [likeSchema]  // Add the likes array
 }, { timestamps: true });
 
 export const Review = mongoose.models.Review || mongoose.model("Review", reviewSchema);
