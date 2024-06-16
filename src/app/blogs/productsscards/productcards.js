@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import './productscard.css'
@@ -16,17 +17,17 @@ const productcards = () => {
         },
         tablet: {
           breakpoint: { max: 1024, min: 464 },
-          items: 3,
+          items: 4,
           slidesToSlide: 1,
         },
         Medtablet: {
           breakpoint: { max: 779, min: 0 },
-          items: 2,
+          items: 3,
           slidesToSlide: 1,
         },
         mobile: {
-          breakpoint: { max: 523, min: 0 },
-          items: 1,
+          breakpoint: { max: 551, min: 0 },
+          items: 2,
           slidesToSlide: 1,
         },
       };
@@ -91,14 +92,14 @@ const productcards = () => {
             minimumTouchDrag={100}
             keyBoardControl={true}
             autoPlay={true}
-            autoPlaySpeed={1000}
+            autoPlaySpeed={500}
             customTransition="transform 1000ms ease-in-out"
             transitionDuration={1000}
             containerClass="carousel-container"
             removeArrowOnDeviceType={["tablet", "mobile"]}
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
-            focusOnSelect={true}
+            focusOnSelect={false}
             rewind={true}
             rewindWithAnimation={true}
           >
@@ -118,7 +119,7 @@ const productcards = () => {
                     <p>{content.contetn}</p>
                 </div>
                 <div className="prodcardbtn">
-                    {content.buttonName}
+                <Link href={'/blogs/Inkipinkiponki'}>{content.buttonName} </Link> 
                 </div>
             </div>
             ))}

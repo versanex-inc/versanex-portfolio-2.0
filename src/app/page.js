@@ -9,7 +9,6 @@ import Values from "@/Components/Home/Values/Values";
 import Reviews from "@/Components/Home/Reviews/Reviews";
 import CTA from "@/Components/Home/CTA/CTA";
 import Footer from "@/Components/Footer/Footer";
-import Blogs from "./blogs/page";
 export default function Home() {
   return (
     <main className="main">
@@ -22,7 +21,6 @@ export default function Home() {
       <Values/>
       <Reviews/>
       <CTA/>
-      <Blogs/>
     </main>
   );
 }

@@ -12,7 +12,6 @@ const Reviews = () => {
   const toglefeedback = () => {
     setfeedbackopen(!feedbackopen);
   };
-  // 9;
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
