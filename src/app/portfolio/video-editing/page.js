@@ -28,7 +28,7 @@ const Projects = () => {
           const filteredProjects = data.result.filter(
             (project) => project.category === "Video Editing"
           );
-          setProjects(filteredProjects);
+          setProjects(filteredProjects.reverse());
           setLoading(false);
         }
       } catch (error) {

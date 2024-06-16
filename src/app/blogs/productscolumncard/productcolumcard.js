@@ -5,7 +5,7 @@ import { useState } from "react";
 import "./productcolumcard.css";
 import { IoIosSearch } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
-const productcolumcard = () => {
+const Productcolumcard = () => {
   const [dropdownVisible1, setDropdownVisible1] = useState(false);
   const [selectedService1, setSelectedService1] = useState(
     " Select Category"
@@ -170,4 +170,4 @@ const productcolumcard = () => {
   );
 };
 
-export default productcolumcard;
+export default Productcolumcard;

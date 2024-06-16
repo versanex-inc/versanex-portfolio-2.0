@@ -24,7 +24,7 @@ const Projects = () => {
         const data = await response.json();
 
         if (isMounted) {
-          setProjects(data.result);
+          setProjects(data.result.reverse());
           
           setLoading(false);
         }

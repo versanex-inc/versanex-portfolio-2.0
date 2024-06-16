@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import './admin.css'
+import './dashboard.css'
 
 const AdminPage = () => {
   const router = useRouter();
@@ -9,7 +9,7 @@ const AdminPage = () => {
   useEffect(() => {
     const user = localStorage.getItem('user');
     if (!user) {
-      router.push('/admin/adminLogin');
+      router.push('/adminLogin');
     }
   }, [router]);
 

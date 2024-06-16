@@ -16,10 +16,10 @@ const authOptions = {
         async signIn({user, account}){
 
             console.log("Account : ",account)
-            console.log("USer : ",user)
+            console.log("User : ",user)
 
             if(account.provider === 'google'){
-                 const {name,email} = user;
+                 const {name,email,image} = user;
                 try {
                     await mongoose.connect(connectionStr);
                     const UserExists = await User.findOne({email});
@@ -32,6 +32,7 @@ const authOptions = {
                             body: JSON.stringify({
                                 name,
                                 email,
+                                image,
                             }),
                         });
     

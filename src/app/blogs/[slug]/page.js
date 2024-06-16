@@ -11,7 +11,7 @@ import { FaHeart } from "react-icons/fa6";
 import { FaLocationArrow } from "react-icons/fa";
 
 
-const page = () => {
+const BlogsSug = () => {
   const [onclickhover, setonclickhover] = useState(false)
   const toggleonclick = () => {
     setonclickhover(!onclickhover)
@@ -331,4 +331,4 @@ const toggleonclickshowcoment3 = () => {
   );
 };
 
-export default page;
+export default BlogsSug;

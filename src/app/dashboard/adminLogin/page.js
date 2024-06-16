@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import './AdminLogin.css'
-import '../admin.css'
 
 const AdminLogin = () => {
   const router = useRouter();
