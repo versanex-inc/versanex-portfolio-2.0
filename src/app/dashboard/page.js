@@ -2,7 +2,9 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import './dashboard.css'
-
+import MainDetails from './DashboardComponents/MainDetails/MainDetails';
+import ActiveProjects from './DashboardComponents/ActiveProjects/ActiveProjects';
+import TeamMembers from './DashboardComponents/TeamMembers/TeamMembers';
 const AdminPage = () => {
   const router = useRouter();
 
@@ -14,8 +16,10 @@ const AdminPage = () => {
   }, [router]);
 
   return (
-    <div className='admin'>
-      HAHAHA
+    <div className="dashboard">
+      <MainDetails/>
+      <ActiveProjects/>
+      <TeamMembers/>
     </div>
   );
 }

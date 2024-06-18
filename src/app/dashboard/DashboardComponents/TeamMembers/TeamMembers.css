@@ -1,0 +1,65 @@
+.db_team_members{
+    position: relative;
+    margin-bottom: 6rem;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border-color);
+}
+th, td {
+    border-bottom: 1px solid var(--border-color);
+    border-left: none;
+    border-right: none;
+    padding: 1rem;
+    text-align: left;
+}
+.db_teammembers_caption{
+    width: 100%;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    padding: 1rem 0 1rem 1rem;
+    font-weight: bold;
+    border-bottom: none;
+}
+.db_tm_thead{
+    background: var(--second-color);
+}
+.db_view_all_team_members{
+    display: inline-block;
+    padding: 1rem 0 1rem 0;
+    text-align: center;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    color: var(--third-color);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+.db_tm_name{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.db_tm_img{
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: flex-start;
+    background: var(--second-color);
+    overflow: hidden;
+    border-radius: 50%;
+}
+.db_tm_img img{
+    width: 100%;
+}
+.db_tm_username{
+    font-weight: bold;
+}
+.db_tm_mail_id{
+    color: var(--light-dark-color);
+}
+.db_tm_role{
+    font-weight: bold;
+}

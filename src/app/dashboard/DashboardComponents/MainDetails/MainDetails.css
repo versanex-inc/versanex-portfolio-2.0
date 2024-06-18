@@ -1,0 +1,70 @@
+.db_md{
+    background: var(--second-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10rem;
+}
+.db_md_projects_create{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 3rem;
+}
+.db_md_projects{
+    font-size: 2rem;
+    align-self: flex-end;
+}
+.md_db_tasks_buttons button{
+    width: 8rem;
+    height: 3rem;
+    background: var(--first-color);
+    border: 1px solid var(--third-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.db_md_details{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.db_md_detail{
+    width: 100%;
+    background: var(--third-color);
+    position: relative;
+    top: 5rem;
+    color: var(--first-color);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 2px 7px 20px rgba(26, 25, 25, 0.61);
+}
+.dt_name_icon{
+    display: flex;
+    justify-content: space-between;
+}
+.db_md_detail_icon{
+    width: 2rem;
+    height: 2rem;
+    background: var(--second-color);
+    color: var(--third-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.db_md_detail_name{
+    font-size: 1.2rem;
+}
+.db_md_detail_cout{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.db_md_detail_cout_completed{
+    color: var(--light-light-color);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

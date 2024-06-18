@@ -1,7 +1,3 @@
-.admin{
-    margin-top: 10vh;
-}
-
 .form {
     position: relative;
     margin-top: 1rem;
@@ -107,4 +103,80 @@
 .form_submit p{
     position: relative;
     z-index: 5;
+}
+
+
+.dashboard_layout{
+  display: flex;
+}
+.db_pages_show{
+  display: flex;
+  flex-direction: column;
+}
+/* NAVBR  */
+.db_nav_links {
+  width: 25vw;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  height: 100vh;
+  overflow: scroll;
+}
+.db_nav_links.open {
+  transition: all 0.3s ease;
+  width: 25vw; 
+}
+
+.db_nav_links.closed {
+  width: 0;
+  padding: 0;
+}
+.db_pages_show{
+  height: 100vh;
+  overflow: scroll;
+  width: 100%;
+}
+.db_pages_show.open{
+  width: 100vw;
+}
+.db_pages_show.close{
+  width: 100%;
+}
+.db_nav_link {
+  /* Your existing styles */
+}
+.nav_open_cl {
+  cursor: pointer;
+}
+
+.open-icon {
+  display: block;
+}
+
+.close-icon {
+  display: none;
+}
+
+/* When sidebar is open, hide the bars icon and show the times icon */
+.dashboard_layout .db_nav_links.open + .db_pages_show .open-icon {
+  display: none;
+}
+
+.dashboard_layout .db_nav_links.open + .db_pages_show .close-icon {
+  display: block;
+}
+
+/* When sidebar is closed, show the bars icon and hide the times icon */
+.dashboard_layout .db_nav_links.closed + .db_pages_show .open-icon {
+  display: block;
+}
+
+.dashboard_layout .db_nav_links.closed + .db_pages_show .close-icon {
+  display: none;
+}
+
+
+/* dashboard page  */
+/* common class  */
+.db_container{
+  padding: 0 3% 0 3%;
 }

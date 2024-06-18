@@ -1,0 +1,118 @@
+.db_active_projects{
+    position: relative;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border-color);
+}
+th, td {
+    border-bottom: 1px solid var(--border-color);
+    border-left: none;
+    border-right: none;
+    padding: 1rem;
+    text-align: left;
+}
+.db_team-members{
+    display: flex;
+    height: 100%;
+}
+.db_team-members .db_ap_team_members {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: -20px;
+    position: relative;
+}
+.db_team-members .db_ap_team_members:hover {
+    z-index: 2;
+}
+.db_ap_team_members img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--first-color);
+}
+.db_team-members span{
+background: var(--light-dark-color);
+color: var(--first-color);
+border: 2px solid var(--first-color);
+font-size: 13px;
+}
+.progress-bar {
+    width: 100%;
+    background-color: var(--light-dark-color);
+    border-radius: 13px;
+    overflow: hidden;
+}
+.progress-bar div {
+    height: .5rem;
+    text-align: right;
+    padding-right: 5px;
+    line-height: 20px;
+    border-radius: 13px;
+    background: var(--third-color);
+}
+.progress_bar_counter{
+    text-align: center;
+}
+
+.db_active_projects_caption{
+    width: 100%;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    padding: 1rem 0 1rem 1rem;
+    font-weight: bold;
+    border-bottom: none;
+}
+.db_ap_thead{
+    background: var(--second-color);
+}
+.db_view_all_active_projects{
+    display: inline-block;
+    padding: 1rem 0 1rem 0;
+    text-align: center;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    color: var(--third-color);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+.project_name_td img{
+    margin-right: .7rem;
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    width: 40px;
+    top: 2px;
+}
+.db_ap_project_name{
+    position: relative;
+    bottom: .5rem;
+}
+.db_ap_rows .priority{
+ font-size: 13px;
+font-weight: bold;
+padding: 7px;
+border-radius: 5px;
+color: var(--first-color);
+}
+.db_ap_rows .High{
+    background: red;
+}
+.db_ap_rows .Medium{
+    background: var(--second-color);
+}
+.db_ap_rows .Low{
+    background: skyblue;
+}
+.db_ap_rows .Track{
+    background: green;
+}
