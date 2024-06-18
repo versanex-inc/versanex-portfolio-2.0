@@ -30,7 +30,7 @@ const Productcolumcard = () => {
     },
     {
       id: 2,
-      image: "/imgs/H_resolution.jpg",
+      image: "/imgs/a (1).jpg",
       topHeading: "This is Light top heading",
       contetn:
         "This is the content of all cards which include some information about the cards",
@@ -39,7 +39,7 @@ const Productcolumcard = () => {
     },
     {
       id: 3,
-      image: "/imgs/H_resolution.jpg",
+      image: "/imgs/a (4).jpg",
       topHeading: "This is Light top heading",
       heading: "This is the First Card",
       contetn:
@@ -48,7 +48,7 @@ const Productcolumcard = () => {
     },
     {
       id: 4,
-      image: "/imgs/H_resolution.jpg",
+      image: "/imgs/a (3).jpg",
       topHeading: "This is Light top heading",
       heading: "This is the First Card",
       contetn:
@@ -57,7 +57,7 @@ const Productcolumcard = () => {
     },
     {
       id: 5,
-      image: "/imgs/H_resolution.jpg",
+      image: "/imgs/a (4).jpg",
       topHeading: "This is Light top heading",
       heading: "This is the First Card",
       contetn:

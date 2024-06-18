@@ -157,6 +157,10 @@ background-color: rgba(196, 196, 196, 0.406);
       top: 0px;
     }
   }
+  .mainprdcolbottomhead{
+    margin-top: 5px;
+    cursor: pointer;
+}
  
 @media (max-width:1024px){
     .mainprdcolmainhead h1{
@@ -182,10 +186,11 @@ background-color: rgba(196, 196, 196, 0.406);
 }
 @media (max-width:779px){
     .mainprdcolmainhead h1{
-        font-size: 9px;
+        font-size: 17px;
     }
     .mainprdcolmaincontent p{
-        font-size: 7px;
+        font-size: 12px;
+        width: 100%;
     }
     .mainprdcoltophead,
     .mainprdcolbottomhead{
@@ -204,19 +209,38 @@ background-color: rgba(196, 196, 196, 0.406);
         font-size: 13px;
         margin-top: 2px;
     }
-    
+    .productsseccardsleft{
+        max-width: 100%;
+    }
+    .productsseccardsright{
+        display: none;
+    }
+    .mainprdcoltophead,
+    .mainprdcolbottomhead{
+        font-size: 15px;
+        color: rgb(124, 124, 124);
+        }
+    .mainprdcolbottomhead{
+        margin-top: 5px;
+    }
+        .mainprdcolimgsec {
+            width: 35%;
+          }
 }
         @media (max-width:600px){
             .mainprdcolmaincontent p{
-                width: 200px;
                 -webkit-line-clamp: 1;
                 }
-              .mainprdcolbox {
-                margin-bottom: 1rem;
+                .mainprdcolmaincontent p{
+                    font-size: 12px;
+                    width: 100%;
+                    }
+                    .mainprdcolbox {
+                        margin-bottom: 1rem;
               }
-              .productsseccardsleft{
-                max-width: 65%;
-              }
+    .productsseccardsleft{
+        max-width: 100%;
+    }
             .productsseccardsright{
                 width:  35%;
             }
@@ -229,14 +253,21 @@ background-color: rgba(196, 196, 196, 0.406);
         }
                 @media (max-width:414px){
                     .mainprdcolmainhead h1{
+                        font-size: 10px;
+                    }
+                        .mainprdcolmaincontent p{
+                        width: 100%;
+                        /* width: 300px; */
+                        display: -webkit-box;
+                        /* width: 150px; */
                         font-size: 7px;
-                    }
-                    .mainprdcolmaincontent p{
-                        font-size: 6px;
-                    }
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                      }
                     .mainprdcoltophead,
                     .mainprdcolbottomhead{
-                        font-size: 6px;
+                        font-size: 9px;
                         color: rgb(124, 124, 124);
                         }
                         .productsseccardsrightboxsrchbar {
@@ -261,15 +292,11 @@ background-color: rgba(196, 196, 196, 0.406);
                         margin-top: 2px;
                     }
                     .productsseccardsleft {
-                        max-width: 60%;
+                        max-width: 100%;
                       }
                       .productsseccardsright {
                         width: 40%;
                       }
-                      .mainprdcolmaincontent p{
-                        width: 150px;
-                        -webkit-line-clamp: 1;
-                        }
                         .productsseccardsrightboxsrchbar input {
                             font-size: 7px;
                           }
@@ -277,3 +304,24 @@ background-color: rgba(196, 196, 196, 0.406);
                             font-size: 8px;
                           }
                 }
+                            @media (max-width:414px){
+
+                                .mainprdcolmainhead h1{
+                                    font-size: 7px;
+                                }
+                                    .mainprdcolmaincontent p{
+                                    width: 100%;
+                                    /* width: 300px; */
+                                    display: -webkit-box;
+                                    /* width: 150px; */
+                                    font-size: 6px;
+                                    -webkit-line-clamp: 3;
+                                    -webkit-box-orient: vertical;
+                                    overflow: hidden;
+                                  }
+                                .mainprdcoltophead,
+                                .mainprdcolbottomhead{
+                                    font-size: 7px;
+                                    color: rgb(124, 124, 124);
+                                    }
+                        }
