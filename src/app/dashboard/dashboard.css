@@ -13,14 +13,16 @@
     min-height: 10rem;
     font-size: 1rem;
     border: none;
-    color: var(--third-color);
+    color: var(--first-color);
     font-family: var(--second-font-family);
+    background: var(--light-dark-color);
+    padding: 1rem;
   }
   .group textarea:focus {
-    border: var(--light-dark-color);
+    border: var(--border-color);
   }
   .group textarea::placeholder {
-    color: rgba(0, 0, 0, 0.308);
+    color: var(--first-color);
   }
   
   .form input {
@@ -31,11 +33,12 @@
     width: 100%;
     border: none;
     outline: none;
-    border-bottom: 1px solid var(--second-color);
+    border-bottom: 1px solid var(--border-color);
     color: var(--third-color);
     background: rgba(0, 0, 0, 0);
     opacity: 0.5;
     transition: 0.2s ease;
+    border-left:1px solid var(--border-color);
   }
   
   .form input:focus {
@@ -79,8 +82,8 @@
     animation: inputHighlighter 0.3s ease;
   }
   .form textarea:focus{
-    border: 1px solid var(--second-color);
-    outline: 1px solid var(--second-color);
+    border: 1px solid var(--border-color);
+    outline: 1px solid var(--border-color);
   }
   
   @keyframes inputHighlighter {

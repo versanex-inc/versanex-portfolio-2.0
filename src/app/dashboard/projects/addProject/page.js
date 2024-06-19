@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
+import './AddProject.css'
 const Admin_Add_project = () => {
   const router = useRouter();
 
@@ -154,7 +155,7 @@ const Admin_Add_project = () => {
 
   return (
     <>
-      <div className="container top_container a_container">
+      <div className="db_container db_ap_container">
         <ToastContainer
           position="top-left"
           autoClose={5000}
@@ -170,7 +171,7 @@ const Admin_Add_project = () => {
         <form className="a_form" onSubmit={handleSubmit}>
           <div className="a_form_content">
             <h1 className="contact_heading admin_contact_heading">Add Project</h1>
-            <div className="form admin_form">
+            <div className="form admin_form db_add_project">
               <div className="group">
                 <input
                   value={title}
@@ -330,7 +331,7 @@ const Admin_Add_project = () => {
                 <span className="highlight"></span>
               </div>
               <div className="group_dropdowns">
-              <div className="group admin_group">
+              <div className="group admin_group group_dd_db">
                 <select
                   value={status}
                   onChange={handleChange}
@@ -346,7 +347,7 @@ const Admin_Add_project = () => {
                 </select>
                 <span className="highlight"></span>
               </div>
-              <div className="group admin_group">
+              <div className="group admin_group group_dd_db">
                 <select
                   value={category}
                   onChange={handleChange}
@@ -361,7 +362,7 @@ const Admin_Add_project = () => {
                 </select>
                 <span className="highlight"></span>
               </div>
-              <div className="group admin_group">
+              <div className="group admin_group group_dd_db">
                 <select
                   value={subCategory}
                   onChange={handleChange}

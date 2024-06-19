@@ -4,6 +4,8 @@ import "./AllProjects.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { RiPencilFill } from "react-icons/ri";
+
 
 const All_Projects_Admin = () => {
     const router = useRouter();
@@ -28,7 +30,7 @@ const All_Projects_Admin = () => {
                 const data = await response.json();
 
                 if (isMounted) {
-                    setProjects(data.result);
+                    setProjects(data.result.reverse());
                     setLoading(false);
                 }
             } catch (error) {
@@ -51,27 +53,28 @@ const All_Projects_Admin = () => {
     }
 
     return (
-        <div className="container admin_all_projects">
+        <div className="db_container admin_all_projects">
             <table className="top_container aap_container">
+                <caption>All Projects</caption>
                 <thead>
                     <tr>
-                        <th>Slug</th>
-                        <th>Title</th>
                         <th>Image</th>
+                        <th>Slug</th>
                         <th>Date</th>
                         <th>Category</th>
+                        <th>Sub Category</th>
                         <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
                     {projects.map((item) => (
                         <tr key={item._id}>
-                            <td className='slug_td'>{item.slug}</td>
-                            <td className='title_td'>{item.title}</td>
                             <td className='image_td'><Image src={item.images[0]?.url} alt='admin' width={1000} height='100'/></td>
+                            <td className='slug_td'>{item.slug}</td>
                             <td className='date_td'>{item.deadline && formatDeadline(item.deadline)}</td>
                             <td className='category_td'>{item.category}</td>
-                            <td className='edit_td'><Link href={`/admin/projects/${item.slug}`}>Edit</Link></td>
+                            <td className='subcat_td'>{item.subCategory}</td>
+                            <td className='edit_td'><Link href={`/dashboard/projects/${item.slug}`}><RiPencilFill/></Link></td>
                         </tr>
                     ))}
                 </tbody>

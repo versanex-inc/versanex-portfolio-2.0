@@ -1,19 +1,38 @@
+.admin_all_projects{
+    margin-top: 4rem;
+}
 .aap_container{
     width: 100%;
     margin-bottom: 3rem;
     text-align: center;
+    border-collapse: collapse;
+    border: 1px solid var(--border-color);
+}
+.aap_container th,td{
+    border-bottom: 1px solid var(--border-color);
+    border-left: none;
+    border-right: none;
+    padding: 1rem;
+    text-align: left;
+}
+.aap_container caption{
+    padding: 1rem;
+    font-weight: bold;
+    text-align: left;
+    border: 1px solid var(--border-color);
 }
 .image_td img{
-    width: 5rem;
+    width: 3rem;
     border-radius: .5rem;
-}
-
-.aap_container td,th{
-    border: 1px solid black;
 }
 .edit_td{
     cursor: pointer;
+    font-size: 1.5rem;
 }
 .edit_td a{
-    color: var(--second-color);
+    color: var(--third-color);
+}
+.aap_container thead{
+    background: var(--third-color);
+    color: var(--first-color);
 }
