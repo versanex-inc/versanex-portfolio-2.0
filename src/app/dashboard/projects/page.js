@@ -15,7 +15,7 @@ const All_Projects_Admin = () => {
       const user = localStorage.getItem("user");
       if (!user) {
         // Redirect to /admin/adminLogin page if user doesn't exist
-        router.push("/admin/adminLogin");
+        router.push("/adminLogin");
       }
     }, []);
     const [projects, setProjects] = useState([]);

@@ -383,7 +383,7 @@ const Admin_Add_project = () => {
               </div>
               </div>
               <div className="admin_form_submit_button">
-              <button type="submit" className="button button_small form_submit">
+              <button type="submit" className="admin_project_submit">
                   <p>Add Project</p>
                 </button>
               </div>

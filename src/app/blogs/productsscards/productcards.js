@@ -1,87 +1,57 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import './productscard.css'
-const productcards = () => {
+import { MdOutlineArrowForward } from "react-icons/md";
 
+const ProductCards = () => {
+  const [latestBlogs, setLatestBlogs] = useState([]);
 
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getBlogs`);
+      const data = await res.json();
+      const { result } = data;
 
-    const responsive = {
-        desktop: {
-          breakpoint: { max: 3000, min: 1024 },
-          items: 4,
-          slidesToSlide: 1,
-        },
-        tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 4,
-          slidesToSlide: 1,
-        },
-        Medtablet: {
-          breakpoint: { max: 779, min: 0 },
-          items: 3,
-          slidesToSlide: 1,
-        },
-        mobile: {
-          breakpoint: { max: 551, min: 0 },
-          items: 2,
-          slidesToSlide: 1,
-        },
-      };
+      // Reverse the blogs to get the latest ones first and take the first 10
+      const latestBlogs = result.reverse().slice(0, 10);
+      setLatestBlogs(latestBlogs);
+    };
 
-    const cardata = [
-        {
-            id:1,
-            image:'/imgs/H_resolution.jpg',
-            heading:'This is the First Card',
-            contetn:'This is the content of all cards which include some information about the cards',
-            buttonName:'Show Details',
-        },
-        {
-            id:2,
-            image:'/imgs/H_resolution.jpg',
-            contetn:'This is the content of all cards which include some information about the cards',
-            heading:'This is the First Card',
-            buttonName:'Show Details',
-        },
-        {
-            id:3,
-            image:'/imgs/H_resolution.jpg',
-            heading:'This is the First Card',
-            contetn:'This is the content of all cards which include some information about the cards',
-            buttonName:'Show Details',
-        },
-        {
-            id:4,
-            image:'/imgs/H_resolution.jpg',
-            heading:'This is the First Card',
-            contetn:'This is the content of all cards which include some information about the cards',
-            buttonName:'Show Details',
-        }
-    ]
+    fetchBlogs();
+  }, []);
+
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 1,
+    },
+    Medtablet: {
+      breakpoint: { max: 779, min: 0 },
+      items: 3,
+      slidesToSlide: 1,
+    },
+    mobile: {
+      breakpoint: { max: 551, min: 0 },
+      items: 2,
+      slidesToSlide: 1,
+    },
+  };
+
   return (
     <>
-    <div className="container">
+      <div className="container">
         <div className="productcardmain">
-        <Carousel
-            // swipeable={true}
-            // draggable={true}
-            // showDots={false}
-            // responsive={responsive}
-            // ssr={true}
-            // infinite={true}
-            // autoPlay={false}
-            // autoPlaySpeed={1000}
-            // keyBoardControl={true}
-            // customTransition="all .5"
-            // transitionDuration={500}
-            // containerClass="carousel-container"
-            // removeArrowOnDeviceType={['tablet', 'mobile']}
-            // dotListClass="custom-dot-list-style"
-            // itemClass="carousel-item-padding-40-px"
+          <Carousel
             swipeable={true}
             draggable={true}
             showDots={false}
@@ -92,7 +62,7 @@ const productcards = () => {
             minimumTouchDrag={100}
             keyBoardControl={true}
             autoPlay={true}
-            autoPlaySpeed={500}
+            autoPlaySpeed={5000}
             customTransition="transform 1000ms ease-in-out"
             transitionDuration={1000}
             containerClass="carousel-container"
@@ -103,31 +73,32 @@ const productcards = () => {
             rewind={true}
             rewindWithAnimation={true}
           >
-                {cardata.map((content) =>(
-            <div className="productcard" key={content.id}>
+            {latestBlogs.map((content) => (
+              <div className="productcard" key={content._id}>
                 <div className="prodcardimg">
-                    <Image
-                    src={content.image}
+                  <Image
+                    src={content.images[0].url}
                     height={230}
-                    width={230}>
-                    </Image>
+                    width={230}
+                    alt={content.title}
+                  />
                 </div>
                 <div className="prodcardconhead">
-                        <h1>{content.heading}</h1>
+                  <h4>{content.title}</h4>
                 </div>
                 <div className="prodcardconcontent">
-                    <p>{content.contetn}</p>
+                  <p>{content.descriptions[0]}</p>
                 </div>
                 <div className="prodcardbtn">
-                <Link href={'/blogs/Inkipinkiponki'}>{content.buttonName} </Link> 
+                  <Link href={`/blogs/${content.slug}`}>Show Details <span className="proecard_arrrow"><MdOutlineArrowForward/></span></Link>
                 </div>
-            </div>
+              </div>
             ))}
-            </Carousel>
+          </Carousel>
         </div>
-    </div>
+      </div>
     </>
   )
 }
 
-export default productcards
+export default ProductCards;

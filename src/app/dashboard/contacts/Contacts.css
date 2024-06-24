@@ -1,0 +1,88 @@
+.db_contacts{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+.db_search_contact{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.serachbar_db_cntact{
+    width: 30rem;
+    position: relative;
+    height: 2.7rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.serachbar_db_cntact input{
+    height: 100%;
+    width: 100%;
+    padding-left: 1rem;
+    background: var(--third-color);
+    color: var(--first-color);
+    border: none;
+}
+.serachbar_db_cntact span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.5rem;
+    background: var(--second-color);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 3rem;
+    cursor: pointer;
+    justify-content: center;
+}
+.db_total_contacts{
+    background: var(--second-color);
+    padding: .5rem;
+    color: var(--third-color);
+    border-radius: 5px;
+    border: 1px solid var(--third-color);
+}
+.db_rm_read_icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+
+
+
+.db_all_contacts{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+.db_contact{
+    width: 100%;
+    padding: 1rem;
+    background: var(--second-color);
+    color: var(--third-color);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+.db_con_readmore{
+    color: var(--third-color);
+    font-weight: bold;
+    text-decoration: underline;
+}
+.db_con_h{
+    color: var(--third-color);
+    font-weight: bold;
+}
+.read_icon{
+    color: rgba(0, 0, 0, 0.201);
+}
+.readed_db_contact svg{
+    color: var(--third-color);
+}

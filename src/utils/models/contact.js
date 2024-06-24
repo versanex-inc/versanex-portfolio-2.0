@@ -7,6 +7,7 @@ const contactSchema = new mongoose.Schema({
   organization: { type: String },
   details: { type: String },
   budget: { type: String, enum: ["50$ - 100$", "100$ - 500$", "500$ - 1000$", "1000$ - 5000$", "More"] },
+  read: { type: Boolean, default: false }
 }, { timestamps: true });
 
 export const Contact = mongoose.models.Contact || mongoose.model("Contact", contactSchema);

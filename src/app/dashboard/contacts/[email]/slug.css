@@ -1,0 +1,9 @@
+.email_slug_contact{
+    margin: 4rem 0 4rem 0;
+}
+.inner_slug_contact{
+    background: var(--light-dark-color);
+    color: var(--first-color);
+    padding: 1rem;
+    border-radius: 1rem;
+}

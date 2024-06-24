@@ -16,57 +16,30 @@ width: 100%;
     width: 100%;
 }
 .prodcardconhead{
-    font-size: .5rem;
+    font-weight: bold;
     
-}
-.react-multi-carousel-item.carousel-item-padding-40-px {
-    height: auto;
-  }
-.prodcardconcontent{
-    font-size: 11px;
-}
-
-.prodcardbtn{
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
 }
 .prodcardconcontent p{
-    text-align:initial;
+    font-size: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: auto; /* Allow the height to adjust based on content */
 }
 
-@media (max-width:768px){
-   .prodcardconhead h1 {
-        font-size: 13px;
-      }
-    .prodcardconcontent p {
-        font-size: 9px;
-      }
-    
+.prodcardbtn a{
+    color: var(--third-color);
+    font-size: 1rem;
 }
-@media (max-width:414px){
-    .prodcardconhead h1 {
-        font-size: 12px;
-       }
-       .prodcardconcontent p {
-           font-size: 9px;
-         }
-         .prodcardbtn{
-        font-size: 11px;
-       }
-       }
-       @media (max-width:414px){
-           .prodcardconhead h1 {
-               font-size: 11px;
-               }
-                .prodcardbtn{
-               font-size: 10px;
-              }
- 
+.prodcardbtn a:hover{
+    color: var(--light-dark-color);
 }
-/* @media (max-width:523px){
-    .productcard{
-        text-align: center;
-        margin-top: 20px;
-    }
-} */
+.proecard_arrrow{
+    position: relative;
+    top: 3px;
+}
+.prodcardbtn:hover svg{
+    transform: translateX(5px);
+}

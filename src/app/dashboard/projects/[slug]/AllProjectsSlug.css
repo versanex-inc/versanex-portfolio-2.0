@@ -1,7 +1,8 @@
 .edit_project_submit{
     grid-area: 10/1/11/3;
-    background: var(--third-color);
-    color: var(--first-color);
+    background: var(--second-color);
+    color: var(--third-color);
+    border: none;
     padding: 1rem;
     cursor: pointer;
 }

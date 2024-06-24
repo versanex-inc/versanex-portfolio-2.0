@@ -3,22 +3,23 @@ import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
+import './AddBlog.css';  // Add CSS styling for the AddBlog component
+
 const Admin_Add_Blog = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // Check if user exists in localStorage
     const user = localStorage.getItem("user");
     if (!user) {
-      // Redirect to /admin/adminLogin page if user doesn't exist
-      router.push("/admin/adminLogin");
+      router.push("/adminLogin");
     }
-  }, []);
+  }, [router]);
 
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
-  const [description, setDescription] = useState("");
-  const [imageUrls, setImageUrls] = useState([]);
+  const [descriptions, setDescriptions] = useState([""]);
+  const [list, setList] = useState([""]);
+  const [imageUrls, setImageUrls] = useState([""]); // Initialize with an empty string for the first image URL
   const [creatorName, setCreatorName] = useState("");
   const [creatorNiche, setCreatorNiche] = useState("");
   const [creatorPicture, setCreatorPicture] = useState("");
@@ -35,9 +36,6 @@ const Admin_Add_Blog = () => {
         break;
       case "slug":
         setSlug(value);
-        break;
-      case "description":
-        setDescription(value);
         break;
       case "creatorName":
         setCreatorName(value);
@@ -65,9 +63,48 @@ const Admin_Add_Blog = () => {
     }
   };
 
+  const handleDescriptionChange = (e, index) => {
+    const newDescriptions = [...descriptions];
+    newDescriptions[index] = e.target.value;
+    setDescriptions(newDescriptions);
+  };
+
+  const handleAddDescription = () => {
+    setDescriptions([...descriptions, ""]);
+  };
+
+  const handleRemoveDescription = (index) => {
+    const newDescriptions = descriptions.filter((_, i) => i !== index);
+    setDescriptions(newDescriptions);
+  };
+
+  const handleListChange = (e, index) => {
+    const newList = [...list];
+    newList[index] = e.target.value;
+    setList(newList);
+  };
+
+  const handleAddListItem = () => {
+    setList([...list, ""]);
+  };
+
+  const handleRemoveListItem = (index) => {
+    const newList = list.filter((_, i) => i !== index);
+    setList(newList);
+  };
+
   const handleImageUrlChange = (e, index) => {
     const newImageUrls = [...imageUrls];
     newImageUrls[index] = e.target.value;
+    setImageUrls(newImageUrls);
+  };
+
+  const handleAddImageUrl = () => {
+    setImageUrls([...imageUrls, ""]);
+  };
+
+  const handleRemoveImageUrl = (index) => {
+    const newImageUrls = imageUrls.filter((_, i) => i !== index);
     setImageUrls(newImageUrls);
   };
 
@@ -77,7 +114,8 @@ const Admin_Add_Blog = () => {
     const data = {
       title,
       slug,
-      description,
+      descriptions,
+      list,
       images: imageUrls.map((url) => ({ url })),
       creatorName,
       creatorNiche,
@@ -101,11 +139,11 @@ const Admin_Add_Blog = () => {
       );
 
       if (response.ok) {
-        // Reset the form
         setTitle("");
         setSlug("");
-        setDescription("");
-        setImageUrls([]);
+        setDescriptions([""]);
+        setList([""]);
+        setImageUrls([""]); // Reset image URLs
         setCreatorName("");
         setCreatorNiche("");
         setCreatorPicture("");
@@ -113,7 +151,7 @@ const Admin_Add_Blog = () => {
         setProjectType("");
         setCategory("");
         setSubCategory("");
-        toast.success("Project added successfully", {
+        toast.success("Blog added successfully", {
           position: "bottom-left",
           autoClose: 5000,
           hideProgressBar: false,
@@ -142,7 +180,7 @@ const Admin_Add_Blog = () => {
 
   return (
     <>
-      <div className="container top_container a_container">
+      <div className="db_container db_ab_container">
         <ToastContainer
           position="top-left"
           autoClose={5000}
@@ -158,8 +196,8 @@ const Admin_Add_Blog = () => {
         <form className="a_form" onSubmit={handleSubmit}>
           <div className="a_form_content">
             <h1 className="contact_heading admin_contact_heading">Add Blog</h1>
-            <div className="form admin_form">
-              <div className="group">
+            <div className="form admin_form db_add_blog">
+              <div className="group group_title">
                 <input
                   value={title}
                   onChange={handleChange}
@@ -188,19 +226,6 @@ const Admin_Add_Blog = () => {
                 <label className="label" htmlFor="slug">
                   Slug
                 </label>
-              </div>
-              <div className="group desc_group">
-                <textarea
-                  value={description}
-                  onChange={handleChange}
-                  name="description"
-                  id="description"
-                  rows={5}
-                  placeholder="Description"
-                  required
-                  autoComplete="off"
-                />
-                <span className="highlight"></span>
               </div>
               <div className="group">
                 <input
@@ -277,75 +302,124 @@ const Admin_Add_Blog = () => {
                   Project Type
                 </label>
               </div>
-              <div className="group">
-                <input
-                  value={imageUrls[0] || ""}
-                  onChange={(e) => handleImageUrlChange(e, 0)}
-                  type="text"
-                  name="imageUrl1"
-                  id="imageUrl1"
-                  placeholder="Image URL (Required)"
-                  required
-                />
-                <span className="highlight"></span>
-                <label className="label" htmlFor="imageUrl1">
-                  Image URL (Required)
-                </label>
-              </div>
-              {[1, 2, 3, 4, 5].map((index) => (
-                <div className="group" key={index}>
-                  <input
-                    value={imageUrls[index] || ""}
-                    onChange={(e) => handleImageUrlChange(e, index)}
-                    type="text"
-                    name={`imageUrl${index + 1}`}
-                    id={`imageUrl${index + 1}`}
-                    placeholder={`Image URL ${index + 1} (Optional)`}
-                  />
+              <div className="ab_group_dropdowns">
+                <div className="group admin_group group_dd_db">
+                  <select
+                    value={category}
+                    onChange={handleChange}
+                    name="category"
+                    id="category"
+                    required
+                  >
+                    <option className="selction_option" value="">Category</option>
+                    <option value="Gfx Design">Gfx Design</option>
+                    <option value="Web Developing">Web Developing</option>
+                    <option value="Video Editing">Video Editing</option>
+                  </select>
                   <span className="highlight"></span>
                 </div>
+                <div className="group admin_group group_dd_db">
+                  <select
+                    value={subCategory}
+                    onChange={handleChange}
+                    name="subCategory"
+                    id="subCategory"
+                    required
+                  >
+                    <option className="selction_option" value="">Sub Category</option>
+                    <option value="Illustration">Illustration</option>
+                    <option value="Gfx">Gfx</option>
+                    <option value="Logo Design">Logo Design</option>
+                    <option value="3d">3d</option>
+                    <option value="E-shop">E-shop</option>
+                    <option value="Business">Business</option>
+                    <option value="Portfolio">Portfolio</option>
+                  </select>
+                  <span className="highlight"></span>
+                </div>
+              </div>
+              <div className="group_multi group_images">
+              {imageUrls.map((imageUrl, index) => (
+                <div className="group image_group" key={index}>
+                  <input
+                    value={imageUrl}
+                    onChange={(e) => handleImageUrlChange(e, index)}
+                    type="text"
+                    name={`imageUrl${index}`}
+                    id={`imageUrl${index}`}
+                    placeholder={`Image URL ${index + 1}`}
+                    required={index === 0} // First image URL is required
+                  />
+                  <span className="highlight"></span>
+                  <button
+                  className="group_multi_remove_btn"
+                    type="button"
+                    onClick={() => handleRemoveImageUrl(index)}
+                  >
+                    Remove Image
+                  </button>
+                </div>
               ))}
-              <div className="group_dropdowns">
-              <div className="group admin_group">
-                <select
-                  value={category}
-                  onChange={handleChange}
-                  name="category"
-                  id="category"
-                  required
-                >
-                  <option className="selction_option" value="">Category</option>
-                  <option value="Gfx Design">Gfx Design</option>
-                  <option value="Web Developing">Web Developing</option>
-                  <option value="Video Editing">Video Editing</option>
-                </select>
-                <span className="highlight"></span>
+              <button className="group_mutli_button" type="button" onClick={handleAddImageUrl}>
+                Add Image URL
+              </button>
               </div>
-              <div className="group admin_group">
-                <select
-                  value={subCategory}
-                  onChange={handleChange}
-                  name="subCategory"
-                  id="subCategory"
-                  required
-                >
-                  <option className="selction_option" value="">Sub Category</option>
-                  <option value="Illustration">Illustration</option>
-                  <option value="Gfx">Gfx</option>
-                  <option value="Logo Design">Logo Design</option>
-                  <option value="3d">3D</option>
-                  <option value="E-shop">E-shop</option>
-                  <option value="Buisness">Buisness</option>
-                  <option value="Portfolio">Portfolio</option>
-                </select>
-                <span className="highlight"></span>
+              <div className="group_multi group_description">
+              {descriptions.map((description, index) => (
+                <div className="group desc_group" key={index}>
+                  <textarea
+                    value={description}
+                    onChange={(e) => handleDescriptionChange(e, index)}
+                    name={`description${index}`}
+                    id={`description${index}`}
+                    rows={5}
+                    placeholder={`Description ${index + 1}`}
+                    required
+                    autoComplete="off"
+                  />
+                  <span className="highlight"></span>
+                  <button
+                  className="group_multi_remove_btn"
+                    type="button"
+                    onClick={() => handleRemoveDescription(index)}
+                  >
+                    Remove Description
+                  </button>
+                </div>
+              ))}
+               <button className="group_mutli_button " type="button" onClick={handleAddDescription}>
+                Add Description
+              </button>
               </div>
+              <div className="group_multi group_lists">
+              {list.map((listItem, index) => (
+                <div className="group list_group" key={index}>
+                  <textarea
+                    value={listItem}
+                    onChange={(e) => handleListChange(e, index)}
+                    type="text"
+                    name={`listItem${index}`}
+                    id={`listItem${index}`}
+                    placeholder={`List Item ${index + 1}`}
+                    required
+                  />
+                  <span className="highlight"></span>
+                  <button
+                  className="group_multi_remove_btn"
+                    type="button"
+                    onClick={() => handleRemoveListItem(index)}
+                  >
+                    Remove List Item
+                  </button>
+                </div>
+              ))}
+              <button className="group_mutli_button " type="button" onClick={handleAddListItem}>
+                Add List Item
+              </button>
               </div>
-              <div className="admin_form_submit_button">
-              <button type="submit" className="button button_small form_submit">
-                  <p>Add Blog</p>
-                </button>
-              </div>
+              <button type="submit" className="btn db_ab_btn">
+                Add Blog
+              </button>
             </div>
           </div>
         </form>

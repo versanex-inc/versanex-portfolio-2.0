@@ -74,7 +74,7 @@ const TeamMembers = () => {
             </span>
           </td>
           <td className='db_tm_role'>
-            Co - Founder
+            Manager
           </td>
           <td>
           Full Stack

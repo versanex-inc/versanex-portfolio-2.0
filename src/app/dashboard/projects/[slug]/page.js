@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import '../addProject/addProject.css'
+import '../addProject/AddProject.css'
 import './AllProjectsSlug.css'
 const All_Projects_Slug = ({ params }) => {
     const router = useRouter();
