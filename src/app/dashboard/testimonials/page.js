@@ -6,9 +6,11 @@ import { IoStarSharp, IoStarOutline } from 'react-icons/io5';
 import { FaThumbsUp } from 'react-icons/fa';
 import { useSession } from "next-auth/react";
 import FilterReview from '@/app/about/testimonials/filterReview/FileterReview';
-import './AllReviews.css'
+import '../../about/testimonials/allReviews/AllReviews.css';
+import './testimonials.css';
+import { LuSendHorizonal } from "react-icons/lu";
 
-const AllReviews = () => {
+const AllReviewsDashboard = () => {
   const { status, data: session } = useSession();
   const [users, setUsers] = useState([]);
   const [reviews, setReviews] = useState([]);
@@ -16,6 +18,7 @@ const AllReviews = () => {
   const [starCounts, setStarCounts] = useState({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 });
   const [selectedRating, setSelectedRating] = useState('all-ratings');
   const [feedbackOpenStates, setFeedbackOpenStates] = useState({});
+  const [feedbackInputs, setFeedbackInputs] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -193,12 +196,62 @@ const AllReviews = () => {
     }
   };
 
+  const handleFeedbackChange = (reviewId, value) => {
+    setFeedbackInputs(prevInputs => ({
+      ...prevInputs,
+      [reviewId]: value
+    }));
+  };
+
+  const handleFeedbackSubmit = async (reviewId) => {
+    if (status !== 'authenticated' || !session?.user?.email) {
+      alert('Please sign in first to leave feedback.');
+      return;
+    }
+
+    const feedback = feedbackInputs[reviewId];
+    if (!feedback) {
+      alert('Feedback cannot be empty.');
+      return;
+    }
+
+    try {
+      const currentUser = users.find(user => user.email === session.user.email);
+      if (!currentUser) {
+        alert('User not found.');
+        return;
+      }
+
+      const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/addReviewFeedback`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ reviewId, userId: currentUser._id, feedback })
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setReviews(reviews.map(review => review._id === reviewId ? data.review : review));
+        setFilteredReviews(filteredReviews.map(review => review._id === reviewId ? data.review : review));
+        setFeedbackInputs(prevInputs => ({
+          ...prevInputs,
+          [reviewId]: ''
+        }));
+      } else {
+        console.error('Error submitting feedback:', data.error);
+      }
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+    }
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div className="main-reviews">
+    <div className="db_container main-reviews db_testi">
       <FilterReview
         reviews={reviews}
         onSortChange={handleSortChange}
@@ -257,6 +310,17 @@ const AllReviews = () => {
                     </div>
                   ))}
                 </div>
+                {feedbackOpenStates[review._id] && (
+                  <div className="review_reply_input">
+                    <input 
+                      type="text" 
+                      placeholder="write your feedback" 
+                      value={feedbackInputs[review._id] || ''} 
+                      onChange={(e) => handleFeedbackChange(review._id, e.target.value)} 
+                    />
+                    <button onClick={() => handleFeedbackSubmit(review._id)}><LuSendHorizonal/></button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -267,4 +331,4 @@ const AllReviews = () => {
   );
 };
 
-export default AllReviews;
+export default AllReviewsDashboard;

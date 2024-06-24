@@ -1,0 +1,45 @@
+.reviews_rating_filter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    border-top: 1px solid var(--third-color);
+    border-bottom: 1px solid var(--third-color);
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .reviews_rating {
+    display: flex;
+    font-size: 1.3rem;
+    font-weight: 500;
+  
+  }
+  .reviews_rating_number {
+    margin-right: .5rem;
+  }
+  .reviews_count {
+    margin: auto 0px;
+    color: #161719d0;
+    margin-left: .5rem;
+  }
+  .reviews_filter{
+      font-size: 1.3rem;
+  }
+  .reviews_filter_box {
+    margin: auto 0;
+    display: flex;
+    margin-top: 5px;
+  }
+  .reviews_filter_box span {
+    font-weight: bold;
+  }
+  .reviews_filter_box select {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+  }
+  .filter_selection{
+      font-size: 1rem;
+  }
