@@ -1,0 +1,121 @@
+.user_container{
+    margin: 4rem 0 4rem 0;
+}
+.db_search_user{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.serachbar_db_user{
+    width: 30rem;
+    position: relative;
+    height: 2.7rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.serachbar_db_user input{
+    height: 100%;
+    width: 100%;
+    padding-left: 1rem;
+    background: var(--third-color);
+    color: var(--first-color);
+    border: none;
+}
+.serachbar_db_user span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.5rem;
+    background: var(--second-color);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 3rem;
+    cursor: pointer;
+    justify-content: center;
+}
+.db_total_users{
+    background: var(--second-color);
+    padding: .5rem;
+    color: var(--third-color);
+    border-radius: 5px;
+    border: 1px solid var(--third-color);
+}
+.db_rm_read_icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.db_user_img{
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: flex-start;
+    background: var(--second-color);
+    overflow: hidden;
+    border-radius: 50%;
+}
+.db_user_img img{
+    width: 100%;
+}
+.user_container table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border-color);
+}
+.user_container th, td {
+    border-bottom: 1px solid var(--border-color);
+    border-left: none;
+    border-right: none;
+    padding: 1rem;
+    text-align: left;
+}
+.db_all_users_heading{
+    width: 100%;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    padding: 1rem 0 1rem 1rem;
+    font-weight: bold;
+    border-bottom: none;
+}
+.view_all_db_users{
+    display: inline-block;
+    padding: 1rem 0 1rem 0;
+    text-align: center;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    color: var(--third-color);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+.db_user_info{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.db_user_name{
+    font-weight: bold;
+}
+.edit_read_block_delete{
+    font-size: 1.5rem;
+    display: flex;
+    gap: .4rem;
+}
+.db_user_control_icon{
+    cursor: pointer;
+}

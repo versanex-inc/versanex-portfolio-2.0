@@ -86,3 +86,11 @@
 .readed_db_contact svg{
     color: var(--third-color);
 }
+.db_con_detail{
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: auto; /* Allow the height to adjust based on content */
+}

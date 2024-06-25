@@ -92,7 +92,7 @@ const TeamMembers = () => {
                 <Image src={'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHVzZXJzfGVufDB8fDB8fHww'} alt="member" width={100} height={100}/>
             </div>
             <span className="db_tm_name_email">
-            <p className="db_tm_username">Our Tiger</p>
+            <p className="db_tm_username">Tiger</p>
             <p className="db_tm_mail_id">tiger@gmail.com</p>
             </span>
           </td>

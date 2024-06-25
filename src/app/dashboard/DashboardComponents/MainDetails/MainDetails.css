@@ -18,8 +18,9 @@
 }
 .md_db_tasks_buttons button{
     width: 8rem;
+    color: var(--first-color);
     height: 3rem;
-    background: var(--first-color);
+    background: var(--light-dark-color);
     border: 1px solid var(--third-color);
     border-radius: 5px;
     cursor: pointer;

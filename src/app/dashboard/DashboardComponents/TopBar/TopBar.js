@@ -5,6 +5,7 @@ import Image from 'next/image';
 import '../../dashboard.css'
 import { FaBell } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
+import { IoSearchSharp } from "react-icons/io5";
 
 const TopBar = ({ toggleSidebar }) => {
   const router = useRouter();
@@ -23,6 +24,7 @@ const TopBar = ({ toggleSidebar }) => {
       </div>
       <div className="db_search_topbar">
         <input type="search" name="" id="" placeholder='Search Here'/>
+        <span className="db_tb_search_icon_button"><IoSearchSharp /></span>
       </div>
       </div>
       <div className="tb_side tb_right">
