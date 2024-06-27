@@ -41,7 +41,7 @@
         margin-bottom: 1rem;
     }
 }
-@media screen and (max-width: 414px){
+@media screen and (max-width: 500px){
     .cta_heading{
         font-size: 1.18rem;
     }

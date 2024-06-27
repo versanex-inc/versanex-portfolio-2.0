@@ -28,7 +28,7 @@ const Values = () => {
   return (
     <section className='values'>
       <div className="values_bg">
-        <Image src={'/imgs/valuesthree.png'} alt='value img' width={1000} height={1000}/>
+        {/* <Image src={'/imgs/valuesthree.png'} alt='value img' width={1000} height={1000}/> */}
         <div className="values_content">
           <h1 className="values_heading">Our Values</h1>
           <div className="values_container">

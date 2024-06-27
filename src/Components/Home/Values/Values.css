@@ -2,6 +2,7 @@
     position: relative;
     z-index: 2;
     background: var(--second-color);
+    padding: 4rem 0 4rem 0;
 }
 .values_heading{
   font-weight: 600;
@@ -9,7 +10,7 @@
 }
 .values_bg{
     width: 100vw;
-    height: 25rem;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,25 +62,19 @@
   .values_para{
     font-size: 1rem;
   }
-  .values_bg{
-    height: 20rem;
-  }
 }
 
 @media screen and (max-width: 768px){
-.values_para{
-  display: none;
-}
-  .values_bg{
-    height: 18rem;
-}
+  .values{
+    padding: 2rem 0 2rem 0;
+  }
 .value{
   font-size: 2.6rem;
 }
 }
 @media screen and (max-width: 500px){
-    .values_bg{
-      height: 14rem;
+  .values{
+    padding: 1.5rem 0 1.5rem 0;
   }
   .value{
     font-size: 2rem;
@@ -88,10 +83,7 @@
     font-size: 1.2rem;
   }
 }
-@media screen and (max-width: 414px){
-  .values_bg{
-    height: 12rem;
-}
+@media screen and (max-width: 500px){
 .value{
   font-size: 1.5rem;
 }
@@ -100,9 +92,6 @@
 }
 }
 @media screen and (max-width: 360px){
-  .values_bg{
-    height: 10rem;
-}
 .values_heading{
   font-size: 1rem;
 }

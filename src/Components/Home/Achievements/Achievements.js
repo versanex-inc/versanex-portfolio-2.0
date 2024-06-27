@@ -1,11 +1,14 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import "./Achievements.css";
-import { PiUsersThreeFill } from "react-icons/pi";
-import { BsPersonHearts } from "react-icons/bs";
-import { FaGlobeAfrica, FaHandshake   } from "react-icons/fa";
-import { FaMedal } from "react-icons/fa6";
-import { GiAchievement } from "react-icons/gi";
+'use client';
+import React, { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import './Achievements.css';
+import { PiUsersThreeFill } from 'react-icons/pi';
+import { BsPersonHearts } from 'react-icons/bs';
+import { FaGlobeAfrica, FaHandshake } from 'react-icons/fa';
+import { GiAchievement } from 'react-icons/gi';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Achievement = ({ icon, count, name, para }) => (
   <div className="achievement">
@@ -26,50 +29,56 @@ const Achievements = () => {
   const [clientAchievementCount, setClientAchievementCount] = useState(0);
   const [projectsAchievementCount, setProjectsAchievementCount] = useState(0);
   const [countryAchievementCount, setCountryAchievementCount] = useState(0);
-  const [employeeCountReached, setEmployeeCountReached] = useState(false);
-  const [clientCountReached, setClientCountReached] = useState(false);
-  const [projectsCountReached, setProjectsCountReached] = useState(false);
-  const [countryCountReached, setCountryCountReached] = useState(false);
+
+  const achievementSectionRef = useRef(null);
 
   useEffect(() => {
-    const employeeCount = 10; // Set the count for employees
-    const clientCount = 200; // Set the count for clients
-    const projectsCount = 300; // Set the count for clients
-    const countryCount = 20; // Set the count for clients
+    const employeeCount = 10;
+    const clientCount = 200;
+    const projectsCount = 300;
+    const countryCount = 20;
 
-    const employeeTimer = setInterval(() => {
-      if (!employeeCountReached && employeeAchievementCount < employeeCount) {
-        setEmployeeAchievementCount((prevCount) => prevCount + 1);
-      } else {
-        clearInterval(employeeTimer);
-        setEmployeeCountReached(true); // Set flag indicating employee count reached
-      }
-    }, 10); // Decreased interval duration to 500 milliseconds
+    let employeeTimer, clientTimer, projectsTimer, countryTimer;
 
-    const clientTimer = setInterval(() => {
-      if (!clientCountReached && clientAchievementCount < clientCount) {
-        setClientAchievementCount((prevCount) => prevCount + 1);
-      } else {
-        clearInterval(clientTimer);
-        setClientCountReached(true); // Set flag indicating client count reached
-      }
-    }, 10); // Decreased interval duration to 500 milliseconds
-    const projectsTimer = setInterval(() => {
-      if (!projectsCountReached && projectsAchievementCount < projectsCount) {
-        setProjectsAchievementCount((prevCount) => prevCount + 1);
-      } else {
-        clearInterval(projectsTimer);
-        setProjectsCountReached(true); // Set flag indicating client count reached
-      }
-    }, 10); // Decreased interval duration to 500 milliseconds
-    const countryTimer = setInterval(() => {
-      if (!countryCountReached && countryAchievementCount < countryCount) {
-        setCountryAchievementCount((prevCount) => prevCount + 1);
-      } else {
-        clearInterval(countryTimer);
-        setCountryCountReached(true); // Set flag indicating client count reached
-      }
-    }, 10); // Decreased interval duration to 500 milliseconds
+    const startCounting = () => {
+      employeeTimer = setInterval(() => {
+        setEmployeeAchievementCount((prevCount) => {
+          if (prevCount < employeeCount) return prevCount + 1;
+          clearInterval(employeeTimer);
+          return employeeCount;
+        });
+      }, 100);
+
+      clientTimer = setInterval(() => {
+        setClientAchievementCount((prevCount) => {
+          if (prevCount < clientCount) return prevCount + 1;
+          clearInterval(clientTimer);
+          return clientCount;
+        });
+      }, 100);
+
+      projectsTimer = setInterval(() => {
+        setProjectsAchievementCount((prevCount) => {
+          if (prevCount < projectsCount) return prevCount + 1;
+          clearInterval(projectsTimer);
+          return projectsCount;
+        });
+      }, 100);
+
+      countryTimer = setInterval(() => {
+        setCountryAchievementCount((prevCount) => {
+          if (prevCount < countryCount) return prevCount + 1;
+          clearInterval(countryTimer);
+          return countryCount;
+        });
+      }, 100);
+    };
+
+    ScrollTrigger.create({
+      trigger: achievementSectionRef.current,
+      start: 'top 90%',
+      onEnter: startCounting,
+    });
 
     return () => {
       clearInterval(employeeTimer);
@@ -77,58 +86,41 @@ const Achievements = () => {
       clearInterval(projectsTimer);
       clearInterval(countryTimer);
     };
-  }, [
-    employeeAchievementCount,
-    clientAchievementCount,
-    projectsAchievementCount,
-    countryAchievementCount,
-    employeeCountReached,
-    clientCountReached,
-    projectsCountReached,
-    countryCountReached,
-  ]);
+  }, []);
 
   return (
-    <section className="container top_container achievements">
-      <h1 className="heading achievements">Our Achievements<div className="heading_underline h_underline_mtContainer">
+    <section ref={achievementSectionRef} className="container top_container achievements">
+      <h1 className="heading heading_achievements">
+        Our Achievements
+        <div className="heading_underline h_underline_mtContainer">
           <span className="heading_underline_dot"></span>
-        </div></h1>
+        </div>
+      </h1>
       <h2 className="sub_heading achievements">
-        Are you ready to bring your vision to life, boost your online presence,
-        and take your business to new heights? Our expert team is here to make
-        it happen. Let&apos;s start your new project today and craft something
-        extraordinary together!
+      Ready to Transform Your Vision into Reality? Start Your Project Today with Our Expert Team!
       </h2>
       <div className="achievements_container sub_container">
-  <Achievement
-    icon={<PiUsersThreeFill />}
-    count={employeeAchievementCount}
-    name="Dedicated Employees"
-    para="Our team of 50+ skilled professionals excels in software development, web design, and digital marketing."
-  />
-  <Achievement
-    icon={<FaHandshake />}
-    count={clientAchievementCount}
-    name="Happy Clients"
-    para="In 2024, we proudly served over 150 clients, bringing their digital dreams to life."
-  />
-  <Achievement
-    icon={<GiAchievement />}
-    count={projectsAchievementCount}
-    name="Completed Projects"
-    para="We have completed over 100 projects, showcasing our dedication to quality and innovation."
-  />
-  <Achievement
-    icon={<FaGlobeAfrica />}
-    count={countryAchievementCount}
-    name="Global Reach"
-    para="Our global services allow clients worldwide to benefit from our expertise."
-  />
-</div>
-
-
-
-
+        <Achievement
+          icon={<PiUsersThreeFill />}
+          count={employeeAchievementCount}
+          name="Dedicated Employees"
+        />
+        <Achievement
+          icon={<FaHandshake />}
+          count={clientAchievementCount}
+          name="Happy Clients"
+        />
+        <Achievement
+          icon={<GiAchievement />}
+          count={projectsAchievementCount}
+          name="Completed Projects"
+        />
+        <Achievement
+          icon={<FaGlobeAfrica />}
+          count={countryAchievementCount}
+          name="Global Reach"
+        />
+      </div>
     </section>
   );
 };

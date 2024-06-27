@@ -2,7 +2,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./Services.css";
 import Image from "next/image";
-import { PiArrowRightBold } from "react-icons/pi";
 import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
 import Link from "next/link";
 import gsap from "gsap";
@@ -122,44 +121,10 @@ const Services = () => {
   );
 
 
-  // useGSAP(
-  //   () => {
-  //     const container = containerRef.current;
-  //     if (container) {
-  //       const elements = container.querySelectorAll('.service');
-
-  //       elements.forEach((el) => {
-  //         gsap.fromTo(
-  //           el,
-  //           {
-  //             y: 60,
-  //             opacity: 0,
-  //             scale: 0.8,
-  //           },
-  //           {
-  //             y: 0,
-  //             opacity: 1,
-  //             scale: 1,
-  //             duration: 1.5,
-  //             ease: 'power3.out',
-  //             scrollTrigger: {
-  //               trigger: el,
-  //               start: 'top 90%',
-  //               end: 'bottom 40%',
-  //             },
-  //           }
-  //         );
-  //       });
-  //     }
-  //   },
-  //   { scope: containerRef }
-  // );
-  // useEffect to update windowWidth state on component mount
   useEffect(() => {
     setWindowWidth(window.innerWidth);
   }, []);
 
-  // useEffect to update windowWidth state on window resize
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);

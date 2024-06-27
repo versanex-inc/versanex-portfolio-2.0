@@ -24,11 +24,10 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1.125rem;
-  --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
   --extra-smaller-font-size: 0.713rem;
   --extra-extra-smaller-font-size: 0.613rem;
-  --normal-font-size: 1.4rem;
+  --normal-font-size: 1.5rem;
 
   /*========== Font weight ==========*/
   --font-small: 400;
@@ -59,21 +58,6 @@
   --z-largest: 5;
 }
 
-@media only screen and (max-width: 1700px) {
-  :root{
-    --normal-font-size: 1.3rem;
-  }
-}
-@media only screen and (max-width: 1500px) {
-  :root{
-    --normal-font-size: 1.2rem;
-  }
-}
-@media only screen and (max-width: 1300px) {
-  :root{
-    --normal-font-size: 1rem;
-  }
-}
 /*========== Variables Dark theme ==========*/
 /* body.dark-theme{ */
 /* HSL color mode */
@@ -207,7 +191,7 @@ img {
 
 /* heading and sub heading  */
 .heading{
-  font-size: 2.7rem;
+  font-size: 4rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -215,7 +199,7 @@ img {
   align-items: center;
 }
 .sub_heading{
-  font-size: 1rem;
+  font-size: 2rem;
   text-align: center;
   width: 50%;
   margin-top: .3rem;
@@ -225,18 +209,18 @@ img {
 /* container class */
 .container{
   width: 100%;
-  /* padding: 0 20vw 0 20vw; */
-  padding: 0 10vw 0 10vw;
+  padding-left: 15vw;
+  padding-right: 15vw;
   background: var(--first-color);
 }
 .container_top{
   margin-top: 4rem;
 }
 .top_container{
-  padding-top: 5rem;
+  padding-top: 8rem;
 }
 .sub_container{
-  margin-top: 4rem;
+  margin-top: 7rem;
 }
 /* scroll bar  */
 ::-webkit-scrollbar{
@@ -287,6 +271,69 @@ img {
     left: 100%;
   }
 }
+@media only screen and (max-width: 1700px) {
+  :root{
+    --normal-font-size: 1.4rem;
+  }
+  .container{
+    padding-left: 13vw;
+    padding-right: 13vw;
+  }
+  .heading{
+    font-size: 3.5rem;
+  }
+  .sub_heading{
+    font-size: 1.7rem;
+  }
+  .top_container{
+    padding-top: 7.5rem;
+  }
+  .sub_container{
+    margin-top: 6.5rem;
+  }
+}
+@media only screen and (max-width: 1500px) {
+  :root{
+    --normal-font-size: 1.3rem;
+  }
+  .container{
+    padding-left: 12vw;
+    padding-right: 12vw;
+  }
+  .heading{
+    font-size: 3rem;
+  }
+  .sub_heading{
+    font-size: 1.5rem;
+  }
+  .top_container{
+    padding-top: 7rem;
+  }
+  .sub_container{
+    margin-top: 6rem;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  :root{
+    --normal-font-size: 1rem;
+  }
+  .container{
+    padding-left: 11vw;
+    padding-right: 11vw;
+  }
+  .heading{
+    font-size: 2.5rem;
+  }
+  .sub_heading{
+    font-size: 1.1rem;
+  }
+  .top_container{
+    padding-top: 6.5rem;
+  }
+  .sub_container{
+    margin-top: 5.5rem;
+  }
+}
 @media screen and (max-width: 1024px){
   .heading{
     font-size: 2rem;
@@ -294,17 +341,25 @@ img {
   .sub_heading{
     font-size: 1rem;
   }
-  .container{
-    padding: 0 8vw 0 8vw;
-  }
   .button_small{
     width: 8rem;
     height: 3rem;
   }
+  .container{
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  .top_container{
+    padding-top: 7rem;
+  }
+  .sub_container{
+    margin-top: 6rem;
+  }
 }
 @media screen and (max-width: 768px){
   .container{
-    padding: 0 6vw 0 6vw;
+    padding-left: 6vw;
+    padding-right: 6vw;
   }
   .h_underline_mtContainer{
     bottom: 5px;
@@ -330,16 +385,17 @@ img {
 }
 @media screen and (max-width: 500px){
   .container{
-    padding: 0 5vw 0 5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
   .h_underline_mtContainer{
     bottom: 3px;
   }
   .top_container{
-    padding-top: 2rem;
+    padding-top: 4.5rem;
   }
   .sub_container{
-    margin-top: 1.5rem;
+    margin-top: 3rem;
     width: 80%;
   }
   .heading{
