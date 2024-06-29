@@ -1,6 +1,6 @@
-'use client'
-import Services from '@/Components/Home/Services/Services'
-import React, {useRef, useState, useEffect} from 'react'
+'use client';
+import Services from '@/Components/Home/Services/Services';
+import React, { useRef, useState, useEffect } from 'react';
 import { FaPeopleRobbery } from "react-icons/fa6";
 import { FaClipboardList, FaPencilAlt } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
@@ -8,7 +8,7 @@ import { MdRocketLaunch } from "react-icons/md";
 import { HiMiniChartBarSquare } from "react-icons/hi2";
 import { MdFeedback } from "react-icons/md";
 import { FaFileCircleCheck } from "react-icons/fa6";
-import './ServiceSection.css'
+import './ServiceSection.css';
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -18,47 +18,57 @@ gsap.registerPlugin(ScrollTrigger);
 const Service_main = () => {
   const containerRef = useRef(null);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 500);
-
-  useGSAP(() => {
-    const container = containerRef.current;
-    if (container) {
-      const elements = container.querySelectorAll('.sm_animate');
-      elements.forEach((el) => {
-        gsap.fromTo(
-          el,
-          {
-            y: 60,
-            opacity: 0,
-            scale: 0.8,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 1.5,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 90%',
-              end: 'bottom 40%',
-            },
-          }
-        );
-      });
-    }
-  }, [containerRef]);
+  const [isMobileView, setIsMobileView] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 500);
+      if (typeof window !== "undefined") {
+        setIsMobileView(window.innerWidth <= 500);
+      }
     };
 
-    window.addEventListener('resize', handleResize);
+    if (typeof window !== "undefined") {
+      setIsMobileView(window.innerWidth <= 500);
+      window.addEventListener('resize', handleResize);
+    }
+
     return () => {
-      window.removeEventListener('resize', handleResize);
+      if (typeof window !== "undefined") {
+        window.removeEventListener('resize', handleResize);
+      }
     };
   }, []);
+
+  useGSAP(() => {
+    if (typeof window !== "undefined") {
+      const container = containerRef.current;
+      if (container) {
+        const elements = container.querySelectorAll('.sm_animate');
+        elements.forEach((el) => {
+          gsap.fromTo(
+            el,
+            {
+              y: 60,
+              opacity: 0,
+              scale: 0.8,
+            },
+            {
+              y: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 1.5,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 90%',
+                end: 'bottom 40%',
+              },
+            }
+          );
+        });
+      }
+    }
+  }, [containerRef]);
 
   const steps = [
     {
@@ -182,7 +192,7 @@ const Service_main = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Service_main
+export default Service_main;
