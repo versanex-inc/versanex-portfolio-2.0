@@ -54,7 +54,7 @@ const Technologies = () => {
     <div key="illustrator" className="technology technology_illustrator"><SiAdobeillustrator /></div>,
     <div key="aftereffects" className="technology technology_aftereffect"><SiAdobeaftereffects /></div>,
     <div key="indesign" className="technology technology_indesign"><SiAdobeindesign /></div>,
-    <div key="premierepro" className="technology technology_premierepro"><SiAdobepremierepro /></div>,
+    <div key="premierepro" className="technology technology_premierpro"><SiAdobepremierepro /></div>,
     <div key="blender" className="technology technology_blender"><SiBlender /></div>,
     <div key="canva" className="technology technology_canva"><SiCanva /></div>
   ];

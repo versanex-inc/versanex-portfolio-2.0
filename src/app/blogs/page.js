@@ -7,7 +7,6 @@ const blogs = () => {
   return (
     <div>
         <Producttop/>
-        <Productcards/>
         <Productcolumcard/>
     </div>
   )

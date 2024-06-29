@@ -43,7 +43,8 @@
 }
 
 .lower_part_img .p_project_title {
-  font-size: 110%;
+  font-size: var(--normal-font-size);
+  padding: 0 10px 0 10px;
 }
 
 .p_project_category {

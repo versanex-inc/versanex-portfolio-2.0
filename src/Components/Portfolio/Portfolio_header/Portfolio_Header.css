@@ -19,7 +19,8 @@
     overflow: hidden;
   }
   .pf_h_heading h1 {
-    font-size: 4rem;
+    /* font-size: 4rem; */
+    font-size: 6rem;
     font-family: neu;
     position: relative;
   }
@@ -85,7 +86,24 @@
 .pf_link_category:hover{
   color: var(--second-color);
 }
-
+.pf_link_category{
+  font-size: var(--normal-font-size);
+}
+@media only screen and (max-width: 1700px) {
+  .pf_h_heading h1 {
+    font-size: 5.5rem;
+  }
+}
+@media only screen and (max-width: 1500px) {
+  .pf_h_heading h1 {
+    font-size: 5rem;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .pf_h_heading h1 {
+    font-size: 4rem;
+  }
+}
 @media only screen and (max-width: 1024px) {
 }
 @media only screen and (max-width: 768px) {

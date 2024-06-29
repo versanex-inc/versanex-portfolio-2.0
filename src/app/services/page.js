@@ -1,8 +1,8 @@
 'use client'
 import Services from '@/Components/Home/Services/Services'
-import React, {useRef} from 'react'
+import React, {useRef, useState, useEffect} from 'react'
 import { FaPeopleRobbery } from "react-icons/fa6";
-import { FaClipboardList,FaPencilAlt } from "react-icons/fa";
+import { FaClipboardList, FaPencilAlt } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { MdRocketLaunch } from "react-icons/md";
 import { HiMiniChartBarSquare } from "react-icons/hi2";
@@ -17,6 +17,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Service_main = () => {
   const containerRef = useRef(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 500);
 
   useGSAP(() => {
     const container = containerRef.current;
@@ -47,6 +49,92 @@ const Service_main = () => {
     }
   }, [containerRef]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 500);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const steps = [
+    {
+      no: 1,
+      icon: <FaPeopleRobbery />,
+      heading: 'Consultation',
+      description: [
+        'Initial Assessment and Requirements Gathering',
+        'Understand Client Needs',
+      ],
+    },
+    {
+      no: 2,
+      icon: <FaClipboardList />,
+      heading: 'Planning',
+      description: [
+        'Strategy Development',
+        'Roadmap and Timeline Creation',
+      ],
+    },
+    {
+      no: 3,
+      icon: <FaPencilAlt />,
+      heading: 'Design',
+      description: [
+        'Conceptualization and Ideation',
+        'Detailed Design and Prototyping',
+      ],
+    },
+    {
+      no: 4,
+      icon: <IoMdSettings />,
+      heading: 'Implementation',
+      description: [
+        'Development and Execution',
+        'Resource Allocation and Management',
+      ],
+    },
+    {
+      no: 5,
+      icon: <FaFileCircleCheck />,
+      heading: 'Testing',
+      description: [
+        'Quality Assurance and Testing',
+        'Performance Evaluation and Adjustments',
+      ],
+    },
+    {
+      no: 6,
+      icon: <MdRocketLaunch />,
+      heading: 'Launch',
+      description: [
+        'Deployment and Rollout',
+        'Training and Handover',
+      ],
+    },
+    {
+      no: 7,
+      icon: <HiMiniChartBarSquare />,
+      heading: 'Monitoring',
+      description: [
+        'Ongoing Support and Maintenance',
+        'Performance Monitoring and Reporting',
+      ],
+    },
+    {
+      no: 8,
+      icon: <MdFeedback />,
+      heading: 'Feedback',
+      description: [
+        'Client Feedback Collection',
+        'Continuous Improvement and Updates',
+      ],
+    },
+  ];
+
   return (
     <section className="service_main">
       <div className="container sm_headings" ref={containerRef}>
@@ -65,79 +153,24 @@ const Service_main = () => {
           <h2 className="heading sm_steps_heading">Our step by step process</h2>
         </div>
         <div className="sub_container sm_steps_container">
-            <div className="sm_step">
-              <span className="sm_step_no">1</span>
-              <span className="sm_step_icon"><FaPeopleRobbery/></span>
-              <h3 className="sm_step_heading">Consultation</h3>
-              <ul className="sm_step_describe">
-                <li>&#x2022; Initial Assessment and Requirements Gathering</li>
-                <li>&#x2022; Understand Client Needs</li>
-              </ul>
-            </div>
-            <div className="sm_step">
-              <span className="sm_step_no">2</span>
-              <span className="sm_step_icon"><FaClipboardList/></span>
-              <h3 className="sm_step_heading">Planning</h3>
-              <ul className="sm_step_describe">
-                <li>&#x2022; Strategy Development</li>
-                <li>&#x2022; Roadmap and Timeline Creation</li>
-              </ul>
-            </div>
-            <div className="sm_step">
-              <span className="sm_step_no">3</span>
-              <span className="sm_step_icon"><FaPencilAlt /></span>
-              <h3 className="sm_step_heading">Design</h3>
-              <ul className="sm_step_describe">
-                <li>&#x2022; Conceptualization and Ideation</li>
-                <li>&#x2022; Detailed Design and Prototyping</li>
-              </ul>
-            </div>
-            <div className="sm_step">
-              <span className="sm_step_no">4</span>
-              <span className="sm_step_icon"><IoMdSettings /></span>
-              <h3 className="sm_step_heading">Implementation</h3>
-              <ul className="sm_step_describe">
-                <li>&#x2022; Development and Execution</li>
-                <li>&#x2022; Resource Allocation and Management</li>
-              </ul>
-            </div>
-            <div className="sm_step">
-              <span className="sm_step_no">5</span>
-              <span className="sm_step_icon"><FaFileCircleCheck /></span>
-              <h3 className="sm_step_heading">Testing</h3>
-              <ul className="sm_step_describe">
-                <li>&#x2022; Quality Assurance and Testing</li>
-                <li>&#x2022; Performance Evaluation and Adjustments</li>
-              </ul>
-            </div>
-            <div className="sm_step">
-              <span className="sm_step_no">6</span>
-              <span className="sm_step_icon"><MdRocketLaunch /></span>
-              <h3 className="sm_step_heading">Launch</h3>
-              <ul className="sm_step_describe">
-                <li>&#x2022; Deployment and Rollout</li>
-                <li>&#x2022; Training and Handover</li>
-              </ul>
-            </div>
-            <div className="sm_step">
-              <span className="sm_step_no">7</span>
-              <span className="sm_step_icon"><HiMiniChartBarSquare /></span>
-              <h3 className="sm_step_heading">Monitoring</h3>
-              <ul className="sm_step_describe">
-                <li>&#x2022; Ongoing Support and Maintenance</li>
-                <li>&#x2022; Performance Monitoring and Reporting</li>
-              </ul>
-            </div>
-            <div className="sm_step">
-              <span className="sm_step_no">8</span>
-              <span className="sm_step_icon"><MdFeedback /></span>
-              <h3 className="sm_step_heading">Feedback</h3>
-              <ul className="sm_step_describe">
-                <li>&#x2022; Client Feedback Collection</li>
-                <li>&#x2022; Continuous Improvement and Updates</li>
-              </ul>
-            </div>
+      {steps.slice(0, isMobileView && !isExpanded ? 3 : steps.length).map((step, index) => (
+        <div key={index} className="sm_step">
+          <span className="sm_step_no">{step.no}</span>
+          <span className="sm_step_icon">{step.icon}</span>
+          <h3 className="sm_step_heading">{step.heading}</h3>
+          <ul className="sm_step_describe">
+            {step.description.map((desc, idx) => (
+              <li key={idx}>&#x2022; {desc}</li>
+            ))}
+          </ul>
         </div>
+      ))}
+    </div>
+    {isMobileView && (
+        <button onClick={() => setIsExpanded(!isExpanded)} className="button read_more_btn_services_main">
+          <p>{isExpanded ? 'Show Less' : 'Read More'}</p>
+        </button>
+      )}
       </div>
       <div className="container top_container sm_take_step">
         <div className="sm_take_step_content">

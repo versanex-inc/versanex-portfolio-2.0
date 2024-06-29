@@ -2,12 +2,10 @@
 import React, { useState } from "react";
 import "../Service.css";
 import Image from "next/image";
-import Link from "next/link";
 import Reviews from "@/Components/Home/Reviews/Reviews";
 import Achievements from "@/Components/Home/Achievements/Achievements";
 import Partnerships from "@/Components/Home/Partnerships/Partnerships";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import Contact_Form from "@/Components/Contact_Form/Contact_Form";
 const Service = () => {
     const [visibleAnswers, setVisibleAnswers] = useState({});
 

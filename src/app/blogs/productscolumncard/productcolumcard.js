@@ -1,17 +1,18 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
-import { IoIosSearch, IoIosArrowDown } from 'react-icons/io';
-import './productcolumcard.css';
+"use client";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import { IoIosSearch, IoIosArrowDown } from "react-icons/io";
+import "./productcolumcard.css";
 import { MdOutlineArrowForward } from "react-icons/md";
-import Link from 'next/link';
-import moment from 'moment';
+import Link from "next/link";
+import moment from "moment";
 
 const Productcolumcard = () => {
   const [dropdownVisible1, setDropdownVisible1] = useState(false);
-  const [selectedService1, setSelectedService1] = useState("Select Subcategory");
+  const [selectedService1, setSelectedService1] =
+    useState("Subcategory");
   const [dropdownVisible2, setDropdownVisible2] = useState(false);
-  const [selectedService2, setSelectedService2] = useState("Select Category");
+  const [selectedService2, setSelectedService2] = useState("Category");
   const [blogs, setBlogs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedSubCategory, setSelectedSubCategory] = useState("");
@@ -63,158 +64,171 @@ const Productcolumcard = () => {
     setSearchTerm(e.target.value);
   };
 
-  const filteredBlogs = blogs.filter(blog =>
-    (blog.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    blog.description.toLowerCase().includes(searchTerm.toLowerCase())) &&
-    (selectedSubCategory ? blog.subCategory === selectedSubCategory : true) &&
-    (selectedCategory ? blog.category === selectedCategory : true)
+  const filteredBlogs = blogs.filter(
+    (blog) =>
+      (blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        blog.description.toLowerCase().includes(searchTerm.toLowerCase())) &&
+      (selectedSubCategory ? blog.subCategory === selectedSubCategory : true) &&
+      (selectedCategory ? blog.category === selectedCategory : true)
   );
-  const getTimeAgo = timestamp => {
+  const getTimeAgo = (timestamp) => {
     return moment(timestamp).fromNow(); // Using moment.js to get time ago format
   };
 
   return (
-      <div className="container">
-        <div className="blog_main_page">
-          <div className="productsseccardsleft">
-            {filteredBlogs.map((value) => (
-              <div className="mainprdcolbox" key={value._id}>
-                <div className="mainprdcolimgsec">
-                  <div className="blog_right_img">
-                    <Image src={value.images[0].url} height={230} width={230} alt={value.title} />
-                  </div>
-                </div>
-                <div className="mainprdcolcontetnsec">
-                    <p className='all_blg_hding'>{value.title}</p>
-                    <p className='mainprdcolmaincontent'>{value.descriptions[0]}</p>
-                    <div className="link_show_date">
-                  <Link href={`/blogs/${value.slug}`} className="mainprdcolbottomhead">
-                    show details <span><MdOutlineArrowForward/></span>
-                  </Link>
-                  <span className="blg_time_created">{getTimeAgo(value.createdAt)}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="productsseccardsright">
-            <div className="productsseccardsrightbox">
-              <div className="productsseccardsrightboxsrchbar">
-                <input
-                  className="productsseccardsrightboxsrchbarinput"
-                  placeholder="Search Here"
-                  value={searchTerm}
-                  onChange={handleSearch}
-                />
-                <button className="productsseccardsrightboxsrchbarbtn">
-                  <IoIosSearch />
+    <div className="container">
+      <div className="blog_main_page">
+        <div className="productsseccardsright">
+          <div className="productsseccardsrightbox">
+            <div className="productsseccardsrightboxsrchbar">
+              <input
+                className="productsseccardsrightboxsrchbarinput"
+                placeholder="Search Here"
+                value={searchTerm}
+                onChange={handleSearch}
+              />
+              <button className="productsseccardsrightboxsrchbarbtn">
+                <IoIosSearch />
+              </button>
+            </div>
+            <div className="blog_right_box_dropdown">
+              <div className="contact_form_parent">
+                <button
+                  type="button"
+                  className="contact_form_select"
+                  onClick={toggleDropdown1}
+                >
+                  {selectedService1}
+                  <span className="blog_cat_arrow">
+                    <IoIosArrowDown />
+                  </span>
                 </button>
-              </div>
-              <div className="blog_right_box_dropdown">
-                <div className="contact_form_parent">
-                  <button
-                    type="button"
-                    className="contact_form_select"
-                    onClick={toggleDropdown1}
-                  >
-                    {selectedService1}
-                    <span className="arrow">
-                      <IoIosArrowDown />
-                    </span>
-                  </button>
-                  {dropdownVisible1 && (
-                    <div className="contact_form_dropdown">
-                      <div className="contact_dropdown">
-                        <div
-                          className="contact_dropdown_link"
-                          onClick={() => selectSubCategory("Illustration")}
-                        >
-                          Illustration
-                        </div>
-                        <div
-                          className="contact_dropdown_link"
-                          onClick={() => selectSubCategory("Gfx")}
-                        >
-                          Gfx
-                        </div>
-                        <div
-                          className="contact_dropdown_link"
-                          onClick={() => selectSubCategory("Logo Design")}
-                        >
-                          Logo Design
-                        </div>
-                        <div
-                          className="contact_dropdown_link"
-                          onClick={() => selectSubCategory("3d")}
-                        >
-                          3d
-                        </div>
-                        <div
-                          className="contact_dropdown_link"
-                          onClick={() => selectSubCategory("E-shop")}
-                        >
-                          E-shop
-                        </div>
-                        <div
-                          className="contact_dropdown_link"
-                          onClick={() => selectSubCategory("Buisness")}
-                        >
-                          Buisness
-                        </div>
-                        <div
-                          className="contact_dropdown_link"
-                          onClick={() => selectSubCategory("Portfolio")}
-                        >
-                          Portfolio
-                        </div>
+                {dropdownVisible1 && (
+                  <div className="contact_form_dropdown contact_form_dropdown_right">
+                    <div className="contact_dropdown">
+                      <div
+                        className="contact_dropdown_link"
+                        onClick={() => selectSubCategory("Illustration")}
+                      >
+                        Illustration
+                      </div>
+                      <div
+                        className="contact_dropdown_link"
+                        onClick={() => selectSubCategory("Gfx")}
+                      >
+                        Gfx
+                      </div>
+                      <div
+                        className="contact_dropdown_link"
+                        onClick={() => selectSubCategory("Logo Design")}
+                      >
+                        Logo Design
+                      </div>
+                      <div
+                        className="contact_dropdown_link"
+                        onClick={() => selectSubCategory("3d")}
+                      >
+                        3d
+                      </div>
+                      <div
+                        className="contact_dropdown_link"
+                        onClick={() => selectSubCategory("E-shop")}
+                      >
+                        E-shop
+                      </div>
+                      <div
+                        className="contact_dropdown_link"
+                        onClick={() => selectSubCategory("Buisness")}
+                      >
+                        Buisness
+                      </div>
+                      <div
+                        className="contact_dropdown_link"
+                        onClick={() => selectSubCategory("Portfolio")}
+                      >
+                        Portfolio
                       </div>
                     </div>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
-              <div className="blog_right_box_dropdown">
-                <div className="contact_form_parent">
-                  <button
-                    type="button"
-                    className="contact_form_select"
-                    onClick={toggleDropdown2}
-                  >
-                    {selectedService2}
-                    <span className="arrow">
-                      <IoIosArrowDown />
-                    </span>
-                  </button>
-                  {dropdownVisible2 && (
-                    <div className="contact_form_dropdown">
-                      <div className="contact_dropdown">
-                        <div
-                          className="contact_dropdown_link"
-                          onClick={() => selectCategory("Gfx Design")}
-                        >
-                          Gfx Design
-                        </div>
-                        <div
-                          className="contact_dropdown_link"
-                          onClick={() => selectCategory("Web Developing")}
-                        >
-                          Web Developing
-                        </div>
-                        <div
-                          className="contact_dropdown_link"
-                          onClick={() => selectCategory("Video Editing")}
-                        >
-                          Video Editing
-                        </div>
+            </div>
+            <div className="blog_right_box_dropdown">
+              <div className="contact_form_parent">
+                <button
+                  type="button"
+                  className="contact_form_select"
+                  onClick={toggleDropdown2}
+                >
+                  {selectedService2}
+                  <span className="blog_cat_arrow">
+                    <IoIosArrowDown />
+                  </span>
+                </button>
+                {dropdownVisible2 && (
+                  <div className="contact_form_dropdown">
+                    <div className="contact_dropdown">
+                      <div
+                        className="contact_dropdown_link"
+                        onClick={() => selectCategory("Gfx Design")}
+                      >
+                        Gfx Design
+                      </div>
+                      <div
+                        className="contact_dropdown_link"
+                        onClick={() => selectCategory("Web Developing")}
+                      >
+                        Web Developing
+                      </div>
+                      <div
+                        className="contact_dropdown_link"
+                        onClick={() => selectCategory("Video Editing")}
+                      >
+                        Video Editing
                       </div>
                     </div>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
+        <div className="productsseccardsleft">
+          {filteredBlogs.map((value) => (
+            <div className="mainprdcolbox" key={value._id}>
+              <div className="mainprdcolimgsec">
+                <div className="blog_right_img">
+                  <Image
+                    src={value.images[0].url}
+                    height={230}
+                    width={230}
+                    alt={value.title}
+                  />
+                </div>
+              </div>
+              <div className="mainprdcolcontetnsec">
+                <p className="all_blg_hding">{value.title}</p>
+                <p className="mainprdcolmaincontent">{value.descriptions[0]}</p>
+                <div className="link_show_date">
+                  <Link
+                    href={`/blogs/${value.slug}`}
+                    className="mainprdcolbottomhead"
+                  >
+                    show details{" "}
+                    <span>
+                      <MdOutlineArrowForward />
+                    </span>
+                  </Link>
+                  <span className="blg_time_created">
+                    {getTimeAgo(value.createdAt)}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+    </div>
   );
 };
 

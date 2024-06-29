@@ -12,16 +12,22 @@
 }
 .service_headline{
   font-weight: bold;
+  font-size: var(--normal-font-size);
 }
 .service_subheadline{
+  font-size: var(--normal-font-size);
   margin: .7rem 0 .7rem 0;
+}
+.service_overview{
+  font-size: var(--normal-font-size);
 }
 .services_media_wrapper{
   width: 100%;
 
 }
 .services_media_wrapper img{
-  max-width: 28rem;
+  /* max-width: 28rem; */
+  max-width: 35rem;
   float: right;
   border-radius: .5rem;
   margin-left: 1.5rem;
@@ -50,16 +56,17 @@
   gap: 1rem;
   position: relative;
   margin-top: 2rem;
+  font-size: var(--normal-font-size);
 }
 
 .service_detail ul{
-  list-style: disc;
-  position: relative;
-  left: 1rem;
+  list-style: none;
 }
 
 .service_detail ul li ul{
   margin: 1rem 0 1rem 0;
+  list-style: disc;
+  margin-left: 1rem;
 }
 
 
@@ -67,6 +74,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
+    font-size: var(--normal-font-size);
   }
   .faqs_container{
     margin-top: 1rem;
@@ -99,7 +107,21 @@
     max-height: 500px; /* or any large value that exceeds the expected height of the content */
     margin-top: 1rem;
   }
-
+  @media only screen and (max-width: 1700px) {
+    .services_media_wrapper img{
+      max-width: 33rem;
+    }
+  }
+  @media only screen and (max-width: 1500px) {
+    .services_media_wrapper img{
+      max-width: 30rem;
+    }
+  }
+  @media only screen and (max-width: 1500px) {
+    .services_media_wrapper img{
+      max-width: 28rem;
+    }
+  }
   @media only screen and (max-width: 1024px) {
     .services_media_wrapper img{
       max-width: 22rem;
@@ -117,10 +139,14 @@
       margin-left: 0;
     }
     .service_detail ul{
-      list-style: disc;
+      list-style: none;
       position: relative;
       left: 0;
       margin: 2rem 0 2rem 0;
+    }
+    .service_detail ul li ul{
+      list-style: disc;
+      margin-left: 1rem;
     }
   }
 
@@ -130,3 +156,4 @@
       padding-top: 2rem;
     }
   }
+  /* ServiceSection.css */
