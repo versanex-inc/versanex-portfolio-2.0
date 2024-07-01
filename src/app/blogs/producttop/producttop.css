@@ -39,6 +39,18 @@
 .pg_left_mainimage:hover img {
   transform: scale(1.2);
 }
+.top_blog_blog_title{
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--first-color);
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 6px;
+  border-radius: 1rem;
+  max-width: 25rem;
+  backdrop-filter: opacity(0.5);
+}
 .prod_rightcontentarrow {
   position: absolute;
   bottom: 5%;

@@ -2,45 +2,17 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import "./slug_page.css";
-import { FaTwitter } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa6";
-import { IoShareSocialSharp } from "react-icons/io5";
+import { IoMdShareAlt } from "react-icons/io";
+import moment from 'moment';
+import { FaThumbsUp } from 'react-icons/fa';
+import { useSession } from "next-auth/react";
+import CommentSection from "./Comment_section/Comment_section";
 
 const BlogsSug = ({ params }) => {
-  const [onclickhover, setonclickhover] = useState(false);
-  const toggleonclick = () => {
-    setonclickhover(!onclickhover);
-  };
-  const [onclickshowcoment, setonclickshowcoment] = useState(false);
-  const toggleonclickshowcoment = () => {
-    setonclickshowcoment(!onclickshowcoment);
-    setonclickshowcoment1(false);
-    setonclickshowcoment2(false);
-    setonclickshowcoment3(false);
-  };
-  const [onclickshowcoment1, setonclickshowcoment1] = useState(false);
-  const toggleonclickshowcoment1 = () => {
-    setonclickshowcoment1(!onclickshowcoment1);
-    setonclickshowcoment(false);
-    setonclickshowcoment2(false);
-    setonclickshowcoment3(false);
-  };
-  const [onclickshowcoment2, setonclickshowcoment2] = useState(false);
-  const toggleonclickshowcoment2 = () => {
-    setonclickshowcoment2(!onclickshowcoment2);
-    setonclickshowcoment1(false);
-    setonclickshowcoment(false);
-    setonclickshowcoment3(false);
-  };
-  const [onclickshowcoment3, setonclickshowcoment3] = useState(false);
-  const toggleonclickshowcoment3 = () => {
-    setonclickshowcoment3(!onclickshowcoment3);
-    setonclickshowcoment1(false);
-    setonclickshowcoment2(false);
-    setonclickshowcoment(false);
-  };
   const [blogData, setBlogData] = useState(null);
   const [error, setError] = useState(null);
+  const [users, setUsers] = useState([]);
+  const { status, data: session } = useSession();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,7 +30,7 @@ const BlogsSug = ({ params }) => {
         if (blog) {
           setBlogData(blog);
         } else {
-          setError(`blog with slug ${params.slug} not found.`);
+          setError(`Blog with slug ${params.slug} not found.`);
         }
       } catch (error) {
         console.error("Error fetching blog data:", error);
@@ -66,8 +38,73 @@ const BlogsSug = ({ params }) => {
       }
     };
 
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getUsers`);
+        const data = await response.json();
+        setUsers(data.result);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
     fetchData();
+    fetchUserData();
   }, [params]);
+
+  const handleLike = async () => {
+    if (status !== 'authenticated' || !session?.user?.email) {
+      alert('Please sign in first to like a blog.');
+      return;
+    }
+  
+    try {
+      const currentUserEmail = session.user.email;
+      const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/addBlogLike`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ blogId: blogData._id, userEmail: currentUserEmail })
+      });
+  
+      const data = await response.json();
+      if (data.success) {
+        setBlogData(data.blog);
+      } else {
+        console.error('Error liking the blog:', data.error);
+      }
+    } catch (error) {
+      console.error('Error liking the blog:', error);
+    }
+  };
+
+  const handleShare = () => {
+    const shareData = {
+      title: blogData.title,
+      text: blogData.descriptions[0],
+      url: window.location.href,
+    };
+
+    if (navigator.share) {
+      navigator.share(shareData).then(() => {
+        console.log('Blog shared successfully');
+      }).catch((error) => {
+        console.error('Error sharing blog:', error);
+      });
+    } else {
+      // Fallback for browsers that do not support the Web Share API
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('URL copied to clipboard');
+      }).catch((error) => {
+        console.error('Error copying URL to clipboard:', error);
+      });
+    }
+  };
+
+  const getTimeAgo = timestamp => {
+    return moment(timestamp).fromNow();
+  };
 
   if (!blogData && !error) {
     return <div>Loading...</div>;
@@ -79,60 +116,58 @@ const BlogsSug = ({ params }) => {
 
   return (
     <>
-      <div className="container">
-        <div className="blog_detail_main">
-          <div className="blog_detail_beforimg_sec">
-            <div className="blog_detail_main_hading">
-              <h1>{blogData.title}</h1>
-            </div>
-            <div className="blog_detail_account_social">
-              <div className="reviewed_user">
-                <div className="reviewed_user_image">
-                  <Image
-                    src={"/imgs/flash.webp"}
-                    height={50}
-                    width={50}
-                    alt="user image"
-                  />
+      <div className="container top_container">
+        <div className="slug_blog_container">
+          <h1 className="blog_slug_heading">Details of blog</h1>
+          <div className="slug_blog_img">
+            <Image
+              src={blogData.images[0].url}
+              alt={blogData.title}
+              width={1000}
+              height={1000}
+            />
+          </div>
+          <div className="blog_slug_after_img">
+            <p className="slg_blg_title">{blogData.title}</p>
+            <div className="slg_posted_blog_person">
+              <div className="slug_blog_persn_img">
+                <Image
+                  src={blogData.creatorPicture}
+                  alt={blogData.creatorName}
+                  width={100}
+                  height={100}
+                  quality={100}
+                />
+              </div>
+              <div className="person_slg_name_date">
+                <span className="slg_person_name">{blogData.creatorName}</span>
+                <span className="slg_person_postedDate">{getTimeAgo(blogData.createdAt)}</span>
+              </div>
+              <div className="blog_slg_like_share">
+                <div className="blog_slg_like" onClick={handleLike}>
+                  <span className={`blg_slg_like_icon ${blogData.likes.some(like => like.userId === session?.user?.id) ? 'liked' : ''}`}>
+                    <FaThumbsUp />
+                  </span>
+                  <span className="blg_slug_like_count">{blogData.likesCount}</span>
                 </div>
-                <div className="reviewed_user_name">
-                  <h5>Fahad Joyia</h5>
-                  <div className="visibility_dropdown">
-                    <span>Jan 13, 2022</span>
-                  </div>
+                <div className="blog_slug_share" onClick={handleShare}>
+                  <IoMdShareAlt />&nbsp;Share
                 </div>
               </div>
-              <div className="blog_social_media_icons">
-                <span>
-                  <FaFacebookF />
-                </span>
-                <span>
-                  <FaTwitter />
-                </span>
-                <span>
-                  <IoShareSocialSharp />
-                </span>
-              </div>
             </div>
           </div>
-          <div className="blog_main_img_sec">
-            <div className="blog_main">
-              <Image
-                src={"/imgs/abc.jpg"}
-                height={500}
-                width={500}
-                alt="Main Image"
-              />
-            </div>
+          <div className="details_slug_blog">
+            {blogData.descriptions.map((description, index) => (
+              <p key={index} className="slug_setail_para">{description}</p>
+            ))}
           </div>
-          <div className="picture_source">
-            <p>Image By VersaNex</p>
-          </div>
-          <div className="blog_read_page_text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-            similique perspiciatis iusto, dicta ab expedita magni aliquam
-            necessitatibus illum temporibus?
-          </div>
+          <ul className="summarize_list_slug_blog">
+            <p className="list_heading_slug_blg">Summarize the details of blog.</p>
+            {blogData.list.map((item, index) => (
+              <li key={index} className='blog_lsug_aummarize_para'>{item}</li>
+            ))}
+          </ul>
+          <CommentSection blogId={blogData._id} users={users} session={session} />
         </div>
       </div>
     </>

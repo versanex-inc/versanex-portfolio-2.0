@@ -1,12 +1,19 @@
-// pages/api/addLike.js
 import { Blog } from "@/utils/models/blogs";
+import { User } from "@/utils/models/user";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
   try {
     await mongoose.connect(process.env.MONGO_URI); // Ensure to replace with your database URL
-    const { blogId, userId } = await request.json();
+    const { blogId, userEmail } = await request.json();
+
+    // Fetch the user by email
+    const user = await User.findOne({ email: userEmail });
+    if (!user) {
+      return NextResponse.json({ error: "User not found", success: false });
+    }
+    const userId = user._id;
 
     const userObjectId = new mongoose.Types.ObjectId(userId); // Correctly cast userId to ObjectId
 

@@ -9,8 +9,7 @@ import moment from "moment";
 
 const Productcolumcard = () => {
   const [dropdownVisible1, setDropdownVisible1] = useState(false);
-  const [selectedService1, setSelectedService1] =
-    useState("Subcategory");
+  const [selectedService1, setSelectedService1] = useState("Subcategory");
   const [dropdownVisible2, setDropdownVisible2] = useState(false);
   const [selectedService2, setSelectedService2] = useState("Category");
   const [blogs, setBlogs] = useState([]);
@@ -67,10 +66,12 @@ const Productcolumcard = () => {
   const filteredBlogs = blogs.filter(
     (blog) =>
       (blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        blog.description.toLowerCase().includes(searchTerm.toLowerCase())) &&
+        blog.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        blog.subCategory.toLowerCase().includes(searchTerm.toLowerCase())) &&
       (selectedSubCategory ? blog.subCategory === selectedSubCategory : true) &&
       (selectedCategory ? blog.category === selectedCategory : true)
   );
+
   const getTimeAgo = (timestamp) => {
     return moment(timestamp).fromNow(); // Using moment.js to get time ago format
   };
