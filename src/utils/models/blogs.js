@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 // Comment Schema
 const commentSchema = new mongoose.Schema({
@@ -15,13 +15,15 @@ const commentSchema = new mongoose.Schema({
   comment: {
     type: String,
     required: true
+  },
+  likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }], // Array of user IDs who liked the comment
+  likesCount: {
+    type: Number,
+    default: 0
   }
 }, { timestamps: true });
 
-// Comment Model
-export const Comment = mongoose.models.Comment || mongoose.model("Comment", commentSchema);
-
-// Like Schema
+// Like Schema for Blogs
 const likeSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -43,8 +45,8 @@ const likeSchema = new mongoose.Schema({
 const blogsSchema = new mongoose.Schema({
   title: { type: String },
   slug: { type: String, required: true, unique: true },
-  descriptions: [{ type: String }], // Array of strings for multiple description paragraphs
-  list: [{ type: String }], // Array of strings for the unordered list
+  descriptions: [{ type: String }],
+  list: [{ type: String }],
   images: [{ url: String }],
   creatorName: { type: String },
   creatorNiche: { type: String },
@@ -55,7 +57,9 @@ const blogsSchema = new mongoose.Schema({
   subCategory: { type: String, enum: ["Illustration", "Gfx", "Logo Design", "3d", "E-shop", "Business", "Portfolio"] },
   comments: [commentSchema],
   likes: [likeSchema],
-  likesCount: { type: Number, default: 0 } // Track the number of likes
+  likesCount: { type: Number, default: 0 }
 }, { timestamps: true });
 
 export const Blog = mongoose.models.Blog || mongoose.model("Blog", blogsSchema);
+export const Like = mongoose.models.Like || mongoose.model("Like", likeSchema);
+export const Comment = mongoose.models.Comment || mongoose.model('Comment', commentSchema);

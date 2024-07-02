@@ -57,7 +57,7 @@ const BlogsSug = ({ params }) => {
       alert('Please sign in first to like a blog.');
       return;
     }
-  
+
     try {
       const currentUserEmail = session.user.email;
       const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/addBlogLike`, {
@@ -67,7 +67,7 @@ const BlogsSug = ({ params }) => {
         },
         body: JSON.stringify({ blogId: blogData._id, userEmail: currentUserEmail })
       });
-  
+
       const data = await response.json();
       if (data.success) {
         setBlogData(data.blog);
@@ -114,6 +114,8 @@ const BlogsSug = ({ params }) => {
     return <div>Error: {error}</div>;
   }
 
+  const userHasLiked = blogData.likes.some(like => like.userId === session?.user?.id);
+
   return (
     <>
       <div className="container top_container">
@@ -145,7 +147,7 @@ const BlogsSug = ({ params }) => {
               </div>
               <div className="blog_slg_like_share">
                 <div className="blog_slg_like" onClick={handleLike}>
-                  <span className={`blg_slg_like_icon ${blogData.likes.some(like => like.userId === session?.user?.id) ? 'liked' : ''}`}>
+                  <span className={`blg_slg_like_icon ${userHasLiked ? 'liked' : ''}`}>
                     <FaThumbsUp />
                   </span>
                   <span className="blg_slug_like_count">{blogData.likesCount}</span>

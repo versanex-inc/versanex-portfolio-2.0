@@ -1,5 +1,3 @@
-// CommentSection.js
-
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
@@ -75,6 +73,54 @@ const CommentSection = ({ blogId, users, session }) => {
     }
   };
 
+  const handleLikeComment = async (commentId) => {
+    if (!session?.user?.email) {
+      alert('Please sign in first to like a comment.');
+      return;
+    }
+
+    const currentUser = users.find(user => user.email === session.user.email);
+    if (!currentUser) {
+      alert('User not found.');
+      return;
+    }
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/likeComment`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          commentId,
+          userId: currentUser._id,
+          blogId
+        })
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        // Update the likes and likesCount for the specific comment
+        setComments(comments.map(comment => {
+          if (comment._id === commentId) {
+            return {
+              ...comment,
+              likesCount: comment.likes.includes(currentUser._id) ? comment.likesCount - 1 : comment.likesCount + 1,
+              likes: comment.likes.includes(currentUser._id)
+                ? comment.likes.filter(id => id !== currentUser._id)
+                : [...comment.likes, currentUser._id]
+            };
+          }
+          return comment;
+        }));
+      } else {
+        console.error('Error liking comment:', data.error);
+      }
+    } catch (error) {
+      console.error('Error liking comment:', error);
+    }
+  };
+
   return (
     <div>
       <div className="blog_coment_section">
@@ -84,9 +130,7 @@ const CommentSection = ({ blogId, users, session }) => {
             <div className="cometbox_main">
               <div
                 onFocus={toggleonclick}
-                className={`cometbox_main_input ${
-                  onclickhover ? "hovercomentbox" : ""
-                }`}
+                className={`cometbox_main_input ${onclickhover ? "hovercomentbox" : ""}`}
               >
                 <input 
                   type="text" 
@@ -104,6 +148,8 @@ const CommentSection = ({ blogId, users, session }) => {
           <ul id="comments-list" className="blog_comments-list">
             {comments.map((comment, index) => {
               const commentUser = users.find(user => user._id === comment.userId);
+              const isLiked = comment.likes.includes(session?.user?.id);
+
               return (
                 <li key={index}>
                   <div className="blog_comment-main-level">
@@ -120,8 +166,13 @@ const CommentSection = ({ blogId, users, session }) => {
                         <h6 className="blog_comment-name">{commentUser?.name || 'Anonymous'}</h6>
                         <span>{moment(comment.createdAt).fromNow()}</span>
                         <div className="coment_sect_icons">
-                          <span className="icon_cmnt_heart"><FaHeart /></span>
-                          <span className="cmnt_like_count">2</span>
+                          <span
+                            className={`icon_cmnt_heart ${isLiked ? 'liked' : ''}`}
+                            onClick={() => handleLikeComment(comment._id)}
+                          >
+                            <FaHeart />
+                          </span>
+                          <span className="cmnt_like_count">{comment.likesCount}</span>
                         </div>
                       </div>
                       <div className="blog_comment-content">
