@@ -30,7 +30,9 @@ const CommentSection = ({ blogId, users, session }) => {
   }, [blogId]);
 
   const handleCommentChange = (e) => {
-    setComment(e.target.value);
+    if (e.target.value.length <= 600) {
+      setComment(e.target.value);
+    }
   };
 
   const handlePostComment = async () => {
@@ -137,6 +139,7 @@ const CommentSection = ({ blogId, users, session }) => {
                   placeholder="Enter Your comment here" 
                   value={comment}
                   onChange={handleCommentChange}
+                  maxLength={600}
                 />
                 <div className="comentbox_bnt">
                   <button onClick={handlePostComment}>Post</button>

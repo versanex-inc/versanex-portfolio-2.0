@@ -43,6 +43,7 @@ const Productcolumcard = () => {
 
   const toggleDropdown1 = () => {
     setDropdownVisible1(!dropdownVisible1);
+    setDropdownVisible2(false);
   };
 
   const selectService2 = (service2) => {
@@ -57,6 +58,7 @@ const Productcolumcard = () => {
 
   const toggleDropdown2 = () => {
     setDropdownVisible2(!dropdownVisible2);
+    setDropdownVisible1(false);
   };
 
   const handleSearch = (e) => {
@@ -91,6 +93,45 @@ const Productcolumcard = () => {
               <button className="productsseccardsrightboxsrchbarbtn">
                 <IoIosSearch />
               </button>
+            </div>
+            <div className="filter_blogs_divs">
+            <div className="blog_right_box_dropdown">
+              <div className="contact_form_parent">
+                <button
+                  type="button"
+                  className="contact_form_select"
+                  onClick={toggleDropdown2}
+                >
+                  {selectedService2}
+                  <span className="blog_cat_arrow">
+                    <IoIosArrowDown />
+                  </span>
+                </button>
+                {dropdownVisible2 && (
+                  <div className="contact_form_dropdown">
+                    <div className="contact_dropdown">
+                      <div
+                        className="contact_dropdown_link"
+                        onClick={() => selectCategory("Gfx Design")}
+                      >
+                        Gfx Design
+                      </div>
+                      <div
+                        className="contact_dropdown_link"
+                        onClick={() => selectCategory("Web Developing")}
+                      >
+                        Web Developing
+                      </div>
+                      <div
+                        className="contact_dropdown_link"
+                        onClick={() => selectCategory("Video Editing")}
+                      >
+                        Video Editing
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
             <div className="blog_right_box_dropdown">
               <div className="contact_form_parent">
@@ -154,43 +195,6 @@ const Productcolumcard = () => {
                 )}
               </div>
             </div>
-            <div className="blog_right_box_dropdown">
-              <div className="contact_form_parent">
-                <button
-                  type="button"
-                  className="contact_form_select"
-                  onClick={toggleDropdown2}
-                >
-                  {selectedService2}
-                  <span className="blog_cat_arrow">
-                    <IoIosArrowDown />
-                  </span>
-                </button>
-                {dropdownVisible2 && (
-                  <div className="contact_form_dropdown">
-                    <div className="contact_dropdown">
-                      <div
-                        className="contact_dropdown_link"
-                        onClick={() => selectCategory("Gfx Design")}
-                      >
-                        Gfx Design
-                      </div>
-                      <div
-                        className="contact_dropdown_link"
-                        onClick={() => selectCategory("Web Developing")}
-                      >
-                        Web Developing
-                      </div>
-                      <div
-                        className="contact_dropdown_link"
-                        onClick={() => selectCategory("Video Editing")}
-                      >
-                        Video Editing
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
             </div>
           </div>
         </div>

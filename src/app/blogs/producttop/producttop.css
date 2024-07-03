@@ -29,7 +29,6 @@
 .pg_left_mainimage {
   border-radius: 1rem;
   overflow: hidden;
-  cursor: pointer;
 }
 
 .pg_left_mainimage img {
@@ -57,7 +56,7 @@
   right: 5%;
 }
 .prod_rightcontentarrow {
-  font-size: 3rem;
+font-size: calc(var(--normal-font-size) + 1rem);
   color: var(--first-color);
 }
 .pg_third_most_liked{
@@ -70,13 +69,12 @@
     position: absolute;
     bottom: 5%;
     right: 5%;
-    font-size: 2rem;
+    font-size: calc(var(--normal-font-size) + .5rem);
     color: var(--first-color);
 }
 .pg_right_div {
     border-radius: 1rem;
     overflow: hidden;
-    cursor: pointer;
   }
   
   .pg_right_div img {
@@ -85,4 +83,88 @@
   
   .pg_right_div:hover img {
     transform: scale(1.2);
+  }
+  .button_blg_show_details{
+    width: 14rem;
+    height: 4rem;
+    background: var(--first-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--third-color);
+    border-radius: 10rem;
+    border: 1px solid var(--border-color);
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    font-size: var(--normal-font-size);
+  }
+  @media only screen and (max-width: 1700px) {
+    .button_blg_show_details{
+      width: 12rem;
+      height: 3.5rem;
+    }
+  }
+  @media only screen and (max-width: 1500px) {
+    .button_blg_show_details{
+      width: 10rem;
+      height: 3.5rem;
+    }
+  }
+  @media only screen and (max-width: 1300px) {
+    .prod_topheading {
+      font-size: 1.5rem;
+    }
+    .button_blg_show_details{
+      width: 8rem;
+      height: 3rem;
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+    .blogs_top_blgs{
+      padding-top: 2.5rem;
+    }
+    .prod_topheading {
+      font-size: 1.3rem;
+    }
+    .button_blg_show_details{
+      width: 7.5rem;
+      height: 2.3rem;
+    }
+  }
+  @media screen and (max-width: 768px){
+    .blogs_top_blgs{
+      padding-top: 2rem;
+    }
+    .prod_topheading {
+      font-size: 1.1rem;
+    }
+    .button_blg_show_details{
+      width: 7rem;
+      height: 1.5rem;
+      font-size: calc(var(--normal-font-size) - 4px);
+    }
+    .pg_left img {
+      border-radius: .5rem;
+    }
+    .pg_right img {
+      border-radius: .5rem;
+    }
+    .pg_right_div {
+      border-radius: .5rem;
+    }
+    .pg_left_mainimage {
+      border-radius: .5rem;
+    }
+  }
+  @media screen and (max-width: 500px){
+    .blogs_top_blgs{
+      padding-top: 1.5rem;
+    }
+    .prod_topheading {
+      font-size: 1rem;
+    }
+    .button_blg_show_details{
+     display: none;
+    }
   }

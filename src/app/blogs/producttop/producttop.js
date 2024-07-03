@@ -37,7 +37,7 @@ const ProductTop = () => {
 
   return (
     <>
-      <div className="container top_container">
+      <div className="container top_container blogs_top_blgs">
         <div className="prod_topheading">
           <h1>Best of the month</h1>
         </div>
@@ -53,6 +53,9 @@ const ProductTop = () => {
                     objectFit="contain"
                     alt={topBlogs[0].title}
                   />
+                   <Link href={`/blogs/${topBlogs[0].slug}`} className="button_blg_show_details button_blg_show_details_main_img">
+                   Show Details
+                  </Link>
                   <Link href={`/blogs/${topBlogs[0].slug}`} className="prod_rightcontentarrow">
                     <BiSolidRightTopArrowCircle />
                   </Link>
@@ -76,6 +79,9 @@ const ProductTop = () => {
                   <Link href={`/blogs/${topBlogs[1].slug}`} className="rightimgsecimgicon">
                   <BiSolidRightTopArrowCircle />
                   </Link>
+                  <Link href={`/blogs/${topBlogs[0].slug}`} className="button_blg_show_details button_blg_show_details_second_main">
+                   Show Details
+                  </Link>
                 </>
               ) : (
                 <p>No second top blog available</p>
@@ -93,6 +99,9 @@ const ProductTop = () => {
                   />
                   <Link href={`/blogs/${topBlogs[2].slug}`} className="rightimgsecimgicon">
                   <BiSolidRightTopArrowCircle />
+                  </Link>
+                  <Link href={`/blogs/${topBlogs[0].slug}`} className="button_blg_show_details button_blg_show_details_second_main">
+                   Show Details
                   </Link>
                 </>
               ) : (

@@ -118,9 +118,9 @@ const BlogsSug = ({ params }) => {
 
   return (
     <>
-      <div className="container top_container">
+      <div className="container top_container blogs_slug_top_container">
         <div className="slug_blog_container">
-          <h1 className="blog_slug_heading">Details of blog</h1>
+          <h1 className="heading blog_slug_heading">Details of blog</h1>
           <div className="slug_blog_img">
             <Image
               src={blogData.images[0].url}
