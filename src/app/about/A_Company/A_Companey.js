@@ -3,13 +3,15 @@ import "./A_Companey.css";
 const A_Companey = () => {
   return (
     <>
-      <div className={`${"container "} ${"Main"}`}>
+      <div className={`${"container "} ${"Main"} ${"top_container"} ${"about_link_top_container"}`}>
         <div className="title">
-          <h1>
-            About Versa<span>Nex</span>
+          <h1 className="heading heading_about_comapny">
+            <p>About Versa<span>Nex</span></p>
+            <div className="heading_underline h_underline_mtContainer">
+              <span className="heading_underline_dot"></span>
+            </div>
           </h1>
         </div>
-        <span className="Yellow_underline"></span>
         <div className="main_con">
           <div className="about_con">
             <p>
@@ -21,7 +23,6 @@ const A_Companey = () => {
               country.
             </p>
             <p>
-              <br />
               Globally, the Company has taken its place among the important
               market specialties of various countries, offering services and
               products to a continuously rising number of corporates. In
@@ -35,22 +36,16 @@ const A_Companey = () => {
           </div>
         </div>
       </div>
-      <div className={`${"container-fluid"} ${"stylebox"}`}>
-        <div className="l_div"></div>
-        <div className="l_small"></div>
-        <div className="line_handler">
-          <div className="top_lef_line"></div>
-          <div className="top_rig_line"></div>
-        </div>
-        <div className="r_div"></div>
-        <div className="r_small"></div>
-      </div>
-      <div className={`${"container "} ${"Mission"}`}>
+      <div className={`${"container "} ${"Main"} ${"our_mission_main"}`}>
         <div className="mission_sec">
           <div className="title ">
-            <h1>Our Mission</h1>
+          <h1 className="heading heading_about_comapny">
+            <p>Our Mission</p>
+            <div className="heading_underline h_underline_mtContainer">
+              <span className="heading_underline_dot"></span>
+            </div>
+          </h1>
           </div>
-          <span className="White_underline"></span>
           <div className="main_con">
             <div className="about_con">
               <p>
@@ -74,46 +69,41 @@ const A_Companey = () => {
           </div>
         </div>
       </div>
-      <div className={`${"container-fluid"} ${"stylebox"}`}>
-        <div className="bl_div"></div>
-        <div className="bl_small"></div>
-        <div className="line_handler">
-          <div className="bottom_lef_line"></div>
-          <div className="bottom_rig_line"></div>
-        </div>
-        <div className="br_div"></div>
-        <div className="br_small"></div>
-      </div>
-      <div className="container">
+      <div className="container Main">
         <div className="our_vision">
-          <div className="vision_title">
-            <h1>Our Vision</h1>
-            <span className="Vision_Yellow_underline"></span>
+          <div className="title">
+          <h1 className="heading heading_about_comapny">
+            <p>Our Vision</p>
+            <div className="heading_underline h_underline_mtContainer">
+              <span className="heading_underline_dot"></span>
+            </div>
+          </h1>
           </div>
           <div className="main_con">
-          <div className="about_con">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Perferendis architecto minima explicabo! Esse ut minima quisquam
-              molestias odio enim optio quasi suscipit asperiores voluptas
-              inventore ratione dicta ducimus dignissimos ullam sunt
-              necessitatibus sapiente iure, corrupti dolores? Iusto maxime nihil
-              ea, incidunt impedit eius quae deleniti nam dolorem reiciendis
-              ducimus quisquam? Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. In voluptas beatae sint unde temporibus
-              molestias enim quibusdam tempora, quidem tenetur iste dolorem,
-              nihil natus
-            </p>
-            <p style={{ margin: "1rem" }}>
-              fugit provident! Ratione recusandae harum vitae, labore est, nam
-              nisi aspernatur molestiae dignissimos rei Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Eius eveniet ut atque, magnam
-              mollitia id non quam? Mollitia numquam amet velit ab consectetur.
-              Mollitia nostrum accusamus omnis molestiae! Voluptatibus in totam
-              sunt libero vero qui, distinctio repellendus nemo nihil quaerat
-              quos officia necessitatibus. ciendis esse rem nesciunt qui.
-            </p>
-          </div>
+            <div className="about_con">
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Perferendis architecto minima explicabo! Esse ut minima quisquam
+                molestias odio enim optio quasi suscipit asperiores voluptas
+                inventore ratione dicta ducimus dignissimos ullam sunt
+                necessitatibus sapiente iure, corrupti dolores? Iusto maxime
+                nihil ea, incidunt impedit eius quae deleniti nam dolorem
+                reiciendis ducimus quisquam? Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. In voluptas beatae sint unde
+                temporibus molestias enim quibusdam tempora, quidem tenetur iste
+                dolorem, nihil natus
+              </p>
+              <p>
+                fugit provident! Ratione recusandae harum vitae, labore est, nam
+                nisi aspernatur molestiae dignissimos rei Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Eius eveniet ut atque, magnam
+                mollitia id non quam? Mollitia numquam amet velit ab
+                consectetur. Mollitia nostrum accusamus omnis molestiae!
+                Voluptatibus in totam sunt libero vero qui, distinctio
+                repellendus nemo nihil quaerat quos officia necessitatibus.
+                ciendis esse rem nesciunt qui.
+              </p>
+            </div>
           </div>
         </div>
       </div>
