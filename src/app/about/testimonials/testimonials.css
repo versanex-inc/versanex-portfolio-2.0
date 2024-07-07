@@ -90,6 +90,7 @@
 }
 .reviewed_user_stars svg {
   margin-left: 5px;
+  cursor: pointer;
 }
 .reviewed_user_content_box textarea {
   resize: none;
@@ -115,6 +116,7 @@
   margin-left: 12px;
   font-weight: normal;
   color: var(--third-color);
+  cursor: pointer;
 }
 .reviewed_user_close button:hover {
   background-color: var(--first-color);

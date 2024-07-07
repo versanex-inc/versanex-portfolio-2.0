@@ -19,6 +19,7 @@ const Reviews = () => {
   const dropdownRef = useRef(null);
   const buttonRef = useRef(null);
   const [reviewDetails, setReviewDetails] = useState("");
+  const [charCount, setCharCount] = useState(0);
 
   useEffect(() => {
     let isMounted = true;
@@ -135,6 +136,7 @@ const Reviews = () => {
       setDropdownOpen(false);
       resetStars();
       setReviewDetails("");
+      setCharCount(0);
     } catch (error) {
       console.error("Error posting review:", error);
     }
@@ -145,6 +147,14 @@ const Reviews = () => {
       setDropdownOpen(!dropdownOpen);
     } else {
       alert("Please sign in first to write a review.");
+    }
+  };
+
+  const handleReviewDetailsChange = (e) => {
+    const value = e.target.value;
+    if (value.length <= 300) {
+      setReviewDetails(value);
+      setCharCount(value.length);
     }
   };
 
@@ -231,14 +241,17 @@ const Reviews = () => {
                         rows={5}
                         placeholder="Share details of your own experience at this place"
                         value={reviewDetails}
-                        onChange={(e) => setReviewDetails(e.target.value)}
+                        onChange={handleReviewDetailsChange}
                       ></textarea>
+                      <div className="char_count">{charCount}/300</div> {/* Character count display */}
                     </div>
                     <div className="reviewed_user_close">
                       <button
                         onClick={() => {
                           setDropdownOpen(false);
                           resetStars();
+                          setReviewDetails("");
+                          setCharCount(0);
                         }}
                       >
                         Cancel

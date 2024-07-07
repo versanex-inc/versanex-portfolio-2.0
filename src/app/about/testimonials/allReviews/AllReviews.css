@@ -1,123 +1,121 @@
-.reviewed_user {
-    display: flex;
-    margin-top: 2rem;
+.reviews_about_page_gid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.review_one {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  height: 100%;
+}
+.reviewed_user_image {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.reviewed_user_image img {
+  border-radius: 50px;
+  background-color: var(--second-color);
+  box-sizing: border-box;
+  height: 50px;
+  width: 50px;
+}
+.reviewed_user_name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reviewd_user_name_testi {
+  font-size: var(--normal-font-size);
+  font-weight: bold;
+}
+.reviewd_user_undername {
+  display: flex;
+  gap: 0.5rem;
+  font-size: calc(var(--normal-font-size) - 4px);
+  margin-top: 4px;
+}
+.review_user_rating {
+  font-size: calc(var(--normal-font-size) + 6px);
+  color: var(--second-color);
+}
+.like_review_reply {
+  display: flex;
+  gap: .5rem;
+}
+.review_like_count {
+  margin-right: 1.5rem;
+}
+.like_review{
+  cursor: pointer;
+  font-size: calc(var(--normal-font-size) + .3rem);
+  position: relative;
+  bottom: .3rem;
+}
+.like_review .liked {
+  color: var(--second-color);
+}
+.show {
+  animation-name: oys;
+}
+.review_reply{
+  text-decoration: underline;
+  cursor: pointer;
+}
+@keyframes oys {
+  0% {
+    opacity: 0%;
   }
-  .reviewed_user_image {
-    display: flex;
+  50% {
+    opacity: 50%;
   }
-  .reviewed_user_image img {
-    border-radius: 50px;
-    background-color: var(--second-color);
-    box-sizing: border-box;
-    height: 50px;
-    width: 50px;
+  100% {
+    opacity: 100%;
   }
-  .reviewed_user_name {
-    margin-left: 14px;
+}
+.review_reply_content {
+  border-left: 1px solid var(--border-color);
+}
+.review_reply_input_main {
+  display: none;
+}
+.review__input {
+  display: block;
+}
+.review_user_content{
+  text-align: justify;
+  text-align-last: center;
+}
+.review_reply_response{
+  text-align: center;
+  margin: 1rem 0 1rem 0;
+}
+.review_reply_response p{
+  color: var(--light-dark-color);
+  text-align: justify;
+  text-align-last: center;
+  padding-left: .5rem;
+}
+.truncated {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (max-width: 1024px){
+  .reviews_about_page_gid {
+    grid-template-columns: 1fr 1fr;
   }
-  .reviewed_user_name p {
-    font-size: 10px;
+}
+@media screen and (max-width: 768px){
+  .reviews_about_page_gid {
+    grid-template-columns: 1fr;
   }
-  .review_user_rating svg {
-    color: var(--second-color);
-  }
-  .review_user_rating span {
-    font-size: 10px;
-    margin-top: 0;
-    color: #1617199b;
-  }
-  .review_user_main_review_content {
-    margin-left: 55px;
-  }
-  .like_review_reply {
-    display: flex;
-  }
-  .like_review {
-    display: inline-flex;
-    margin-top: 0.5rem;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  .like_review svg {
-    font-size: 1.3rem;
-    color: #1617199b;
-  }
-  .like_review .liked{
-      color: var(--second-color);
-  }
-  .like_review p {
-    color: #1617199b;
-    margin-left: 10px;
-  }
-  .review_reply {
-    margin-left: 0.5rem;
-    margin-top: 1rem;
-    color: #1617199b;
-    font-size: 13px;
-    text-decoration: underline;
-    cursor: pointer;
-    position: relative;
-  }
-  .review_reply:hover {
-    color: #161719b8;
-  }
-  .show {
-    animation-name: oys;
-  }
-  .review_star svg{
-    margin-bottom: 1rem;
-    color: var(--second-color);
-  }
-  @keyframes oys {
-    0% {
-      opacity: 0%;
-    }
-    50% {
-      opacity: 50%;
-    }
-    100% {
-      opacity: 100%;
-    }
-  }
-  .review_reply_input {
-    width: 30%;
-  }
-  .review_reply_input input {
-    border-radius: 20px;
-    border: 1px solid var(--second-color);
-    width: 100%;
-    margin-top: 10px;
-    padding: 8px 1rem;
-    margin-bottom: 10px;
-  }
-  .review_reply_input input:focus {
-    outline: none;
-    border: 1px solid var(--third-color);
-  }
-  .review_reply_content {
-    border-left: 2px solid grey;
-    margin-top: 10px;
-  }
-  .review_reply_response {
-    margin-left: 10px;
-  }
-  .review_reply_titledate {
-    display: flex;
-  }
-  .review_reply_titledate h1 {
-    font-size: 1rem;
-  }
-  .review_reply_titledate span {
-    margin-left: 10px;
-    font-size: 0.8rem;
-    margin-top: 2px;
-  }
-  .review_reply_response p {
-    font-size: 0.9rem;
-  }
-  .review_reply_input_main {
-    display: none;
-  }
-  .review__input {
-    display: block;
-  }
+}

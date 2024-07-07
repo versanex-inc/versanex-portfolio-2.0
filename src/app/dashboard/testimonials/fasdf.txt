@@ -1,0 +1,71 @@
+ 
+ import '../../about/testimonials/allReviews/AllReviews.css';
+import './testimonials.css';
+import { LuSendHorizonal } from "react-icons/lu";
+  const [feedbackOpenStates, setFeedbackOpenStates] = useState({});
+  const [feedbackInputs, setFeedbackInputs] = useState({});
+ {feedbackOpenStates[review._id] && (
+                  <div className="review_reply_input">
+                    <input 
+                      type="text" 
+                      placeholder="write your feedback" 
+                      value={feedbackInputs[review._id] || ''} 
+                      onChange={(e) => handleFeedbackChange(review._id, e.target.value)} 
+                    />
+                    <button onClick={() => handleFeedbackSubmit(review._id)}><LuSendHorizonal/></button>
+                  </div>
+                )}
+
+
+  const handleFeedbackChange = (reviewId, value) => {
+    if (value.length <= 300) {
+      setFeedbackInputs(prevInputs => ({
+        ...prevInputs,
+        [reviewId]: value
+      }));
+    } else {
+      alert('Feedback cannot exceed 300 characters.');
+    }
+  };
+                 const handleFeedbackSubmit = async (reviewId) => {
+    if (status !== 'authenticated' || !session?.user?.email) {
+      alert('Please sign in first to leave feedback.');
+      return;
+    }
+
+    const feedback = feedbackInputs[reviewId];
+    if (!feedback) {
+      alert('Feedback cannot be empty.');
+      return;
+    }
+
+    try {
+      const currentUser = users.find(user => user.email === session.user.email);
+      if (!currentUser) {
+        alert('User not found.');
+        return;
+      }
+
+      const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/addReviewFeedback`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ reviewId, userId: currentUser._id, feedback })
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setReviews(reviews.map(review => review._id === reviewId ? data.review : review));
+        setFilteredReviews(filteredReviews.map(review => review._id === reviewId ? data.review : review));
+        setFeedbackInputs(prevInputs => ({
+          ...prevInputs,
+          [reviewId]: ''
+        }));
+      } else {
+        console.error('Error submitting feedback:', data.error);
+      }
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+    }
+  };

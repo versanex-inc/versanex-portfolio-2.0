@@ -1,30 +1,36 @@
-.main-reviews{
-    margin: 4rem 0 4rem 0;
+.main-reviews {
+  margin: 4rem 0 4rem 0;
 }
-.review_reply_input{
-    position: relative;
+.main-review-db{
+    padding: 0 1rem 0 1rem;
 }
-.review_reply_input{
-    position: relative;
-    width: 50%;
-    overflow: hidden;
+.review_reply_input {
+  position: relative;
 }
-.review_reply_input input{
-    padding-right: 3rem;
-height: 3rem;
-border-radius: 10px;
+.review_reply_input {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
-.review_reply_input button{
-    position: absolute;
-    right: 1rem;
-    top: 35%;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: var(--second-color);
-    cursor: pointer;
+.review_reply_input input {
+  padding-right: 3rem;
+  padding-left: 1rem;
+  outline: none;
+  height: 3rem;
+  border-radius: 10px;
+  width: 100%;
 }
-.db_testi .reviews_rating_filter{
-    border: 1px solid var(--border-color);
-    padding: 1rem;
+.review_reply_input button {
+  position: absolute;
+  right: 1rem;
+  top: 25%;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--second-color);
+  cursor: pointer;
+}
+.db_testi .reviews_rating_filter {
+  border: 1px solid var(--border-color);
+  padding: 1rem;
 }
