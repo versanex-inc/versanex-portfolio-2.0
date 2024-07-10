@@ -194,7 +194,7 @@ img {
 .heading{
   font-size: 4rem;
   text-align: center;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

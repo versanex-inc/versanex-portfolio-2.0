@@ -1,0 +1,43 @@
+.team_upper_Details{
+    margin-bottom: 3rem;
+}
+.ot_headig_div{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.container_info_ot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.ot_info_para{
+    text-align: justify;
+    text-align-last: center;
+}
+.ot_para_div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.container_info_ot_lower{
+    margin-top: 3rem;
+}
+@media only screen and (max-width: 1024px) {
+    .team_upper_Details{
+        padding-top: 2.5rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .team_upper_Details{
+        padding-top: 2rem;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .team_upper_Details{
+        padding-top: 1.5rem;
+    }
+}
