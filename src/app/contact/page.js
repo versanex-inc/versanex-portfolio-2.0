@@ -5,6 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import Joins from "./join_us/joinus";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PersonalContact from "./personal/personal";
 
 const Contact = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -106,28 +107,31 @@ const Contact = () => {
           pauseOnHover
           theme="light"
         />
-      <div className="container">
+        <div className="contact_us_personal_dvs">
+          <PersonalContact/>
+        </div>
+      <div className="container container_top">
         <div className="Contact_main">
           <div className="left_con">
-            <div className="f_title">
-              <h1>Initiate your project with us!</h1>
+            <div className="f_title title_right_contact">
+              <p>Initiate your project with us!</p>
             </div>
-            <div className="content">
+            <div className="content_cont_form">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis commodi minima laudantium impedit magnam sequi qui aspernatur nesciunt tenetur eius.
             </div>
-            <div className="s_title">
-              <h1>Complete the contact form to inform us of your needs</h1>
+            <div className="s_title title_right_contact">
+              <p>Complete the contact form to inform us of your needs</p>
             </div>
-            <div className="content">
+            <div className="content_cont_form content_cont_form_btm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </div>
           </div>
           <div className="form_arrow"></div>
           <div className="right_con">
             <div className="form_main">
-              <form className="form" onSubmit={handleSubmit}>
+              <form className="contact_main_form" onSubmit={handleSubmit}>
                 <div className="contact_form_parent">
-                  <button type="button" className="contact_form_select" onClick={toggleDropdown}>
+                  <button type="button" className="contact_form_select_main" onClick={toggleDropdown}>
                     {selectedService}
                     <span className="arrow">
                       <IoIosArrowDown />
@@ -145,20 +149,20 @@ const Contact = () => {
                     </div>
                   )}
                 </div>
-                <div className="f_group">
+                <div className="f_group_cm">
                   <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} />
                 </div>
-                <div className="f_group">
+                <div className="f_group_cm">
                   <input type="text" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} />
                 </div>
-                <div className="f_group">
+                <div className="f_group_cm">
                   <input type="text" name="organization" placeholder="Your Organization" value={formData.organization} onChange={handleChange} />
                 </div>
-                <div className="f_group">
+                <div className="f_group_cm">
                   <textarea name="details" placeholder="How can we help you?" value={formData.details} onChange={handleChange} rows={4}></textarea>
                 </div>
                 <div className="contact_form_parent">
-                  <button type="button" className="contact_form_select" onClick={toggleDropdown1}>
+                  <button type="button" className="contact_form_select_main" onClick={toggleDropdown1}>
                     {selectedService1}
                     <span className="arrow">
                       <IoIosArrowDown />
@@ -176,9 +180,9 @@ const Contact = () => {
                     </div>
                   )}
                 </div>
-                <div className="submit_btn">
-                  <button className="form_btn" type="submit">
-                    Submit
+                <div className="submit_btn_contact">
+                  <button className="button small_burron form_submit_btn_main" type="submit">
+                    <p>Submit</p>
                   </button>
                 </div>
               </form>

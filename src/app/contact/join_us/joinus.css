@@ -1,44 +1,37 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-.body{
-    box-sizing: border-box;
-}
 .joincontent{
-    margin-left: 1rem;
     display: flex;
     margin-bottom: 2rem;
     height: auto;
     display: flex;
     margin-top: 3rem;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
 }
 .joinus_main{
     overflow: hidden;
     background-color: var(--second-color);
 }
 .main_heading{
-    font-size: var(--h3--size);
+    font-size: calc(var(--normal-font-size) + 1rem);
+    font-weight: bold;
 }
-.content{
+.content_sbsq{
     font-size: var(--normal-font-size);
     text-align: left;
 }
-.content li{
+.content_sbsq li{
 margin-top: 1rem;
 list-style: none;
 display: flex;
 }
-.content li {
+.content_sbsq li {
     position: relative;
     list-style-type: none; /* Remove default bullet points */
     margin-bottom: 10px;
     padding-left: 20px; /* Space for the dot */
   }
   
-  .content li::before {
+  .content_sbsq li::before {
     content: "";
     position: absolute;
     left: 0;
@@ -49,27 +42,16 @@ display: flex;
     background-color: #000; /* Color of the dot */
     border-radius: 50%; /* Make it a circle */
   }
-.joinus_lft{
-    width: 45%;
-    /* text-align: justify; */
-}
 .joinus_right{
-    /* font-size: 13rem; */
-    width: 40%;
-    margin-left: 4rem;
     text-align: center;
 }
-.joinus_lft_con h1{
+.anim-text{
+    font-size: calc(var(--normal-font-size) + 2rem);
     font-family: "Poppins";
-    line-height: 4rem;
     font-size:5rem ;
     text-align: left;
-}
-.joinus_right h1 {
-    transition: color 0.5s ease-in-out;
-}
-.color-change {
-    color: red; /* Change this to your desired color */
+    font-weight: bold;
+    line-height: 4rem;
 }
 /* --------------------------------- */
 @media screen and (max-width:1024px){
@@ -78,41 +60,38 @@ display: flex;
     .joinus_lft {
         width: auto;
       }
-    .joinus_right{
-        /* font-size: 13rem; */
-        width: auto;
-        margin-left: 4rem;
-    }
-    .joinus_lft_con h1{
-        line-height: 4rem;
-        font-size:4rem ;
-        text-align: left;
-    }
 
 }
 @media screen and (max-width: 768px){
     .joinus_right{
         /* font-size: 13rem; */
         width: auto;
-        margin-left: 4rem;
     }
-    .joinus_lft_con h1{
+    
+    
+}
+@media screen and (max-width: 768px){
+    .joincontent{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .joinus_right{
+        margin: 0;
+    }
+    .anim-text{
+        font-size: calc(var(--normal-font-size) + 4rem);
+    }
+}
+@media screen and (max-width: 500px){
+    .anim-text{
+        font-size: calc(var(--normal-font-size) + 3rem);
+    }
+}
+
+@media screen and (max-width: 368px){
+    .anim-text{
+        font-size: calc(var(--normal-font-size) + 2rem);
         line-height: 3rem;
-        font-size:3rem ;
-        text-align: left;
     }
-    
-    
-}
-@media screen and (max-width: 768px){
-    .joinus_right{
-       display: none;
-    }
-}
-@media screen and (max-width: 600px){
-
-}
-
-@media screen and (max-width: 414px){
-
 }
