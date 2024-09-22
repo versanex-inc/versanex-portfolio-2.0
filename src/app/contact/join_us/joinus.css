@@ -53,6 +53,14 @@ display: flex;
     font-weight: bold;
     line-height: 4rem;
 }
+.joinus_right,.joinus_lft {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.joinus_lft{
+    padding-right: 1rem;
+}
 /* --------------------------------- */
 @media screen and (max-width:1024px){
 }

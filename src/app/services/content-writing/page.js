@@ -8,6 +8,7 @@ import Achievements from "@/Components/Home/Achievements/Achievements";
 import Partnerships from "@/Components/Home/Partnerships/Partnerships";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import Contact_Form from "@/Components/Contact_Form/Contact_Form";
+
 const Service = () => {
     const [visibleAnswers, setVisibleAnswers] = useState({});
 
@@ -17,146 +18,95 @@ const Service = () => {
         [index]: !prevVisibleAnswers[index],
       }));
     };
+
     const faqData = [
         {
-          question: "What technologies do you use for web development?",
-          answer: "We specialize in using the MERN stack (MongoDB, Express.js, React, Node.js) for developing robust and scalable web applications. We also work with other technologies like HTML, CSS, JavaScript, and various frameworks and libraries as needed.",
+          question: "What type of content writing services do you offer?",
+          answer: "We offer a range of content writing services including blog posts, SEO content, website copy, social media content, product descriptions, and technical writing.",
         },
         {
-          question: "How long does it take to develop a web application?",
-          answer: "The timeline for web development varies depending on the complexity and scope of the project. A basic website might take a few weeks, while a more complex web application could take several months. We provide a detailed timeline after understanding your requirements.",
+          question: "How do you ensure quality in the content?",
+          answer: "We have a dedicated team of professional writers and editors who ensure every piece of content is well-researched, engaging, and free from errors before delivery.",
         },
         {
-          question: "How much does a web development project cost?",
-          answer: "The cost of web development depends on various factors, including the project’s complexity, the technologies used, and the time required to complete it. We offer customized quotes based on your specific needs and budget.",
+          question: "Do you provide SEO-optimized content?",
+          answer: "Yes, we specialize in creating SEO-friendly content that improves your search engine ranking while keeping the reader engaged and informed.",
         },
         {
-          question: "Do you offer custom web development services?",
-          answer: "Yes, we provide custom web development services tailored to your unique business requirements. Whether you need a simple website or a complex web application, we can deliver a solution that fits your needs.",
+          question: "Can you write for specific industries?",
+          answer: "Absolutely! Our team of experienced writers has expertise in various industries such as tech, finance, healthcare, and lifestyle, ensuring content is relevant and impactful.",
         },
         {
-          question: "Will my website be mobile-friendly?",
-          answer: "Absolutely. We prioritize responsive design to ensure that your website functions seamlessly on all devices, including desktops, tablets, and smartphones.",
+          question: "What is the turnaround time for content writing projects?",
+          answer: "The delivery time depends on the project scope. Short blog posts can be delivered within a few days, while larger projects like eBooks or full website content may take a couple of weeks.",
         },
         {
-          question: "Can you redesign my existing website?",
-          answer: "Yes, we offer website redesign services to improve the look, feel, and functionality of your existing site. We can update the design, enhance user experience, and implement new features.",
+          question: "Do you offer revisions on the content?",
+          answer: "Yes, we offer multiple revisions to ensure the content aligns with your vision and meets your expectations.",
         },
         {
-          question: "Will you maintain and update my website after its launched?",
-          answer: "Yes, we offer ongoing maintenance and support services to ensure your website remains up-to-date, secure, and functioning optimally. This includes updates, bug fixes, performance optimization, and more.",
-        },
-        {
-          question: "How do you ensure the security of the web application?",
-          answer: "We implement best practices for web security, including data encryption, secure authentication, regular security audits, and vulnerability assessments to protect your web application from threats.",
-        },
-        {
-          question: "Can you integrate third-party services and APIs?",
-          answer: "Yes, we can integrate various third-party services and APIs into your web application to extend its functionality. This includes payment gateways, social media platforms, analytics tools, and more.",
-        },
-        {
-          question: "Do you provide SEO services for my website?",
-          answer: "While our primary focus is on web development, we can implement basic SEO best practices during development to help your website rank better in search engines. We also collaborate with SEO specialists for advanced SEO services.",
-        },
-        {
-          question: "How do you handle project management and communication during development?",
-          answer: "We use project management tools like Jira, Trello, or Asana to track progress and keep you updated. Regular meetings and status reports ensure clear communication and transparency throughout the development process.",
-        },
-        {
-          question: "How do you ensure the quality of the web application?",
-          answer: "We follow a rigorous quality assurance process that includes automated and manual testing to ensure the application is bug-free and performs well. This includes functional testing, performance testing, security testing, and usability testing.",
-        },
+          question: "How much do your content writing services cost?",
+          answer: "Our pricing varies depending on the type of content and project size. We offer competitive rates and provide customized quotes based on your specific needs.",
+        }
       ];
+
   return (
     <div className="services_service">
       <h1 className="heading container services_service_heading">Content Writing</h1>
       <div className="container services_media_wrapper">
-      <Image
+        <Image
           className="services_service_image"
-            src={
-              "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29udGVudCUyMHdyaXRpbmd8ZW58MHx8MHx8fDA%3D"
-            }
-            alt="service"
-            width={1000}
-            height={1000}
-            quality={100}
-          />
+          src={"https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29udGVudCUyMHdyaXRpbmd8ZW58MHx8MHx8fDA%3D"}
+          alt="Content Writing Service"
+          width={1000}
+          height={1000}
+          quality={100}
+        />
         <div className="services_media_text_boxex">
-        <p className="service_headline">
-            Build Robust and Scalable Web Applications with Our MERN Stack
-            Development Services.
+          <p className="service_headline">
+            Enhance Your Brands Presence with Professional Content Writing Services.
           </p>
           <p className="service_subheadline">
-            Unlock the Full Potential of Your Business with Custom Solutions
-            Using MongoDB, Express.js, React, and Node.js.
+            Captivate Your Audience with Engaging, SEO-Optimized Content Tailored to Your Brand.
           </p>
           <p className="service_overview">
-            Our MERN stack development service is designed for businesses
-            looking to create dynamic, high-performance web applications. By
-            leveraging the power of MongoDB, Express.js, React, and Node.js, we
-            deliver seamless, end-to-end solutions that meet your specific needs
-            and help you achieve your business goals.Our first priority is to make you buisness ranked high in that online dominating world.We will trust the process you can trust us.
+            Our content writing services help you communicate effectively with your audience, driving engagement and conversion. From blogs to product descriptions, we create compelling content that aligns with your business goals and resonates with your target audience.
           </p>
         </div>
       </div>
       <div className="container service_detail">
-        <h2>Technologies we are using</h2>
+        <h2>Types of Content We Offer</h2>
         <ul className="service_technologies">
           <li className="service_technology">
-            <b>Mongodb:</b>
+            <b>SEO Content Writing:</b>
             <ul className="service_technology_details">
               <li className="service_technology_detail">
-                Design and implement scalable, NoSQL databases tailored to your
-                application’s requirements.
+                Create optimized content that ranks high on search engines while engaging your audience.
               </li>
               <li className="service_technology_detail">
-                Ensure high availability and performance with optimized data
-                structures and queries.
+                Focus on keywords, readability, and structure to improve SEO performance.
               </li>
             </ul>
           </li>
           <li className="service_technology">
-            <b>Express.js Framework:</b>
+            <b>Website Copywriting:</b>
             <ul className="service_technology_details">
               <li className="service_technology_detail">
-                Develop robust back-end solutions with our expertise in
-                Express.js.
+                Write clear, compelling copy that captures your brand voice and converts visitors into customers.
               </li>
               <li className="service_technology_detail">
-                Create efficient, secure APIs to handle data exchange between
-                the server and client.
+                Tailor content for different sections like homepage, about, services, and more.
               </li>
             </ul>
           </li>
           <li className="service_technology">
-            <b>React Front-End Development:</b>
+            <b>Technical Writing:</b>
             <ul className="service_technology_details">
               <li className="service_technology_detail">
-                Build responsive, user-friendly interfaces using React.
+                Provide detailed, informative content for industries like tech, finance, and healthcare.
               </li>
               <li className="service_technology_detail">
-                Implement component-based architecture for maintainable and
-                scalable applications.
-              </li>
-              <li className="service_technology_detail">
-                Ensure high performance with optimized rendering and state
-                management.
-              </li>
-            </ul>
-          </li>
-          <li className="service_technology">
-            <b>Node.js Server-Side Development:</b>
-            <ul className="service_technology_details">
-              <li className="service_technology_detail">
-                Develop high-performance, scalable server-side solutions with
-                Node.js.
-              </li>
-              <li className="service_technology_detail">
-                Utilize asynchronous programming to handle multiple requests
-                efficiently.
-              </li>
-              <li className="service_technology_detail">
-                Integrate third-party services and APIs seamlessly.
+                Ensure accuracy and clarity, simplifying complex information for easy understanding.
               </li>
             </ul>
           </li>
@@ -164,37 +114,26 @@ const Service = () => {
         <h2 className="service_additional_features">Additional Features:</h2>
         <ul className="service_additional_features">
           <li className="service_additional_feature">
-            <b>Real-Time Applications:</b>
+            <b>Content Strategy:</b>
             <ul className="service_additional_feature_detail">
               <li className="additional_feature_detail">
-                Implement real-time features such as live chat, notifications,
-                and updates using WebSockets.
+                Develop a long-term content plan aligned with your business goals.
               </li>
             </ul>
           </li>
           <li className="service_additional_feature">
-            <b>Deployment and Maintenance:</b>
+            <b>Proofreading & Editing:</b>
             <ul className="service_additional_feature_detail">
               <li className="additional_feature_detail">
-                Deploy your application on cloud platforms like AWS, Azure, or
-                Heroku.
-              </li>
-              <li className="additional_feature_detail">
-                Provide ongoing maintenance and support to ensure your
-                application remains up-to-date and secure.
+                Ensure your content is polished, error-free, and professional.
               </li>
             </ul>
           </li>
           <li className="service_additional_feature">
-            <b>Custom Solutions:</b>
+            <b>Social Media Content:</b>
             <ul className="service_additional_feature_detail">
               <li className="additional_feature_detail">
-                Tailor our services to meet your specific business needs,
-                whether you’re a startup or an established enterprise.
-              </li>
-              <li className="additional_feature_detail">
-                Offer custom integrations with existing systems and third-party
-                services.
+                Create engaging posts that reflect your brand and resonate with your followers.
               </li>
             </ul>
           </li>
@@ -203,21 +142,21 @@ const Service = () => {
       <div className="container service_faqs">
         <h2>FAQ&apos;s</h2>
         <div className="faqs_container">
-      {faqData.map((faq, index) => (
-        <div className="service_faq" key={index}>
-          <span className="service_q" onClick={() => toggleAnswer(index)}>
-            <p className="service_question">{faq.question}</p>
-            <span className="service_answer_show">
-              {visibleAnswers[index] ? <FaMinus /> : <FaPlus />}
-            </span>
-          </span>
-          <p className={`service_answer ${visibleAnswers[index] ? 'show' : ''}`}>
-            {faq.answer}
-          </p>
+          {faqData.map((faq, index) => (
+            <div className="service_faq" key={index}>
+              <span className="service_q" onClick={() => toggleAnswer(index)}>
+                <p className="service_question">{faq.question}</p>
+                <span className="service_answer_show">
+                  {visibleAnswers[index] ? <FaMinus /> : <FaPlus />}
+                </span>
+              </span>
+              <p className={`service_answer ${visibleAnswers[index] ? 'show' : ''}`}>
+                {faq.answer}
+              </p>
+            </div>
+          ))}
         </div>
-      ))}
       </div>
-    </div>
       <div className="service_testimonials">
         <Reviews />
       </div>

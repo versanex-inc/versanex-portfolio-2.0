@@ -152,6 +152,9 @@ select{
       top: 0px;
     }
   }
+  .contact_form_parent{
+    z-index: 10000;
+  }
   
   @media screen and (max-width: 768px){
     .form_arrow{

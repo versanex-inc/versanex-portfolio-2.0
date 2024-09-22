@@ -34,9 +34,9 @@ const Achievements = () => {
 
   useEffect(() => {
     const employeeCount = 10;
-    const clientCount = 200;
-    const projectsCount = 300;
-    const countryCount = 20;
+    const clientCount = 100;
+    const projectsCount = 150;
+    const countryCount = 10;
 
     let employeeTimer, clientTimer, projectsTimer, countryTimer;
 

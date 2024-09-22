@@ -28,40 +28,32 @@ const Upper_Details = () => {
               encompass operations, maintenance, support, and business
               outsourcing. As a team of talented and hardworking Technology
               Specialists, we have vast experience in implementing successful
-              solutions using technologies such as Microsoft, Oracle, PHP, ASP,
-              3D, and MERN stack.
+              solutions using technologies such as Microsoft, Mern Stack, Nextjs, Adobe, Blender etc.
             </p>
           </div>
         </div>
       </div>
       <div className="container_info_ot container_info_ot_lower">
-      <h1 className="heading heading_about_comapny ot_headig_div">
-            <p>Team Culture and Values</p>
-            <div className="heading_underline h_underline_mtContainer">
-              <span className="heading_underline_dot"></span>
-            </div>
-          </h1>
-        <div className="ot_info_para">
-          <div className="team_culture_main_con">
-            <div className="ot_para_div">
-              <p>
-                Lorem Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Laboriosam, ratione. ipsum dolor sit amet consectetur
-                adipisicing elit. Vel blanditiis aliquid dicta ipsam beatae
-                placeat? Ea dicta quisquam amet, eum quos sint alias, cumque
-                vitae nobis fuga magnam, voluptates possimus!
-              </p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Delectus quaerat cupiditate aperiam animi. Numquam incidunt
-                corrupti suscipit maxime, ipsa tempore explicabo quis,
-                voluptates unde excepturi obcaecati quam quas eligendi
-                molestias?
-              </p>
-            </div>
-          </div>
-        </div>
+  <h1 className="heading heading_about_comapny ot_headig_div">
+    <p>Team Culture and Values</p>
+    <div className="heading_underline h_underline_mtContainer">
+      <span className="heading_underline_dot"></span>
+    </div>
+  </h1>
+  <div className="ot_info_para">
+    <div className="team_culture_main_con">
+      <div className="ot_para_div">
+        <p>
+          At VERSANEX, our team culture is built on collaboration, innovation, and mutual respect. We believe in fostering a positive and inclusive work environment where every team member feels valued and empowered to contribute their unique skills. This enables us to consistently deliver exceptional solutions to our clients.
+        </p>
+        <p>
+          Our core values of integrity, excellence, and continuous learning guide everything we do. We encourage open communication, embrace challenges, and strive for personal and professional growth. By staying committed to these principles, we create a dynamic workplace that drives creativity and success.
+        </p>
       </div>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 };

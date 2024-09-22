@@ -20,11 +20,11 @@ const Service = () => {
     const faqData = [
         {
           question: "What technologies do you use for web development?",
-          answer: "We specialize in using the MERN stack (MongoDB, Express.js, React, Node.js) for developing robust and scalable web applications. We also work with other technologies like HTML, CSS, JavaScript, and various frameworks and libraries as needed.",
+          answer: "We specialize in using the MERN stack (MongoDB, Express.js, React, Node.js, Wordpress, Shopify, Nextjs, GSAP,Vue.js, Tailwind css, Bootstrap,Figma,MySQL) for developing robust and scalable web applications. We also work with other technologies like HTML, CSS, JavaScript, and various frameworks and libraries as needed.",
         },
         {
           question: "How long does it take to develop a web application?",
-          answer: "The timeline for web development varies depending on the complexity and scope of the project. A basic website might take a few weeks, while a more complex web application could take several months. We provide a detailed timeline after understanding your requirements.",
+          answer: "The timeline for web development varies depending on the complexity and scope of the project. A basic website might take a week, while a more complex web application could take month. We provide a detailed timeline after understanding your requirements.",
         },
         {
           question: "How much does a web development project cost?",
@@ -60,7 +60,7 @@ const Service = () => {
         },
         {
           question: "How do you handle project management and communication during development?",
-          answer: "We use project management tools like Jira, Trello, or Asana to track progress and keep you updated. Regular meetings and status reports ensure clear communication and transparency throughout the development process.",
+          answer: "We use project management tools to track progress and keep you updated. Regular meetings and status reports ensure clear communication and transparency throughout the development process.",
         },
         {
           question: "How do you ensure the quality of the web application?",
@@ -88,7 +88,7 @@ const Service = () => {
           </p>
           <p className="service_subheadline">
             Unlock the Full Potential of Your Business with Custom Solutions
-            Using MongoDB, Express.js, React, and Node.js.
+            Using MongoDB, Express.js, React, and Node.js,Wordpress,Shopify.
           </p>
           <p className="service_overview">
             Our MERN stack development service is designed for businesses
@@ -160,6 +160,76 @@ const Service = () => {
               </li>
             </ul>
           </li>
+          <li className="service_technology">
+  <b>WordPress Development:</b>
+  <ul className="service_technology_details">
+    <li className="service_technology_detail">
+      Build dynamic, responsive websites using WordPress, tailored to your business needs.
+    </li>
+    <li className="service_technology_detail">
+      Customize themes and plugins to create unique, feature-rich user experiences.
+    </li>
+    <li className="service_technology_detail">
+      Ensure seamless integration with third-party tools and APIs for enhanced functionality.
+    </li>
+    <li className="service_technology_detail">
+      Optimize WordPress sites for performance, security, and SEO best practices.
+    </li>
+  </ul>
+</li>
+<li className="service_technology">
+  <b>Shopify Development:</b>
+  <ul className="service_technology_details">
+    <li className="service_technology_detail">
+      Build robust, customizable e-commerce stores using Shopify, tailored to your brand.
+    </li>
+    <li className="service_technology_detail">
+      Develop custom themes and features to create unique and engaging shopping experiences.
+    </li>
+    <li className="service_technology_detail">
+      Seamlessly integrate payment gateways, shipping solutions, and third-party apps.
+    </li>
+    <li className="service_technology_detail">
+      Optimize Shopify stores for performance, security, and SEO to enhance visibility and sales.
+    </li>
+  </ul>
+</li>
+<li className="service_technology">
+  <b>Next.js Development:</b>
+  <ul className="service_technology_details">
+    <li className="service_technology_detail">
+      Develop high-performance web applications using Next.js for optimal speed and scalability.
+    </li>
+    <li className="service_technology_detail">
+      Implement server-side rendering (SSR) and static site generation (SSG) for fast load times and SEO benefits.
+    </li>
+    <li className="service_technology_detail">
+      Seamlessly integrate APIs and third-party services to enhance functionality.
+    </li>
+    <li className="service_technology_detail">
+      Build modern, responsive, and secure web applications with Next.js best practices.
+    </li>
+  </ul>
+</li>
+<li className="service_technology">
+  <b>GSAP (GreenSock Animation Platform):</b>
+  <ul className="service_technology_details">
+    <li className="service_technology_detail">
+      Create highly interactive, smooth, and performant animations for websites and applications using GSAP.
+    </li>
+    <li className="service_technology_detail">
+      Build advanced timeline-based animations to enhance user engagement and experience.
+    </li>
+    <li className="service_technology_detail">
+      Integrate GSAP with various frameworks like React, Vue, and Next.js to deliver dynamic, fluid animations.
+    </li>
+    <li className="service_technology_detail">
+      Optimize animations for performance across all devices and browsers to ensure a seamless experience.
+    </li>
+  </ul>
+</li>
+
+
         </ul>
         <h2 className="service_additional_features">Additional Features:</h2>
         <ul className="service_additional_features">
@@ -176,8 +246,7 @@ const Service = () => {
             <b>Deployment and Maintenance:</b>
             <ul className="service_additional_feature_detail">
               <li className="additional_feature_detail">
-                Deploy your application on cloud platforms like AWS, Azure, or
-                Heroku.
+                Deploy your application on cloud platforms like Hostinger,Godaddy,DigitalOcean etc.
               </li>
               <li className="additional_feature_detail">
                 Provide ongoing maintenance and support to ensure your

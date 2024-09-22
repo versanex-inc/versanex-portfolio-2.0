@@ -117,13 +117,13 @@ const Contact = () => {
               <p>Initiate your project with us!</p>
             </div>
             <div className="content_cont_form">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis commodi minima laudantium impedit magnam sequi qui aspernatur nesciunt tenetur eius.
+            Get started on your next project with our expert team. We specialize in delivering high-quality solutions, from web development and video editing to SEO, content creation, and digital marketing. Let’s work together to turn your vision into reality.
             </div>
             <div className="s_title title_right_contact">
               <p>Complete the contact form to inform us of your needs</p>
             </div>
             <div className="content_cont_form content_cont_form_btm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Fill out the contact form and let us know how we can assist you. Our team will carefully review your request and provide a tailored approach to meet your business objectives.
             </div>
           </div>
           <div className="form_arrow"></div>

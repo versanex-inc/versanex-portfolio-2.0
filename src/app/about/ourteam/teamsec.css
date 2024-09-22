@@ -69,7 +69,7 @@
 .ot_card_img img{
   width: 100%;
   position: relative;
-  z-index: 2;
+  z-index: 5;
   transition: transform 1s ease;
 }
 .ot_card_user_data{

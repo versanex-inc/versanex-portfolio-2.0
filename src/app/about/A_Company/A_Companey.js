@@ -30,8 +30,7 @@ const A_Companey = () => {
               encompass operations, maintenance, support, and business
               outsourcing. As a team of talented and hardworking Technology
               Specialists, we have vast experience in implementing successful
-              solutions using technologies such as Microsoft, Oracle, PHP, ASP,
-              3D, and MERN stack.
+              solutions using technologies such as Microsoft,Mern Stack,3D,Adobe,Wordpress etc.
             </p>
           </div>
         </div>
@@ -49,21 +48,7 @@ const A_Companey = () => {
           <div className="main_con">
             <div className="about_con">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit, minima. Maiores, nemo totam iusto nobis
-                perspiciatis reiciendis obcaecati labore. Laborum eius obcaecati
-                quidem repellendus amet Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Repellendus, quo! Lorem ipsum dolor, sit amet
-                consectetur adipisicing elit. Aspernatur dolor architecto, ea
-                dolorem ipsa nam illum error porro incidunt, neque impedit
-                debitis minima veritatis eius, corrupti repudiandae vero
-                quibusdam earum omnis aliquid? Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Temporibus soluta ad praesentium
-                quae quidem excepturi, quisquam non suscipit nulla, dignissimos
-                quaerat quo eveniet eum natus. Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Molestias, repudiandae eligendi
-                quos temporibus velit aliquam, adipisci aut suscipit placeat
-                amet itaque nostrum autem totam cupiditate.
+              Our mission is to empower businesses by providing innovative and tailored technological solutions that drive success in the digital age. At VERSANEX, we are committed to enhancing the digital capabilities of organizations through our expertise in video editing, web development, SEO, graphic design, digital marketing, and content creation. We strive to deliver high-quality services that help our clients stay competitive in an ever-evolving market. With a focus on excellence, customer satisfaction, and continuous improvement, we aim to build long-term partnerships with businesses, enabling them to achieve their strategic goals efficiently and effectively.
               </p>
             </div>
           </div>
@@ -82,26 +67,7 @@ const A_Companey = () => {
           <div className="main_con">
             <div className="about_con">
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Perferendis architecto minima explicabo! Esse ut minima quisquam
-                molestias odio enim optio quasi suscipit asperiores voluptas
-                inventore ratione dicta ducimus dignissimos ullam sunt
-                necessitatibus sapiente iure, corrupti dolores? Iusto maxime
-                nihil ea, incidunt impedit eius quae deleniti nam dolorem
-                reiciendis ducimus quisquam? Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. In voluptas beatae sint unde
-                temporibus molestias enim quibusdam tempora, quidem tenetur iste
-                dolorem, nihil natus
-              </p>
-              <p>
-                fugit provident! Ratione recusandae harum vitae, labore est, nam
-                nisi aspernatur molestiae dignissimos rei Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Eius eveniet ut atque, magnam
-                mollitia id non quam? Mollitia numquam amet velit ab
-                consectetur. Mollitia nostrum accusamus omnis molestiae!
-                Voluptatibus in totam sunt libero vero qui, distinctio
-                repellendus nemo nihil quaerat quos officia necessitatibus.
-                ciendis esse rem nesciunt qui.
+              Our vision is to become a global leader in providing comprehensive technology-driven solutions that transform how businesses operate in the digital world. We aim to be recognized as a trusted partner for both private and government organizations, delivering cutting-edge services that span video editing, web development, SEO, graphic design, digital marketing, and content creation. By staying at the forefront of technological advancements, we envision empowering companies to harness the full potential of IT in driving innovation, efficiency, and growth. Ultimately, our goal is to contribute to a more connected, efficient, and dynamic business landscape.
               </p>
             </div>
           </div>

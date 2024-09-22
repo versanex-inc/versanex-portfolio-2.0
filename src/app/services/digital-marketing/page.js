@@ -19,52 +19,48 @@ const Service = () => {
     };
     const faqData = [
         {
-          question: "What technologies do you use for web development?",
-          answer: "We specialize in using the MERN stack (MongoDB, Express.js, React, Node.js) for developing robust and scalable web applications. We also work with other technologies like HTML, CSS, JavaScript, and various frameworks and libraries as needed.",
+          question: "What digital marketing services do you offer?",
+          answer: "We offer a full range of digital marketing services, including SEO, PPC (Pay-Per-Click), social media marketing, content marketing, email marketing, and online reputation management. Our strategies are customized to meet the specific needs of your business.",
         },
         {
-          question: "How long does it take to develop a web application?",
-          answer: "The timeline for web development varies depending on the complexity and scope of the project. A basic website might take a few weeks, while a more complex web application could take several months. We provide a detailed timeline after understanding your requirements.",
+          question: "How do you ensure the success of your digital marketing strategies?",
+          answer: "We base our strategies on data and performance analytics. By using industry-leading tools and regularly monitoring key performance indicators (KPIs), we ensure our campaigns are optimized for the best results. Additionally, we continuously test and adjust strategies to meet your business goals.",
         },
         {
-          question: "How much does a web development project cost?",
-          answer: "The cost of web development depends on various factors, including the project’s complexity, the technologies used, and the time required to complete it. We offer customized quotes based on your specific needs and budget.",
+          question: "How long does it take to see results from digital marketing?",
+          answer: "The timeline for seeing results can vary based on the type of service. For SEO, it may take 3 to 6 months to see significant improvements, whereas PPC and social media campaigns can deliver quicker results, often within a few weeks. We aim to provide a balance of short-term gains and long-term success.",
         },
         {
-          question: "Do you offer custom web development services?",
-          answer: "Yes, we provide custom web development services tailored to your unique business requirements. Whether you need a simple website or a complex web application, we can deliver a solution that fits your needs.",
+          question: "Do you offer social media management as part of your services?",
+          answer: "Yes, we offer comprehensive social media management services, including content creation, audience engagement, and paid advertising on platforms such as Facebook, Instagram, LinkedIn, and Twitter. We work to ensure your brand message reaches your target audience effectively.",
         },
         {
-          question: "Will my website be mobile-friendly?",
-          answer: "Absolutely. We prioritize responsive design to ensure that your website functions seamlessly on all devices, including desktops, tablets, and smartphones.",
+          question: "How do you measure the ROI of digital marketing campaigns?",
+          answer: "We measure ROI by tracking metrics like website traffic, conversion rates, lead generation, and sales. Detailed analytics reports are provided, showing the performance of each campaign, the return on your investment, and areas for improvement.",
         },
         {
-          question: "Can you redesign my existing website?",
-          answer: "Yes, we offer website redesign services to improve the look, feel, and functionality of your existing site. We can update the design, enhance user experience, and implement new features.",
+          question: "Can you help with SEO for my website?",
+          answer: "Absolutely! We specialize in both on-page and off-page SEO to help your website rank higher in search engine results. Our services include keyword research, content optimization, backlink building, technical SEO improvements, and more.",
         },
         {
-          question: "Will you maintain and update my website after its launched?",
-          answer: "Yes, we offer ongoing maintenance and support services to ensure your website remains up-to-date, secure, and functioning optimally. This includes updates, bug fixes, performance optimization, and more.",
+          question: "Do you provide custom strategies for each business?",
+          answer: "Yes, every business is unique, and we tailor our digital marketing strategies to fit your specific goals, industry, and target audience. Our approach is to develop a custom plan that addresses your challenges and drives growth.",
         },
         {
-          question: "How do you ensure the security of the web application?",
-          answer: "We implement best practices for web security, including data encryption, secure authentication, regular security audits, and vulnerability assessments to protect your web application from threats.",
+          question: "How do you handle content creation for digital marketing?",
+          answer: "We have a team of experienced content creators who can develop high-quality, engaging content tailored to your brand. This includes blog posts, social media content, articles, infographics, and videos. Our content strategies focus on providing value and building trust with your audience.",
         },
         {
-          question: "Can you integrate third-party services and APIs?",
-          answer: "Yes, we can integrate various third-party services and APIs into your web application to extend its functionality. This includes payment gateways, social media platforms, analytics tools, and more.",
+          question: "Can you manage paid advertising campaigns?",
+          answer: "Yes, we offer PPC management services for platforms such as Google Ads, Facebook Ads, Instagram Ads, and more. Our team optimizes ad copy, targets the right audience, and monitors performance to maximize the return on your advertising spend.",
         },
         {
-          question: "Do you provide SEO services for my website?",
-          answer: "While our primary focus is on web development, we can implement basic SEO best practices during development to help your website rank better in search engines. We also collaborate with SEO specialists for advanced SEO services.",
+          question: "What platforms do you specialize in for social media marketing?",
+          answer: "We specialize in a variety of platforms, including Facebook, Instagram, LinkedIn, Twitter, and Pinterest. Depending on your business and target audience, we develop a tailored social media strategy to reach potential customers where they are most active.",
         },
         {
-          question: "How do you handle project management and communication during development?",
-          answer: "We use project management tools like Jira, Trello, or Asana to track progress and keep you updated. Regular meetings and status reports ensure clear communication and transparency throughout the development process.",
-        },
-        {
-          question: "How do you ensure the quality of the web application?",
-          answer: "We follow a rigorous quality assurance process that includes automated and manual testing to ensure the application is bug-free and performs well. This includes functional testing, performance testing, security testing, and usability testing.",
+          question: "Do you offer analytics and reporting for digital marketing efforts?",
+          answer: "Yes, we provide detailed analytics and reporting for all digital marketing campaigns. This includes insights on traffic, engagement, conversions, and other important metrics. Our reports help you understand the effectiveness of our strategies and guide future decisions.",
         },
       ];
   return (
@@ -83,19 +79,13 @@ const Service = () => {
           />
         <div className="services_media_text_boxex">
         <p className="service_headline">
-            Build Robust and Scalable Web Applications with Our MERN Stack
-            Development Services.
+        Grow Your Business and Maximize Online Visibility with Our Tailored Digital Marketing Services.
           </p>
           <p className="service_subheadline">
-            Unlock the Full Potential of Your Business with Custom Solutions
-            Using MongoDB, Express.js, React, and Node.js.
+          Unlock the potential of your brand with data-driven strategies in SEO, PPC, social media marketing, and content marketing, designed to increase engagement, generate leads, and boost conversions. Our customized digital marketing solutions target your audience and ensure measurable results that align with your business goals.
           </p>
           <p className="service_overview">
-            Our MERN stack development service is designed for businesses
-            looking to create dynamic, high-performance web applications. By
-            leveraging the power of MongoDB, Express.js, React, and Node.js, we
-            deliver seamless, end-to-end solutions that meet your specific needs
-            and help you achieve your business goals.Our first priority is to make you buisness ranked high in that online dominating world.We will trust the process you can trust us.
+          We prioritize the success of your online presence, making sure your business thrives in an ever-changing digital landscape. Trust our expertise to elevate your brand, and we will make sure your message reaches the right audience at the right time.
           </p>
         </div>
       </div>
@@ -103,60 +93,57 @@ const Service = () => {
         <h2>Technologies we are using</h2>
         <ul className="service_technologies">
           <li className="service_technology">
-            <b>Mongodb:</b>
+            <b>SEO (Search Engine Optimization):</b>
             <ul className="service_technology_details">
               <li className="service_technology_detail">
-                Design and implement scalable, NoSQL databases tailored to your
-                application’s requirements.
+              Optimize your website’s on-page and off-page elements to rank higher in search engine results.
               </li>
               <li className="service_technology_detail">
-                Ensure high availability and performance with optimized data
-                structures and queries.
+              Implement keyword strategies and link-building techniques to drive organic traffic.
               </li>
             </ul>
           </li>
           <li className="service_technology">
-            <b>Express.js Framework:</b>
+            <b>PPC (Pay-Per-Click Advertising):</b>
             <ul className="service_technology_details">
               <li className="service_technology_detail">
-                Develop robust back-end solutions with our expertise in
-                Express.js.
+              Run targeted ad campaigns on platforms like Google Ads and Bing Ads to reach potential customers.
               </li>
               <li className="service_technology_detail">
-                Create efficient, secure APIs to handle data exchange between
-                the server and client.
+              Optimize your ad spend with A/B testing and detailed analytics.
               </li>
             </ul>
           </li>
           <li className="service_technology">
-            <b>React Front-End Development:</b>
+            <b>Social Media Marketing:</b>
             <ul className="service_technology_details">
               <li className="service_technology_detail">
-                Build responsive, user-friendly interfaces using React.
+              Leverage platforms like Facebook, Instagram, LinkedIn, and Twitter to engage with your audience.
               </li>
               <li className="service_technology_detail">
-                Implement component-based architecture for maintainable and
-                scalable applications.
-              </li>
-              <li className="service_technology_detail">
-                Ensure high performance with optimized rendering and state
-                management.
+              Create and manage content that builds brand loyalty and increases visibility.
               </li>
             </ul>
           </li>
           <li className="service_technology">
-            <b>Node.js Server-Side Development:</b>
+            <b>Content Marketing:</b>
             <ul className="service_technology_details">
               <li className="service_technology_detail">
-                Develop high-performance, scalable server-side solutions with
-                Node.js.
+              Develop high-quality content strategies that resonate with your audience and build brand authority.
               </li>
               <li className="service_technology_detail">
-                Utilize asynchronous programming to handle multiple requests
-                efficiently.
+              Create blog posts, articles, infographics, and videos to increase engagement and drive traffic.
+              </li>
+            </ul>
+          </li>
+          <li className="service_technology">
+            <b>Email Marketing:</b>
+            <ul className="service_technology_details">
+              <li className="service_technology_detail">
+              Design personalized email campaigns that nurture leads and improve customer retention.
               </li>
               <li className="service_technology_detail">
-                Integrate third-party services and APIs seamlessly.
+              Use automation tools to manage subscriber lists and track campaign performance.
               </li>
             </ul>
           </li>
@@ -164,37 +151,26 @@ const Service = () => {
         <h2 className="service_additional_features">Additional Features:</h2>
         <ul className="service_additional_features">
           <li className="service_additional_feature">
-            <b>Real-Time Applications:</b>
+            <b>Advanced Analytics & Reporting:</b>
             <ul className="service_additional_feature_detail">
               <li className="additional_feature_detail">
-                Implement real-time features such as live chat, notifications,
-                and updates using WebSockets.
+              Gain detailed insights into your campaign’s performance with real-time analytics, helping you make data-driven decisions and optimize your marketing strategy.
               </li>
             </ul>
           </li>
           <li className="service_additional_feature">
-            <b>Deployment and Maintenance:</b>
+            <b>Conversion Rate Optimization (CRO):</b>
             <ul className="service_additional_feature_detail">
               <li className="additional_feature_detail">
-                Deploy your application on cloud platforms like AWS, Azure, or
-                Heroku.
-              </li>
-              <li className="additional_feature_detail">
-                Provide ongoing maintenance and support to ensure your
-                application remains up-to-date and secure.
+              Implement strategies to enhance user experience and increase the percentage of website visitors who take desired actions, such as making a purchase or filling out a form.
               </li>
             </ul>
           </li>
           <li className="service_additional_feature">
-            <b>Custom Solutions:</b>
+            <b>Custom Campaign Management:</b>
             <ul className="service_additional_feature_detail">
               <li className="additional_feature_detail">
-                Tailor our services to meet your specific business needs,
-                whether you’re a startup or an established enterprise.
-              </li>
-              <li className="additional_feature_detail">
-                Offer custom integrations with existing systems and third-party
-                services.
+              Tailor each marketing campaign to your business needs with our flexible approach, ensuring that every effort is aligned with your goals and delivers maximum impact.
               </li>
             </ul>
           </li>

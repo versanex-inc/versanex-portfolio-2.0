@@ -23,9 +23,7 @@ const JoinUs = () => {
         </h1>
         <div className="container_top joinus_content">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, vel
-            optio, ipsam cupiditate natus dignissimos eius tempore, totam
-            laborum quos reprehenderit deleniti quam necessitatibus vero.
+          Are you ready to take your career to the next level? At VERSANEX, we are always looking for passionate and talented individuals to join our diverse team. By becoming a team member, you will have the opportunity to work on innovative projects, collaborate with industry experts, and contribute to a culture of excellence. We value creativity, initiative, and a commitment to continuous growth, and we provide the resources and support needed to help you thrive. If you’re eager to make an impact and grow your skills in a dynamic environment, we invite you to explore our current openings and become part of our journey.
           </p>
           {showForm && (
             <div className="joining_form_ab">
