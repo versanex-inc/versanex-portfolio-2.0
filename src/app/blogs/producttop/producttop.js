@@ -79,7 +79,7 @@ const ProductTop = () => {
                   <Link href={`/blogs/${topBlogs[1].slug}`} className="rightimgsecimgicon">
                   <BiSolidRightTopArrowCircle />
                   </Link>
-                  <Link href={`/blogs/${topBlogs[0].slug}`} className="button_blg_show_details button_blg_show_details_second_main">
+                  <Link href={`/blogs/${topBlogs[1].slug}`} className="button_blg_show_details button_blg_show_details_second_main">
                    Show Details
                   </Link>
                 </>
@@ -100,7 +100,7 @@ const ProductTop = () => {
                   <Link href={`/blogs/${topBlogs[2].slug}`} className="rightimgsecimgicon">
                   <BiSolidRightTopArrowCircle />
                   </Link>
-                  <Link href={`/blogs/${topBlogs[0].slug}`} className="button_blg_show_details button_blg_show_details_second_main">
+                  <Link href={`/blogs/${topBlogs[2].slug}`} className="button_blg_show_details button_blg_show_details_second_main">
                    Show Details
                   </Link>
                 </>

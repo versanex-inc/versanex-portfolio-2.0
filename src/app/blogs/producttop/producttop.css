@@ -168,3 +168,8 @@ font-size: calc(var(--normal-font-size) + 1rem);
      display: none;
     }
   }
+
+  .button_blg_show_details{
+    font-size: .8rem;
+    background: #efeae3a0;
+  }

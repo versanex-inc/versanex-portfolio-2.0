@@ -26,23 +26,24 @@ const quotes = () => {
   const quotes = [
     {
       quote:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi dolor totam aspernatur voluptas, dolorum iusto rerum illo, vitae saepe incidunt tempore blanditiis libero cumque. Ducimus est ratione asperiores quas corporis.",
+        "At Versanex, our mission is to bring creativity and innovation to every project. We believe in delivering solutions that not only meet client needs but also elevate their brand to new heights.",
       name: "Moaz",
       position: "Founder"
     },
     {
       quote:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi dolor totam aspernatur voluptas, dolorum iusto rerum illo, vitae saepe incidunt tempore blanditiis libero cumque. Ducimus est ratione asperiores quas corporis.",
+        "We take pride in building lasting partnerships with our clients. At Versanex, every project is a collaboration, ensuring that we deliver results that truly resonate with the client's vision and goals.",
       name: "Hisham",
       position: "Co Founder"
     },
     {
       quote:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi dolor totam aspernatur voluptas, dolorum iusto rerum illo, vitae saepe incidunt tempore blanditiis libero cumque. Ducimus est ratione asperiores quas corporis.",
+        "Our approach at Versanex combines passion, expertise, and a commitment to excellence. We aim to provide tailored solutions that enhance your business and set it apart in today's competitive market.",
       name: "Fahad",
-      position: "Manager"
+      position: "Co - Founder"
     },
   ];
+
   return (
     <>
       <div className="container top_container quotes_container_ab">

@@ -231,3 +231,12 @@
     font-size: 9px;
   }
 }
+.review_star svg{
+  color:var(--second-color);
+}
+.reviewed_user_stars{
+  margin: 1rem 0 1rem 0;
+}
+/* .visibility_dropdown{
+  color: var(--second-color);
+} */

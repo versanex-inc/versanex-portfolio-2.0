@@ -40,7 +40,7 @@ const Page = () => {
     {
       img: '/imgs/btchi.png',
       name: 'Fahad Joyia',
-      position: 'Manager',
+      position: 'Co - Founder',
       role: 'WEB DEVELOPMENT',
       topPositioned: true,
     },

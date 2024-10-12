@@ -216,12 +216,12 @@ const Reviews = () => {
                       </div>
                       <div className="reviewed_user_name">
                         <h5>{user.name}</h5>
-                        <div className="visibility_dropdown">
+                        {/* <div className="visibility_dropdown">
                           <label htmlFor="visibility">Visibility: </label>
                           <span>
                             Public <MdPublic />
                           </span>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                     <div className="reviewed_user_stars">
