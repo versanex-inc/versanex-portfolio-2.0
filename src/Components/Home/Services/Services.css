@@ -14,6 +14,7 @@
   justify-content: center;
   gap: 2.3rem;
   margin-bottom: 2rem;
+  overflow: hidden;
 }
 .show_all_services {
   /* margin-top: 1rem; */
